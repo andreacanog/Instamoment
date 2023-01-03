@@ -5,13 +5,16 @@ import React from 'react';
 import './Navigation.css';
 
 
-const Navigation = ({ isLoaded }) => {
+const Navigation = () => {
   const sessionUser = useSelector(state => state.session.user);
+
   let sessionLinks;
   if (sessionUser) {
+
     sessionLinks = (
       <ProfileButton user={sessionUser} />
     );
+
   } else {
     sessionLinks = (
       <>
@@ -22,12 +25,12 @@ const Navigation = ({ isLoaded }) => {
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-    </ul>
+    <header>
+      <nav>
+        <NavLink className="logo-home-link" exact to="/"></NavLink>
+        <ul>{sessionLinks}</ul> 
+      </nav>
+    </header>
   );
 }
 

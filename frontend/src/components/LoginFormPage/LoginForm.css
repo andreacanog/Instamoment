@@ -1,12 +1,149 @@
-.container {
-    flex-grow: 1;
-    max-width: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.box {
+    border: 1px solid var(--box-border-color);
+    background-color: var(--box-bg);
+    border-radius: 3px;
 }
 
 .form-content {
     margin-bottom: 10px;
     padding: 10px;
+    position: relative;
 }
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.singin-form {
+    padding-top: 24px;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin: 0 40px 6px;
+}
+
+.animate-input {
+    height: 36px;
+    border: 1px solid var(--box-border-color);
+    border-radius: 3px;
+    position: relative;
+}
+/* .container {
+    flex-grow: 1;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+
+
+.animate-input span {
+    position: absolute;
+    left: 8px;
+    height: 100%;
+    font-size: 12px;
+    line-height: 36px;
+    color: var(--txt-second-color);
+    transform-origin: left;
+    transition: transform 0.1s ease-in-out;
+    pointer-events: none;
+}
+
+.animate-input input {
+    width: 100%;
+    height: 100%;
+    padding: 9px 8px 7px;
+    border: 0;
+    outline: 0;
+    background-color: var(--box-bg);
+    color: var(--txt-color);
+}
+
+.animate-input.active span {
+    transform: scale(0.83333) translateY(-10px);
+}
+
+.animate-input.active input {
+    padding: 14px 0 2px 8px;
+}
+
+.animate-input button {
+    color: var(--txt-color);
+    border: 0;
+    outline: 0;
+    display: inline;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: transparent;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+}
+
+.animate-input.active button {
+    display: inline;
+}
+
+.bottom-group {
+    padding: 8px 40px;
+}
+
+.bottom-login {
+    width: 100%;
+    border: 1px solid transparent;
+    outline: 0;
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 5px 9px;
+    border-radius: 4px;
+}
+
+button:disabled {
+    background-color: rgba(0, 149, 246, 0.3);
+}
+
+
+
+.divine {
+    padding: 10px 40px 18px;
+    display: flex;
+}
+
+.divide div:nth-child(2) {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 15px;
+    margin: 0 18px;
+    color: var(--txt-second-color);
+}
+
+.divide div:nth-child(1),
+.divide div:nth-child(3) {
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--box-border-color);
+    position: relative;
+    top: 0.45em;
+}
+
+.forgot-pw {
+    display: block;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 12px;
+    text-align: center;
+    color: var(--a-color);
+    text-decoration: none;
+}
+
+

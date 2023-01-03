@@ -1,20 +1,82 @@
-.photo-slide-container {
-    background-image: url("./../../../assets/phone.png");
-    height: 618px;
-    flex-basis: 454px;
+.landing-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.photo-slide-content {
+.main-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.main-content {
+    margin: 32px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 935px;
+    flex-grow: 1;
+}
+
+.form-container {
+    flex-grow: 1;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slide-container {
+    background-image: url("../../../assets/iphones.png");
+    height: 618px;
+    flex-basis: 454px; 
+}
+
+.slide-content {
     margin: 99px 0 0 151px;
     position: relative;
 }
 
-.photo-slide-content img {
+.slide-content img {
     position: absolute;
     inset: 0;
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease-in-out;
+}
+
+.goto {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.goto p {
+    font-size: 14px;
+    font: arial;
+    margin: 15px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.goto a {
+    text-decoration: none;
+    color: var(--btn-bg);
+    font-size: inherit;
+    line-height: 18px;
+    font-weight: 600;
+    position: relative;
+}
+
+.box {
+    border: 1px solid var(--box-border-color);
+    background-color: var(--box-bg);
+    border-radius: 3px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 /* responsive */
