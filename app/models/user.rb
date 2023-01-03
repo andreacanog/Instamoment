@@ -13,51 +13,54 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
-    has_secure_password
+  has_secure_password
 
-    validates :username, :email, :name, :password_digest, :session_token, presence: true
-    validates :username, :email, :session_token, uniqueness: true
-    validates :password, length: { in: 6..255 }, allow_nil: true
-    validates :bio, length: { maximum: 50 }
-    validates :username, length: { in: 3..30 }, format: { without: URI::MailTo::EMAIL_REGEXP, message: "can't be an email" }
-    validates :name, length: { maximum: 30 }
-    validates :email, { in: 3..255 }, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :username, 
+    uniqueness: true, 
+    length: { in: 3..30 }, 
+    format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }
+  validates :email, 
+    uniqueness: true, 
+    length: { in: 3..255 }, 
+    format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :session_token, presence: true, uniqueness: true
+  validates :password, length: { in: 6..255 }, allow_nil: true
 
-    has_many :posts,
-        foreign_key: :user_id,
-        class_name: :Post,
-        dependent: :destroy
-    
-    has_many :comments,
-        foreign_key: :user_id,
-        class_name: :Comment,
-        dependent: :destroy
-    
-    has_many :likes,
-        foreign_key: :user_id,
-        class_name: :Like,
-        dependent: :destroy
-    
-    has_many :followers,
-        foreign_key: :follower_id,
-        class_name: :Follow,
-        dependent: :destroy
+  has_many :posts,
+      foreign_key: :user_id,
+      class_name: :Post,
+      dependent: :destroy
+  
+  has_many :comments,
+      foreign_key: :user_id,
+      class_name: :Comment,
+      dependent: :destroy
+  
+  has_many :likes,
+      foreign_key: :user_id,
+      class_name: :Like,
+      dependent: :destroy
+  
+  has_many :followers,
+      foreign_key: :follower_id,
+      class_name: :Follow,
+      dependent: :destroy
 
-    has_many :followed_users,
-        through: :follows,
-        source: :followed_user
-    
-    has_many :followees, 
-        foreign_key: :followee_id, 
-        class_name: :Follow,
-        dependent: :destroy
+  has_many :followed_users,
+      through: :follows,
+      source: :followed_user
+  
+  has_many :followees, 
+      foreign_key: :followee_id, 
+      class_name: :Follow,
+      dependent: :destroy
 
-    has_many :following_users,
-        through: :followees,
-        source: :follower
+  has_many :following_users,
+      through: :followees,
+      source: :follower
 
 
-    before_validation :ensure_session_token
+  before_validation :ensure_session_token
 
   def self.find_by_credentials(credential, password)
     field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :username
