@@ -1,0 +1,26 @@
+.photo-slide-container {
+    background-image: url("./../../../assets/phone.png");
+    height: 618px;
+    flex-basis: 454px;
+}
+
+.photo-slide-content {
+    margin: 99px 0 0 151px;
+    position: relative;
+}
+
+.photo-slide-content img {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 800px) {
+    .slide-container {
+        display: none;
+    }
+}
