@@ -4,10 +4,29 @@
     border-radius: 3px;
 }
 
+.form-container-2 {
+    flex-grow: 1;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .form-content {
     margin-bottom: 10px;
     padding: 10px;
-    position: relative;
+    height: 470px;;
+}
+
+.form-content .logo {
+    text-align: center;
+    height: 51px;
+    width: 175px;
+    margin: 22px auto 12px;
+}
+
+.form-content .logo img {
+    max-width: 100%;
 }
 
 .logo {
@@ -16,7 +35,7 @@
     color: rgb(0, 0, 0);
 }
 
-.singin-form {
+.signin-form {
     padding-top: 24px;
     margin-bottom: 10px;
 }
@@ -27,7 +46,7 @@
 
 .animate-input {
     height: 36px;
-    border: 1px solid var(--box-border-color);
+    /* border: 1px solid var(--box-border-color); */
     border-radius: 3px;
     position: relative;
 }
@@ -40,7 +59,7 @@
 } */
 
 
-.animate-input span {
+/* .animate-input span {
     position: absolute;
     left: 8px;
     height: 100%;
@@ -50,13 +69,14 @@
     transform-origin: left;
     transition: transform 0.1s ease-in-out;
     pointer-events: none;
-}
+} */
 
 .animate-input input {
     width: 100%;
     height: 100%;
-    padding: 9px 8px 7px;
-    border: 0;
+    /* padding: 9px 8px 7px; */
+    padding-left: 5px;
+    border: 1px solid grey;
     outline: 0;
     background-color: var(--box-bg);
     color: var(--txt-color);
@@ -90,11 +110,11 @@
     display: inline;
 }
 
-.bottom-group {
+.button-group {
     padding: 8px 40px;
 }
 
-.bottom-login {
+.button-login {
     width: 100%;
     border: 1px solid transparent;
     outline: 0;
@@ -112,9 +132,13 @@ button:disabled {
     background-color: rgba(0, 149, 246, 0.3);
 }
 
+.demoButton:disabled {
+    background-color: rgba(0, 149, 246, 0.3);
+}
 
 
-.divine {
+
+.divide {
     padding: 10px 40px 18px;
     display: flex;
 }
@@ -134,6 +158,14 @@ button:disabled {
     background-color: var(--box-border-color);
     position: relative;
     top: 0.45em;
+
+}
+
+.forgot-and-demo-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;;
 }
 
 .forgot-pw {
@@ -146,4 +178,53 @@ button:disabled {
     text-decoration: none;
 }
 
+.demoButton {
+    align-items: center;
+    appearance: none;
+    background-color: #fff;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgb(0 0 0 / 20%) 0 3px 5px -1px, rgb(0 0 0 / 14%) 0 6px 10px 0, rgb(0 0 0 / 12%) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: #3c4043;
+    cursor: pointer;
+    display: inline-flex;
+    fill: currentcolor;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: .25px;
+    line-height: normal;
+    /* max-width: 100%; */
+    max-width: 50%;
+    overflow: visible;
+    padding: 2px 24px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+    will-change: transform,opacity;
+    z-index: 0;
 
+    margin-left: 80px;
+    margin-top: 10px;
+}
+
+
+.download {
+    display: flex;
+    flex-direction: column;
+}
+
+.download p {
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    margin: 10px 20px;
+}

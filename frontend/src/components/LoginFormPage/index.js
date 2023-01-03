@@ -35,39 +35,32 @@ function LoginFormPage() {
   }
 
   return (
-    <div>
+    <div className='form-container-4'>
+
       <div className='form-content box'>
-          <NavLink to="/" style={{ textDecoration: 'none' }}>
-            <div className='logo'>
-                <h1>Instapound</h1>
-            </div>
-          </NavLink>
+
+        <NavLink to="/" style={{ textDecoration: 'none' }}>
+          <div className='logo'>
+              <h1>Instapound</h1>
+          </div>
+        </NavLink>
 
         <div className='singin-form'>
 
           <div className='form-group'>
-
             <div className='animate-input'>
-              {/* <span>
-                  Username or email
-                </span> */}
-                <input
-                  type="text"
-                  value={credential}
-                  placeholder="Username or email"
-                  onChange={(e) => setCredential(e.target.value)}
-                  required
-                />
+              <input
+                type="text"
+                value={credential}
+                placeholder="Username or email"
+                onChange={(e) => setCredential(e.target.value)}
+                required
+              />
             </div>
+          </div>
 
-          <div/>
-
-          <div className="form-group">
-
-            <div className="animate-input">
-              {/* <span>
-                Password
-              </span> */}
+          <div className='form-group'>
+            <div className='animate-input'>
               <input
                 type="password"
                 value={password}
@@ -77,12 +70,10 @@ function LoginFormPage() {
               />
               <button>Show</button>
             </div>
-
           </div>
 
-            
-          <div className="bottom-group">
-              <button className="bottom-login" id="signin-btn" onClick={handleSubmit}>
+          <div className="button-group">
+              <button className="button-login" id="signin-btn" onClick={handleSubmit}>
                   Log In
               </button>
           </div>
@@ -93,34 +84,38 @@ function LoginFormPage() {
               <div></div>
           </div>
 
-            <ul>
-              {errors.map(error => <li key={error}>{error}</li>)}
-            </ul>
+          <ul>
+            {errors.map(error => <li key={error}>{error}</li>)}
+          </ul>
+
+          <div className='forgot-and-demo-container'>
             <a href="#" className="forgot-pw">Forgot password?</a>
             <button onClick={handleDemoLogin} className="demoButton">Demo Login</button>
           </div>
+
         </div>
 
       </div>
 
       <div className="box goto">
-          <p>
-              Don't have an account?
-              <a href="/signup">  Sign up</a>
-          </p>
+        <p>
+          Don't have an account?
+          <a href="/signup">  Sign up</a>
+        </p>
       </div>
 
       <div className="download">
         <p>Get the app.</p>
         <div className="link">
           <a href="#">
-              <img src="" alt=""/>
+            <img src="" alt=""/>
           </a>
           <a href="#">
-              <img src="" alt=""/>
+            <img src="" alt=""/>
           </a>
         </div>
-        </div>
+      </div>
+
     </div>
   );
 }
