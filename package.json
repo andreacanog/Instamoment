@@ -1,0 +1,27 @@
+{
+  "name": "instapound",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "webpack.config.js",
+  "engines": {
+    "node": "16.x"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm install --prefix frontend $$ npm rub build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreacanog/Instapound.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreacanog/Instapound/issues"
+  },
+  "homepage": "https://github.com/andreacanog/Instapound#readme"
+}

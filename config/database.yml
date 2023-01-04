@@ -81,6 +81,5 @@ test:
 #
 production:
   <<: *default
-  database: instamoment_production
-  username: instamoment
-  password: <%= ENV["INSTAMOMENT_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  
