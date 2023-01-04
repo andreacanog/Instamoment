@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
@@ -11,10 +11,29 @@ function LoginFormPage() {
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
+  const passwordAnimateRef = useRef(new Array());
+
+  // useEffect(() => {
+
+  // }, [])
+
+
   if (sessionUser) return <Redirect to="/" />;
 
   const handleDemoLogin = (e) => {
     return dispatch(sessionActions.login({credential: "demo@user.io", password: "password"}))
+  }
+
+  const handleShowPassword = (ele) => {
+    ele.preventDefault();
+    let inputType = passwordAnimateRef.current.getAttritube('type');
+    if (inputType.getAttribute('type') === 'text') {
+      inputType.setAttribute('type', 'password')
+      ele.innerHTML = 'Show'
+    } else {
+        inputType.setAttribute('type', 'text')
+        ele.innerHTML = 'Hide'
+    }
   }
 
   const handleSubmit = (e) => {
@@ -60,7 +79,7 @@ function LoginFormPage() {
           </div>
 
           <div className='form-group'>
-            <div className='animate-input'>
+            <div className='animate-input' ref={passwordAnimateRef}>
               <input
                 type="password"
                 value={password}
@@ -68,7 +87,7 @@ function LoginFormPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <button>Show</button>
+              <button className="show-password-button" onClick={handleShowPassword}>Show</button>
             </div>
           </div>
 
@@ -84,7 +103,7 @@ function LoginFormPage() {
               <div></div>
           </div>
 
-          <ul>
+          <ul className="error-ul">
             {errors.map(error => <li key={error}>{error}</li>)}
           </ul>
 

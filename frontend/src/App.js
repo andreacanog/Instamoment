@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import LoginFormPage from './components/LoginFormPage';
+// import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from './components/Navigation';
 import LandingPage from './components/LandingPage';

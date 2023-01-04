@@ -32,5 +32,7 @@ class Post < ApplicationRecord
     has_many :commenters,
         through: :comments,
         source: :user
+
+    has_one_attached :photo
        
 end

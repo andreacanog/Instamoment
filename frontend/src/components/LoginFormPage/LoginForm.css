@@ -2,6 +2,8 @@
     border: 1px solid var(--box-border-color);
     background-color: var(--box-bg);
     border-radius: 3px;
+    background-color: blue(0, 149,246);
+    font-weight: bold;
 }
 
 .form-container-2 {
@@ -159,6 +161,10 @@ button:disabled {
     position: relative;
     top: 0.45em;
 
+}
+
+.error-ul {
+    padding-left: 70px;;
 }
 
 .forgot-and-demo-container {

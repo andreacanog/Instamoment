@@ -58,7 +58,7 @@
 
 .signup {
     width: 100%;
-    border: 1px solid transparent;
+    /* border: 1px solid transparent; */
     outline: 0;
     background-color: var(--btn-bg);
     color: var(--btn-color);
@@ -68,6 +68,8 @@
     line-height: 10px;
     padding: 9px 9px;
     border-radius: 9px;
+    padding-left: 5px;
+    border: 1px solid grey;
 }
 
 .signup {
