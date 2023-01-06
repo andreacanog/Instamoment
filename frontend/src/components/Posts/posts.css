@@ -6,3 +6,77 @@
     object-fit: cover;
 }
 
+.post-index {
+    padding-left: 175px;
+}
+
+.item-bottom-line {
+    width: 400px;
+    /* color: rgb(224, 219, 219); */
+    margin: 20px 0 20px;
+    border-top: 1px solid ;
+    color: rgba(239, 239, 239);
+    border-bottom: none;
+}
+
+.item-top-line {
+    width: 400px;
+    /* color: rgb(224, 219, 219); */
+    margin: 20px 0 20px;
+    border-top: 1px solid ;
+    color: rgba(219, 219, 219);
+    border-bottom: none;
+}
+
+.post-index-item-caption-container {
+    width: 400px;
+    /* color: rgb(224, 219, 219); */
+    margin: 20px 0 20px;  
+    display: flex;
+}
+.post-caption-username {
+    font-weight: 600;
+    margin-right: 5px;
+    color: rgba(38, 38, 38);
+    /* display: inline; */
+    /* margin: 0; */
+    font-size: 14px;
+    line-height: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    /* display: inline!important;
+    margin: 0!important; */
+    cursor: pointer;
+    text-align: inherit;
+    pointer-events: auto;
+    
+}
+
+.post-icons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin: 15px 0 20px;
+    flex-direction: row;
+    font-size: 22px;
+}
+
+.post-icons-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100px;
+}
+
+
+.post-index-item__user__info__username {
+    font-weight: 600;
+    /* margin-right: 5px; */
+    color: rgba(38, 38, 38); 
+    font-size: 14px;
+    line-height: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    text-align: inherit;
+    pointer-events: auto;
+    margin-bottom: 10px;
+}
