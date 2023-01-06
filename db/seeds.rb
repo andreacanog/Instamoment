@@ -52,7 +52,7 @@ ApplicationRecord.transaction do
     post_27.photo.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/zarastore.jpg'), filename: 'zarastore.jpg')
 
 
-    post_3 = Post.create!(user_id: valenciaciudad.id, title: 'Do you like blue? #blue#valencia#spain#summercolors#summerwemissyou#tapas#sangria')
+    post_3 = Post.create!(user_id: valenciaciudad.id, title: 'Do you like blue? #blue #valencia #spain #summercolors #summerwemissyou #tapas #sangria')
     post_3.photo.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/casa.jpg'), filename: 'casa.jpg')
     post_24 = Post.create!(user_id: valenciaciudad.id, title: 'Come visit Torre de Serranos in Valencia! #valencia #spain #tapas #sangria ')
     post_24.photo.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/torre-de-serranos.jpg'), filename: 'torre-de-serranos.jpg')
@@ -77,7 +77,7 @@ ApplicationRecord.transaction do
     post_19 = Post.create!(user_id: sflocations.id, title: 'Once upon a time in San Francisco #sfdowntown #cali #photooftheday #westcoast')
     post_19.photo.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/sf-downtown.jpg'), filename: 'sf-downtown.jpg')
     
-    post_4 = Post.create!(user_id: cutepets.id, title: 'Making friends with a butterfly')
+    post_4 = Post.create!(user_id: cutepets.id, title: 'Making friends with a butterfly.')
     post_4.photo.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/cat-butterfly.jpg'), filename: 'cat-butterfly.jpg')
     
     post_12 = Post.create!(user_id: appacademy.id, title: 'Kashual: "I need to finish user auth, so I can go home early lol" #12/23/2022')
@@ -94,7 +94,7 @@ ApplicationRecord.transaction do
     post_14 = Post.create!(user_id: sflocations.id, title: 'The Golden Gate Bridge is one of the most iconic bridges in the world. Have you ever been to San Francisco? Comment below what is your favorite thing of SF. #sanfrancisco #california')
     post_14.photo.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/golden-gate.jpg'), filename: 'golden-gate.jpg')
     
-    post_15 = Post.create!(user_id: appacademy.id, title: 'Daphne is ready for Christmas! Big thanks to Darren for letting us go early! #christmas #christmas2021 #christmasdecor #christmasdecorations #christmaslights #christmasiscoming #christmasgifts #christmasgiftideas #christmasgift #christmasparty #christmas2020 #christmasgiftguide #christmasgifts2020 #christmasgiftguide2020 #christmasgifts2021 #christmasgiftguide2021 #christmasgiftideas2020 #christmasgiftideas2021 #christmasgiftguide2021 #christmasgiftguide2020 #christmasgiftguide2021')
+    post_15 = Post.create!(user_id: appacademy.id, title: 'Daphne is ready for Christmas! Big thanks to Darren for letting us go early! #christmas #christmasdecorations #christmaslights #christmasiscoming #christmas2022 #christmasparty')
     post_15.photo.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/hat1.jpg'), filename: 'hat1.jpg')
     
     

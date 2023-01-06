@@ -27,6 +27,8 @@ function App() {
         </Route>
         <Route exact path="/feed/posts" component={PostIndex}>
         </Route>
+        <Route path='/users/id'>
+        </Route>
         <Route path={'/*'} component={error} />
         <Redirect to={'/error'} />
       </Switch>

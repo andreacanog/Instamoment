@@ -7,6 +7,7 @@ import pic1 from '../../login-assets/pic1.png'
 import pic2 from '../../login-assets/pic2.png'
 import pic3 from '../../login-assets/pic3.png'
 import pic4 from '../../login-assets/pic4.png'
+import { Redirect } from 'react-router-dom';
 
 const LandingPage = () => {
     const sessionUser = useSelector(state => state.session.user);
@@ -75,6 +76,7 @@ const LandingPage = () => {
             </div>
         </div>
     ) : <></>
+    
 }
 
 export default LandingPage;
