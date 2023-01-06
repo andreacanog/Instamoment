@@ -123,7 +123,7 @@ function LoginFormPage() {
         </p>
       </div>
 
-      <div className="download">
+      {/* <div className="download">
         <p>Get the app.</p>
         <div className="link">
           <a href="#">
@@ -133,7 +133,7 @@ function LoginFormPage() {
             <img src="" alt=""/>
           </a>
         </div>
-      </div>
+      </div> */}
 
     </div>
   );

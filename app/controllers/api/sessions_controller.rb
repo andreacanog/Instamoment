@@ -27,4 +27,3 @@ class Api::SessionsController < ApplicationController
     render json: { message: 'success' }
   end
 end
-  
