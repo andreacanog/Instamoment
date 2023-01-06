@@ -84,16 +84,14 @@ ApplicationRecord.transaction do
     
     post_23 = Post.create!(user_id: appacademy.id, title: 'Welcome our new TA, Nishant! #appacademy #sf #sanfrancisco #california')
     post_23.photo.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/teaching1.jpg'), filename: 'teaching1.jpg')
-    
-    
     post_15 = Post.create!(user_id: appacademy.id, title: 'Daphne is ready for Christmas! Big thanks to Darren for letting us go early. #christmas #christmas2021 #christmasdecor #christmasdecorations #christmaslights #christmasiscoming #christmasgifts #christmasgiftideas #christmasgift #christmasparty #christmas2020 #christmasgiftguide #christmasgifts2020 #christmasgiftguide2020 #christmasgifts2021 #christmasgiftguide2021 #christmasgiftideas2020 #christmasgiftideas2021 #christmasgiftguide2021 #christmasgiftguide2020 #christmasgiftguide2021')
-    post_15.photo.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/hat.jpg'), filename: 'hat.jpg')
+    post_15.photo.attach(io: URI.open(''), filename: '')
     post_11 = Post.create!(user_id: appacademy.id, title: 'Whatever’s yummy goes in my tummy. #sharingiscaring')
-    post_11.photo.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/eating.jpg'), filename: 'eating.jpg')
+    post_11.photo.attach(io: URI.open(''), filename: '')
     post_12 = Post.create!(user_id: appacademy.id, title: 'Kashual: "I going to make like a just finish user auth, so we can go home early today lol." #12/23/2022')
-    post_12.photo.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/explaining.jpg'), filename: 'explaining.jpg')
+    post_12.photo.attach(io: URI.open(''), filename: '')
     post_7 = Post.create!(user_id: appacademy.id, title: 'What is the best coding language? JS? Ruby? Python? Comment below your favorite!')
-    post_7.photo.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/computer.jpg'), filename: 'computer.jpg')
+    post_7.photo.attach(io: URI.open(''), filename: '')
 
 
     post_3 = Post.create!(user_id: valenciaciudad.id, title: 'Do you like blue? #blue#valencia#spain#summercolors#summerwemissyou#tapas#sangria')

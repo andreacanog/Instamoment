@@ -1,10 +1,14 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import './posts.css'
+import ProfileButton from "../SideNavBar/ProfileButton";
+import { NavLink } from "react-router-dom";
+
 
 
 const PostIndexItem = ({ post, user }) => {
-  const dispatch = useDispatch();
+//   const dispatch = useDispatch();
+let sessionUser = user;
 
   return (
     <div className="post-index-item">
@@ -12,18 +16,27 @@ const PostIndexItem = ({ post, user }) => {
         </div>
         
 
-        <div className="post-index-item__user">
-            {/* <img src={post.user
+        <div className="post-index-item-user">
+                
+            <div className="post-index-item-user-info">
+                <div className="user-post-username"> 
+                    <NavLink exact to="/"><ProfileButton user={sessionUser} /></NavLink>
+                    {/* <img src={post.user
                 ? post.user.profilePhotoUrl
                 : ""} alt="profile" /> */}
-            <div className="post-index-item__user__info">
-                <div className="post-index-item__user__info__username">
+                </div>
+                <div className="post-index-item-user-info-username">
                     {post.username ? post.username : "Anonymous"}
                 </div>  
                 {/* <div className="post-index-item__user__info__location">
                     {post?.location}
                 </div> */}
             </div>
+
+            <div className="post-index-item-dots-container">
+                <i className="fa-solid fa-ellipsis"></i>
+            </div>
+
         </div>
 
         <div className="post-index-item-image-container">

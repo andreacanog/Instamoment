@@ -33,6 +33,7 @@
     /* color: rgb(224, 219, 219); */
     margin: 20px 0 20px;  
     display: flex;
+    direction: ltr;
 }
 .post-caption-username {
     font-weight: 600;
@@ -68,7 +69,7 @@
 }
 
 
-.post-index-item__user__info__username {
+.post-index-item-user-info-username {
     font-weight: 600;
     /* margin-right: 5px; */
     color: rgba(38, 38, 38); 
@@ -79,4 +80,63 @@
     text-align: inherit;
     pointer-events: auto;
     margin-bottom: 10px;
+}
+
+.post-caption-title {
+    color: rgba(38, 38, 38);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    pointer-events: auto;
+    /* font: inherit; */
+    direction: ltr;
+}
+
+
+.post-index-item-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+    /* margin: 15px 0 20px; */
+    /* flex-direction: row; */
+    /* font-size: 22px; */
+}
+
+.post-index-item-user-info {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* width: 400px; */
+    /* margin: 15px 0 20px; */
+    /* flex-direction: row; */
+    /* font-size: 22px; */
+}
+
+.post-index-item-user-info-username {
+    font-weight: 600;
+    /* margin-right: 5px; */
+    color: rgba(38, 38, 38); 
+    font-size: 14px;
+    line-height: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    text-align: inherit;
+    pointer-events: auto;
+    /* margin-bottom: 10px; */
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+
+.user-post-username {
+    /* padding: 8px 8px 8px 18px; */
+    margin-bottom: 10px;;
+}
+
+.post-index-item-dots-container {
+    display: flex;
+    align-items: end;
+    margin-bottom: 25px;
 }
