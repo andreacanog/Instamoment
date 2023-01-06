@@ -29,10 +29,11 @@ function ProfileButton({ user }) {
   };
 
   return (
-    <>
+    <div className="profile-pic">
       <button onClick={openMenu}>
-        <div style={{ color: "darkgrey", fontSize: "100px" }}>
-            <i className="fa-solid fa-user"></i>
+        {/* <div  style={{ color: "darkgrey", fontSize: "100px" }}> */}
+        <div style={{ color: "darkgrey" }}>
+            <i className="fa-regular fa-user"></i>
         </div>
       </button>
       {showMenu && (
@@ -44,7 +45,7 @@ function ProfileButton({ user }) {
           </li>
         </ul>
       )}
-    </>
+    </div>
   );
 }
 

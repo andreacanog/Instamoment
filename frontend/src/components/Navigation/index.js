@@ -1,4 +1,4 @@
-import ProfileButton from './ProfileButton';
+import ProfileButton from '../SideNavBar/ProfileButton';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import React from 'react';

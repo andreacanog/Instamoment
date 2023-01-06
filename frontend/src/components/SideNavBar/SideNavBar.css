@@ -1,40 +1,54 @@
 .sidenav {
-    /* height: 100%;  
-    width: 7%;  
-    position: fixed; 
-    z-index: 1; 
-    top: 0; 
-    left: 0;  */
     background-color:#fffbfb; 
-    /* transition: .5s ease; 
-    overflow-x: hidden; 
-    padding-top: 20px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; */
-
     height: 100%; /* 100% Full-height */
     width: 75px; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    /* background-color: #111; Black */
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
+    padding-top: 23px; /* Place content 60px from the top */
     transition: 0.5s;
     border: 1px solid rgb(217, 214, 214);
+    display: flex;
+    flex-direction: column;
+    display: inline-block;
+    text-align: left;
+    
 }
 
 .side-navbar-link {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 8px 8px 23px;
     text-decoration: none;
     font-size: 25px;
     color: #343131;
     display: block;
-  transition: 0.3s;
+    transition: 0.3s;
+    margin-bottom: 20px;
+    padding-right: 50px;
+    display: inline-block;
+    text-align: left;
+    
 }
 
+.user-icon {
+    padding: 8px 8px 8px 18px;
+}
 .sidenav a:hover {
     color: #9f9696;
+}
+
+.bars {
+    margin-top: 250px;
+}
+
+.profile-pic, button {
+    height: 35px;
+    width: 35px;
+    border-radius: 50px;
+    font-size: 25px;
+}
+
+.fa-instagram {
+    margin-bottom: 25px;
 }

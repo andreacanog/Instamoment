@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       
-      <Navigation/>
+      {/* <Navigation/> */}
       <SideNavBar/>
       <Switch>
         <Route path="/signup">
@@ -27,7 +27,8 @@ function App() {
         <Route exact path="/">
             <LandingPage/>
         </Route>
-        <Route exact path="/feed/posts" component={PostIndex} />
+        <Route exact path="/feed/posts" component={PostIndex}>
+        </Route>
         {/* <Route path="/feed/posts/:postId" component={PostIndexItem} /> */}
         <Route path={'/*'} component={error} />
         <Redirect to={'/error'} />
