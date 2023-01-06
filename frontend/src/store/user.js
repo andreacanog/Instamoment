@@ -18,7 +18,10 @@ const removeUser = (userId) => ({
 });
 
 export const getUser = (userId) => (state) => {
+    console.log("state", state)
+    console.log('userId', userId)
     return state?.users ? state.users[userId] : null;
+    
 }
 
 export const getUsers = (state) => {
@@ -89,9 +92,9 @@ const userReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_USER:
-            return {...state, [action.post.id]: action.post}
+            return {...state, [action.user.id]: action.user}
         case RECEIVE_USERS:
-            return {...state, ...action.posts}
+            return {...state, ...action.users}
         case REMOVE_USER:
             delete newState[action.userId];
             return newState;

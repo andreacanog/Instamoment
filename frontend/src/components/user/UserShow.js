@@ -1,6 +1,20 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import UserShowPostItem from "./UserShowPostItem";
+import { useSelector} from "react-redux";
+import { fetchUser, getUser } from "../../store/user";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 const UserShow = () => {
+  const dispatch = useDispatch();
+  let {userId} = useParams();
+  const user = useSelector(getUser(userId));
+
+  useEffect(() => {
+    dispatch(fetchUser(userId));
+  }, [dispatch, userId]);
+
   return (
     <div className="user-show-container">
 
@@ -13,17 +27,17 @@ const UserShow = () => {
           {user.username ? user.username : "Anonymous"}
         </div>
 
-        <div className="posts-number"><span>Posts</span></div>
-        <div className="followers-number"><span>Followers</span></div>
-        <div className="following-number"><span>Following</span></div>
-
         <div className="edit-button">
           <button>Edit Profile</button>
         </div>
 
         <div className="setting-button">
           <button>Settings</button>
-          </div>
+        </div>
+
+        <div className="posts-number"><span>Posts</span></div>
+        <div className="followers-number"><span>Followers</span></div>
+        <div className="following-number"><span>Following</span></div>
 
         <div className="user-name">
           {user.name ? user.name : "Anonymous"}
@@ -41,7 +55,7 @@ const UserShow = () => {
         <div className="user-show-body"> 
 
           <div className="post-index-item-image-container">
-              <img className="post-index-item-image" src={user.posts.photoUrl ? user.posts.photoUrl : "https://i.imgur.com/8Q9QY7C.png"} alt="post" />
+            {user.posts.map(post => (<UserShowPostItem key={post.id} post={post} user={user} />))}
           </div>
 
         </div>
@@ -50,3 +64,5 @@ const UserShow = () => {
     </div>
   );
 }
+
+export default UserShow;

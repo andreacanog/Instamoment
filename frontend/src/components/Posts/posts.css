@@ -92,6 +92,7 @@
     pointer-events: auto;
     /* font: inherit; */
     direction: ltr;
+    line-height: 1rem;
 }
 
 

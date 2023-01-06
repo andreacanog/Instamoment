@@ -8,6 +8,7 @@ import error from './components/error';
 import PostIndex from './components/Posts/PostIndex';
 // import PostIndexItem from './components/Posts/PostIndexItem';
 import SideNavBar from './components/SideNavBar';
+import UserShow from './components/User/UserShow';
 
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
         </Route>
         <Route exact path="/feed/posts" component={PostIndex}>
         </Route>
-        <Route path='/users/id'>
+        <Route path='/users/:userId'>
+          <UserShow/>
         </Route>
         <Route path={'/*'} component={error} />
         <Redirect to={'/error'} />
