@@ -5,22 +5,27 @@ import { useSelector} from "react-redux";
 import { fetchUser, getUser } from "../../store/user";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import './UserShowPost.css'
+import { getPosts } from "../../store/post";
 
 const UserShow = () => {
   const dispatch = useDispatch();
   let {userId} = useParams();
-  const user = useSelector(getUser(userId));
-
+  let user = useSelector(getUser(userId));
+  let posts = useSelector(getPosts);
+  
   useEffect(() => {
     dispatch(fetchUser(userId));
   }, [dispatch, userId]);
-
+  
+  if (!user) return null;
+  console.log("user inside component: ", user);
   return (
     <div className="user-show-container">
 
       <div className="user-show-header">
         <div className="user-profile-pic">
-          <img src={user.id ? user.profilePhotoUrl : ""} alt="profile" />
+          {/* <img src={user?.id ? user?.profilePhotoUrl : ""} alt="profile" /> */}
         </div>
 
         <div className="user-username">
@@ -55,7 +60,7 @@ const UserShow = () => {
         <div className="user-show-body"> 
 
           <div className="post-index-item-image-container">
-            {user.posts.map(post => (<UserShowPostItem key={post.id} post={post} user={user} />))}
+            {posts.map(post => (<UserShowPostItem key={post.id} post={post}/>))}
           </div>
 
         </div>

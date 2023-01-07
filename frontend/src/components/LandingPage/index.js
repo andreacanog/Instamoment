@@ -18,9 +18,6 @@ const LandingPage = () => {
     useEffect(() => {
         if (sessionUser !== null) return;
         const photoSlide = () => {
-            console.log("slideIndex: ", slideIndex);
-            console.log("slideItems: ", slideItems);
-            console.log("sessionUser: ", sessionUser);
             if (!slideItems.length) return;
             slideItems.forEach(e => e.classList.remove('active'))
             slideIndex = (slideIndex + 1 === slideItems.length || slideItems[slideIndex + 1] === undefined)? 0 : slideIndex + 1

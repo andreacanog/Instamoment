@@ -1,3 +1,5 @@
+import { RECEIVE_USER } from "./user";
+
 export const RECEIVE_POSTS = 'posts/RECEIVE_POSTS';
 export const RECEIVE_POST = 'posts/RECEIVE_POST';
 export const REMOVE_POST = 'posts/REMOVE_POST';
@@ -100,6 +102,8 @@ const postReducer = (state = {}, action) => {
         case REMOVE_POST:
             delete newState[action.postId];
             return newState;
+        case RECEIVE_USER:
+            return {...state, ...action.user.posts}
         default:
             return state;
     }

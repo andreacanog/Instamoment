@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
   
       if @user.save
         login!(@user)
-        render :show
+        render 'api/users/show'
       else
         render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
       end
@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
 
     def show
       @user = User.find(params[:id])
-      render 'api/users/show'
+      render 'api/users/user_post_show'
     end
   
     private

@@ -17,15 +17,15 @@ const removeUser = (userId) => ({
     userId
 });
 
-export const getUser = (userId) => (state) => {
-    console.log("state", state)
-    console.log('userId', userId)
-    return state?.users ? state.users[userId] : null;
-    
-}
+
 
 export const getUsers = (state) => {
     return state?.users ? Object.values(state.users) : [];
+}
+
+
+export const getUser = (userId) => (state) => {
+    return state?.users ? state.users[userId] : null;   
 }
 
 export const fetchUsers = () => async (dispatch) => {
@@ -39,9 +39,9 @@ export const fetchUsers = () => async (dispatch) => {
 
 export const fetchUser = (userId) => async (dispatch) => {
     const res = await fetch(`/api/users/${userId}`);
-
     if (res.ok) {
         const user = await res.json();
+        console.log("user in res: ", user);
         dispatch(receiveUser(user));
     }
 }
@@ -89,10 +89,10 @@ export const deleteUser = (userId) => async (dispatch) => {
 const userReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = {...state};
-
+    console.log("action: ", action);
     switch (action.type) {
         case RECEIVE_USER:
-            return {...state, [action.user.id]: action.user}
+            return {...state, [action.user.user.id]: action.user.user}
         case RECEIVE_USERS:
             return {...state, ...action.users}
         case REMOVE_USER:
