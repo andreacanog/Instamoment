@@ -15,7 +15,7 @@ function App() {
   
   return (
     <>      
-      <SideNavBar/>
+      <SideNavBar />
       <Switch>
         <Route path="/signup">
           <SignupFormPage />
@@ -29,6 +29,7 @@ function App() {
         <Route exact path="/feed/posts" component={PostIndex}>
         </Route>
         <Route path='/users/:userId'>
+          {/* <SideNavBar /> */}
           <UserShow/>
         </Route>
         <Route path={'/*'} component={error} />

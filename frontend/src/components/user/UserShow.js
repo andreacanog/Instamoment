@@ -27,29 +27,34 @@ const UserShow = () => {
         <div className="user-profile-pic">
           {/* <img src={user?.id ? user?.profilePhotoUrl : ""} alt="profile" /> */}
         </div>
+          <div className="first-row">
+            <div className="user-username">
+              {user.username ? user.username : "Anonymous"}
+            </div>
 
-        <div className="user-username">
-          {user.username ? user.username : "Anonymous"}
+            <div className="edit-button-user">
+              <button>Edit Profile</button>
+            </div>
+
+            <div className="setting-button-user">
+              <button>Settings</button>
+            </div>
+          </div>
+
+        <div className="second-row">
+          <div className="posts-number"><span>Posts</span></div>
+          <div className="followers-number"><span>Followers</span></div>
+          <div className="following-number"><span>Following</span></div>
         </div>
 
-        <div className="edit-button">
-          <button>Edit Profile</button>
-        </div>
+        <div className="third-row">
+          <div className="user-name">
+            {user.name ? user.name : "Anonymous"}
+          </div>
 
-        <div className="setting-button">
-          <button>Settings</button>
-        </div>
-
-        <div className="posts-number"><span>Posts</span></div>
-        <div className="followers-number"><span>Followers</span></div>
-        <div className="following-number"><span>Following</span></div>
-
-        <div className="user-name">
-          {user.name ? user.name : "Anonymous"}
-        </div>
-
-        <div className="user-bio">
-          {user.bio ? user.bio : "Anonymous"}
+          <div className="user-bio">
+            {user.bio ? user.bio : ""}
+          </div>
         </div>
 
       </div>
@@ -59,7 +64,7 @@ const UserShow = () => {
       <div>
         <div className="user-show-body"> 
 
-          <div className="post-index-item-image-container">
+          <div className="user-show-photos-container">
             {posts.map(post => (<UserShowPostItem key={post.id} post={post}/>))}
           </div>
 

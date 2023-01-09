@@ -27,14 +27,15 @@
     margin: 22px auto 12px;
 }
 
-.form-content .logo img {
+/* .form-content .logo img {
     max-width: 100%;
-}
+} */
 
 .logo {
     font-family: 'Pacifico', cursive;
     text-align: center;
     color: rgb(0, 0, 0);
+    font-size: 35px;
 }
 
 .signin-form {
@@ -114,6 +115,8 @@
 
 .button-group {
     padding: 8px 40px;
+    /* padding: 8px 40px 8px 40px; */
+    
 }
 
 .button-login {
@@ -128,6 +131,7 @@
     line-height: 18px;
     padding: 5px 9px;
     border-radius: 4px;
+    margin-left: 3px;
 }
 
 button:disabled {
@@ -186,35 +190,7 @@ button:disabled {
 }
 
 .demoButton {
-    /* align-items: center;
-    appearance: none;
-    background-color: #3EB2FD;
-    background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);
-    background-size: calc(100% + 20px) calc(100% + 20px);
-    border-radius: 100px;
-    border-width: 0;
-    box-shadow: none;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: CircularStd,sans-serif;
-    font-size: 1rem;
-    height: auto;
-    justify-content: center;
-    line-height: 1.5;
-    padding: 5px 10px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color .2s,background-position .2s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: top;
-    white-space: nowrap; */
-
-    width: 80%;
+    width: 75%;
     border: 1px solid var(--btn-bg);
     outline: 0;
     background-color: var(--btn-color); 
@@ -225,9 +201,8 @@ button:disabled {
     line-height: 18px;
     padding: 5px 9px;
     border-radius: 4px;
-    
 
-    margin-left: 2px;
+    margin-left: 43px;
     margin-top: 40px;
     margin-right: 100px;
 

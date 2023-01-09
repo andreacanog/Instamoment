@@ -1,17 +1,12 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+
 
 
 const UserShowPostItem= ({post}) => {
-    const dispatch = useDispatch();
-    console.log(post)
     return (
-        <>
-        <div>{post.title}</div>
-        <img src={`${post.photoUrl}`}></img>
-        </>
-        
-
+        <div className='user-show-photos-container-item'>
+        <img className="user-show-photos-container-item-img" src={`${post.photoUrl}`}></img>
+        </div>
     )
 }
 

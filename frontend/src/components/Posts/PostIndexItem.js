@@ -7,7 +7,6 @@ import { NavLink } from "react-router-dom";
 
 
 const PostIndexItem = ({ post, user }) => {
-//   const dispatch = useDispatch();
 let sessionUser = user;
 
   return (
