@@ -1,12 +1,21 @@
-class CommentsController < ApplicationController 
+class Api::CommentsController < ApplicationController 
+
+    # def show 
+    #     @comment = Comment.find_by(id: params[:id])
+    #     render :show
+    # end
+
 
     def create
         @comment = Comment.new(comment_params)
-
         @comment.user_id = current_user.id
         if @comment.save
-            render :show
+            # render :show
+            # puts "inside save"
+            return render json: @comment
         else
+            puts "inside else"
+            puts @comment.errors.full_messages
             render json: { errors: @comment.errors.full_messages }, status: :unprocessable_entity
         end
     end
@@ -32,6 +41,7 @@ class CommentsController < ApplicationController
 
     private
     def comment_params
+        puts "params: #{params}";
         params.require(:comment).permit(:post_id, :user_id, :body)
     end
 

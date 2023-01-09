@@ -7,12 +7,14 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import './UserShowPost.css'
 import { getPosts } from "../../store/post";
+import {CgProfile} from "react-icons/cg"
 
 const UserShow = () => {
   const dispatch = useDispatch();
   let {userId} = useParams();
   let user = useSelector(getUser(userId));
   let posts = useSelector(getPosts);
+  console.log("posts: ", posts);
   
   useEffect(() => {
     dispatch(fetchUser(userId));
@@ -25,8 +27,12 @@ const UserShow = () => {
 
       <div className="user-show-header">
         <div className="user-profile-pic">
-          {/* <img src={user?.id ? user?.profilePhotoUrl : ""} alt="profile" /> */}
+        {user.profilePhotoUrl ? <img src={user.profilePhotoUrl} alt="profile"  /> : <i className="fa-regular fa-user cg-profile"></i>}
+          {/* {user.profilePhotoUrl ? <img src={user.profilePhotoUrl} alt="profile"  /> : <CgProfile className="cg-profile"/>} */}
+          {/* <img src={user.profilePhotoUrl ? user.profilePhotoUrl : } /> */}
         </div>
+        
+        <div className="user-info-rows-container">
           <div className="first-row">
             <div className="user-username">
               {user.username ? user.username : "Anonymous"}
@@ -41,25 +47,26 @@ const UserShow = () => {
             </div>
           </div>
 
-        <div className="second-row">
-          <div className="posts-number"><span>Posts</span></div>
-          <div className="followers-number"><span>Followers</span></div>
-          <div className="following-number"><span>Following</span></div>
-        </div>
-
-        <div className="third-row">
-          <div className="user-name">
-            {user.name ? user.name : "Anonymous"}
+          <div className="second-row">
+            <div className="posts-number"><span>Posts</span></div>
+            <div className="followers-number"><span>Followers</span></div>
+            <div className="following-number"><span>Following</span></div>
           </div>
 
-          <div className="user-bio">
-            {user.bio ? user.bio : ""}
+          <div className="third-row">
+            <div className="user-name">
+              {user.name ? user.name : "Anonymous"}
+            </div>
+
+            <div className="user-bio">
+              {user.bio ? user.bio : ""}
+            </div>
           </div>
         </div>
 
       </div>
 
-      <div></div>
+      <div className="line"></div>
 
       <div>
         <div className="user-show-body"> 

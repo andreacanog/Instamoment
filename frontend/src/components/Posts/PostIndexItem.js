@@ -1,13 +1,56 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import './posts.css'
 import ProfileButton from "../SideNavBar/ProfileButton";
 import { NavLink } from "react-router-dom";
+import { createComment } from "../../store/comment";
+import {useState} from "react";
 
 
 
 const PostIndexItem = ({ post, user }) => {
-let sessionUser = user;
+    let sessionUser = user;
+
+    const dispatch = useDispatch();
+    const [comment, setComment] = useState("");
+
+    const [postComments, setPostComments] = useState([]);
+
+    // useEffect(() => {
+    //     console.log("post.comments inside useEffect: ", post.comments);
+    //     let tempComments = Object.entries(post.comments);
+    //     setPostComments(tempComments);
+    //     }, [post])
+    // let comments = Object.entries(post.comments);
+    console.log("post.comments: ", post.comments);
+    let tempComments = [];
+
+    if (post.comments !== undefined) {
+        // tempComments = Object.entries(post.comments);
+        tempComments = [];
+        for (let key in post.comments) {
+            tempComments.push(post.comments[key]);
+        }
+        
+        console.log("tempComments: ", tempComments);
+    }
+    const handleSubmitWithEnter = (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            const newComment = {comment: {userId: user.id, body: comment, postId: post.id}}
+            dispatch(createComment(newComment));
+            e.target.value = "";
+
+        }
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("post: ", post);
+        const newComment = {comment: {userId: user.id, body: comment, postId: post.id}}
+        dispatch(createComment(newComment));
+        e.target.value = "";
+    };
 
   return (
     <div className="post-index-item">
@@ -65,6 +108,17 @@ let sessionUser = user;
                 <div className="post-caption-title">{post.title}</div>  
             </div>
         </div>
+
+        <div className="post-index-item-comments">
+             { tempComments.map(comment => (
+                <div className="post-index-item-comment" key={comment.id}>  
+                    <div className="post-index-item-comment-username">{comment.username}</div>
+                    <div className="post-index-item-comment-body">{comment.body}</div>
+                </div>
+             )) }
+            <input onKeyDown={handleSubmitWithEnter} onChange={(e) => setComment(e.target.value)} value={comment} type="text" name="" placeholder="Add a comment..." />
+        </div>
+
         <div className="item-bottom-line">
         </div>
         

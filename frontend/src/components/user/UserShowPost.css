@@ -1,3 +1,33 @@
+.user-show-container {
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 374px;
+}
+
+.user-show-header {
+  display: flex;
+  flex-direction: row;
+  /* width: 100%; */
+  max-width: 937px;
+  min-height: 250px;
+  /* height: 100%; */
+  background-color: pink;
+}
+
+
+.user-profile-pic {
+    width: 149px;
+    height: 149px;
+}
+    
+
+.cg-profile {
+    width: 100%;
+    height: 100%;
+}
+
 .first-row {
     display: flex;
     flex-direction: row;
@@ -35,7 +65,7 @@
 }
 
 .user-show-body {
-    margin-left: 374px;
+    /* margin-left: 374px; */
 }
 
 .user-show-photos-container-item {
