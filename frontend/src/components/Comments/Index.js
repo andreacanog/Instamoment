@@ -1,7 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteComment, updateComment} from "../../store/comment";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
+import "./comment.css";
 
 
 
@@ -20,7 +21,7 @@ const Comment = ({comment, user, postId}) => {
     const handleUpdate = (e) => {
         e.preventDefault();
         const commentToUpdate = {comment: {userId: user.id, body: comment, postId: postId}}
-        dispatch(updateComment(commentId));
+        dispatch(updateComment(comment));
         e.target.value = "";
 
     }
@@ -29,8 +30,10 @@ const Comment = ({comment, user, postId}) => {
         <div className="post-index-item-comment" key={comment.id}>  
             <div className="post-index-item-comment-username">{comment.username}</div>
             <div className="post-index-item-comment-body">{comment.body}</div>
-            { user.id === comment.user.id ? <button onClick={handleDelete} >Delete</button> : <></>}
-            { user.id === comment.user.id ? <button onClick={handleUpdate} >Update</button> : <></>}
+            <div className="button-container-update-delete">
+                { user.id === comment.user.id ? <button className="delete-botton" onClick={handleDelete} >Delete</button> : <></>}
+                { user.id === comment.user.id ? <button className="update-button" onClick={handleUpdate} >Update</button> : <></>}
+            </div>
         </div>
 
     )

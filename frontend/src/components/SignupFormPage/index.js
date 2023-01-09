@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
+import { NavLink, useHistory } from 'react-router-dom';
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ function SignupFormPage() {
   const [name, setName] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  let history = useHistory();
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -21,6 +23,7 @@ function SignupFormPage() {
     if (password === confirmPassword) {
       setErrors([]);
       return dispatch(sessionActions.signup({ email, username, password, name }))
+        .then(() => {history.push('/feed/posts')})
         .catch(async (res) => {
         let data;
         try {

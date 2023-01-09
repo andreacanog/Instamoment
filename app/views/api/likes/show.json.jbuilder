@@ -1,1 +1,1 @@
-json.extract! @reaction, :id, :post_id, :user_id
+json.extract! @like, :id, :post_id, :user_id

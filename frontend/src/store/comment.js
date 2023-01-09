@@ -93,9 +93,9 @@ const commententReducer = (state = {}, action) => {
         case RECEIVE_COMMENTS:
             return {...state, ...action.comments}
         case RECEIVE_COMMENT:
-            return {...state, [action.comment.id]: action.coment}
+            return {...state, [action.comment.id]: action.comment}
         case REMOVE_COMMENT:
-            delete newState[action.comentId];
+            delete newState[action.commentId];
             return newState;
         default:
             return state;

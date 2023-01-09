@@ -24,6 +24,7 @@ function LoginFormPage() {
 
   const handleDemoLogin = (e) => {
     return dispatch(sessionActions.login({credential: "demo@user.io", password: "password"}))
+    .then(() => {history.push('/feed/posts')})
   }
 
   const handleShowPassword = (ele) => {

@@ -64,13 +64,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100px;
+    width: 60px;
 }
 
 
 .post-index-item-user-info-username {
     font-weight: 600;
-    /* margin-right: 5px; */
     color: rgba(38, 38, 38); 
     font-size: 14px;
     line-height: 14px;
@@ -88,7 +87,6 @@
     line-height: 14px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     pointer-events: auto;
-    /* font: inherit; */
     direction: ltr;
     line-height: 1rem;
 }
@@ -99,19 +97,11 @@
     flex-direction: row;
     justify-content: space-between;
     width: 470px;
-    /* margin: 15px 0 20px; */
-    /* flex-direction: row; */
-    /* font-size: 22px; */
 }
 
 .post-index-item-user-info {
     display: flex;
     flex-direction: row;
-    /* justify-content: space-between; */
-    /* width: 400px; */
-    /* margin: 15px 0 20px; */
-    /* flex-direction: row; */
-    /* font-size: 22px; */
 }
 
 .post-index-item-user-info-username {
@@ -132,11 +122,66 @@
 
 .user-post-username {
     /* padding: 8px 8px 8px 18px; */
-    margin-bottom: 10px;;
+    margin-bottom: 10px;
+    font-size: 32px;
+    
 }
 
 .post-index-item-dots-container {
     display: flex;
     align-items: end;
     margin-bottom: 25px;
+}
+
+.user-show-profile-link {
+    color: black;
+}
+
+.comment-container {
+    border: none;
+}
+
+.view-comments {
+    padding-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400px;
+    color: rgb(142, 142, 142);
+    line-height: 14px;
+    font-family: apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.heart-icon {
+    font-size: 25px;
+}
+
+.post-button {
+    border: none;
+    background-color: #fafafa;;
+    color: #b3dbff;
+    font-size: 15px;
+    box-sizing: border-box;
+    width: auto;
+    font-weight: 600px;
+    height: auto;
+    border-top-left-radius: 2px;
+    text-overflow: ellipsis;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+}
+
+.comment-container-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 470px;
+}
+
+.delete-comment {
+    border:none;
+    padding-top: 15px;
 }

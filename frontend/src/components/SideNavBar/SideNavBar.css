@@ -22,7 +22,9 @@
     text-decoration: none;
     font-size: 25px;
     color: #343131;
-    display: block;
+    /* display: block; */
+    display: flex;
+    flex-direction: row;
     transition: 0.3s;
     margin-bottom: 20px;
     padding-right: 50px;
@@ -41,13 +43,130 @@
     margin-top: 250px;
 }
 
-.profile-pic, button {
+.more-button {
     height: 35px;
     width: 35px;
-    border-radius: 50px;
+    /* border-radius: 50px; */
     font-size: 25px;
+    border: none;
+    background: #fafafa;;
 }
 
 .fa-instagram {
     margin-bottom: 25px;
+}
+
+.side-nav-labels {
+    white-space: nowrap;
+    color: rgb(38, 38, 38);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1px;
+    margin: -6px 0 -6px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;;
+}
+
+.logo-side-nav {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 27px;
+    margin-bottom: 30px;
+    padding-left: 5px;
+}
+
+.side-nav-home {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgb(38, 38, 38);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    direction: ltr;
+    padding-left: 16px;
+    padding-top: 6px;
+}
+
+.side-nav-search {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgb(38, 38, 38);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    direction: ltr;
+    padding-left: 16px;
+    padding-top: 6px;
+}
+
+.side-nav-create {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgb(38, 38, 38);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    direction: ltr;
+    padding-left: 16px;
+    padding-top: 6px;
+}
+
+.side-nav-notifications {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgb(38, 38, 38);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    direction: ltr;
+    padding-left: 16px;
+    padding-top: 6px;
+}
+
+.side-nav-profile {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgb(38, 38, 38);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    direction: ltr;
+    padding-left: 16px;
+    padding-top: 6px;  
+}
+
+.side-nav-more {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgb(38, 38, 38);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    direction: ltr;
+    padding-left: 16px;
+    padding-top: 6px; 
 }

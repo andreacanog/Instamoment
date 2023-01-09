@@ -1,0 +1,45 @@
+.button-container-update-delete {
+    display: flex;
+    flex-direction: row;
+    max-width: 100px;
+    /* padding-left: 10px; */
+    justify-content: space-evenly;
+}
+
+.delete-botton {
+    border: none;
+    background-color: #fafafa;;
+    color: #b3dbff;
+    font-size: 12px;
+    box-sizing: border-box;
+    width: auto;
+    font-weight: 600px;
+    height: auto;
+    border-top-left-radius: 2px;
+    text-overflow: ellipsis;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+}
+
+.update-button {
+    border: none;
+    background-color: #fafafa;;
+    color: #b3dbff;
+    font-size: 12px;
+    box-sizing: border-box;
+    width: auto;
+    font-weight: 600px;
+    height: auto;
+    border-top-left-radius: 2px;
+    text-overflow: ellipsis;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;  
+}
+
+.post-index-item-comment {
+    padding-top: 15px;
+}
