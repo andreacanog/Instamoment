@@ -10,18 +10,14 @@ class Api::CommentsController < ApplicationController
         @comment = Comment.new(comment_params)
         @comment.user_id = current_user.id
         if @comment.save
-            # render :show
-            # puts "inside save"
             return render json: @comment
         else
-            puts "inside else"
-            puts @comment.errors.full_messages
             render json: { errors: @comment.errors.full_messages }, status: :unprocessable_entity
         end
     end
 
     def update
-        @comment = Comment.find_by(id: params[:id])
+        @comment = Comment.find(params[:id])
 
         if @comment&.update(comment_params)
             render :show
@@ -30,13 +26,18 @@ class Api::CommentsController < ApplicationController
         end
     end
 
+    # def destroy
+    #     @comment = Comment.find_by(id: params[:id])
+    #     if @comment&.destroy
+    #         render json: { comment: nil }
+    #     else
+    #         render json: { errors: @comment.errors.full_messages }, status: :unprocessable_entity
+    #     end
+    # end
+
     def destroy
-        @comment = Comment.find_by(id: params[:id])
-        if @comment&.destroy
-            render json: { comment: nil }
-        else
-            render json: { errors: @comment.errors.full_messages }, status: :unprocessable_entity
-        end
+        @comment = Comment.find(params[:id])
+        @comment.delete()
     end
 
     private

@@ -5,6 +5,7 @@ import ProfileButton from "../SideNavBar/ProfileButton";
 import { NavLink } from "react-router-dom";
 import { createComment } from "../../store/comment";
 import {useState} from "react";
+import Comment from "../Comments/Index";
 
 
 
@@ -111,10 +112,7 @@ const PostIndexItem = ({ post, user }) => {
 
         <div className="post-index-item-comments">
              { tempComments.map(comment => (
-                <div className="post-index-item-comment" key={comment.id}>  
-                    <div className="post-index-item-comment-username">{comment.username}</div>
-                    <div className="post-index-item-comment-body">{comment.body}</div>
-                </div>
+                <Comment comment={comment} user={user} postId={post.id}/>
              )) }
             <input onKeyDown={handleSubmitWithEnter} onChange={(e) => setComment(e.target.value)} value={comment} type="text" name="" placeholder="Add a comment..." />
         </div>
