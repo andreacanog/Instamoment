@@ -30,18 +30,14 @@ function MoreButton({ user }) {
   };
 
   return (
-    <div className="more-button-container">
-      <button className='more-button' onClick={openMenu}>
-        {/* <div  style={{ color: "darkgrey", fontSize: "100px" }}> */}
-        <div>
-          {/* <i className="fa-solid fa-bars"></i> */}
+    <div className="more-button-container" onClick={openMenu}>
+      {/* <button className='more-button' onClick={openMenu}>
+        <div> */}
           <GoThreeBars/>
-        </div>
-      </button>
+        {/* </div>
+      </button> */}
       {showMenu && (
         <ul className="profile-dropdown">
-          {/* <li>{user.username}</li>
-          <li>{user.email}</li> */}
           <li>
             <button onClick={logout}>Log Out</button>
           </li>

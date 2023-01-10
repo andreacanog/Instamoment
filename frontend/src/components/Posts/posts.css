@@ -181,7 +181,17 @@
     max-width: 470px;
 }
 
-.delete-comment {
-    border:none;
+.create-comment-input {
+    border: none;
     padding-top: 15px;
+}
+
+.unliked svg{
+    color: black;
+    fill: black;
+}
+
+.liked svg{
+    color: red;
+    fill: red;
 }

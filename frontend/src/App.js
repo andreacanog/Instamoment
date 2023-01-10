@@ -1,14 +1,12 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-// import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from "./components/SignupFormPage";
-// import Navigation from './components/Navigation';
 import LandingPage from './components/LandingPage';
 import error from './components/error';
 import PostIndex from './components/Posts/PostIndex';
-// import PostIndexItem from './components/Posts/PostIndexItem';
 import SideNavBar from './components/SideNavBar';
 import UserShow from './components/User/UserShow';
+import Form from './store/form';
 
 
 function App() {
@@ -27,6 +25,7 @@ function App() {
             <LandingPage/>
         </Route>
         <Route exact path="/feed/posts" component={PostIndex}>
+        <Form />
         </Route>
         <Route path='/users/:userId'>
           {/* <SideNavBar /> */}

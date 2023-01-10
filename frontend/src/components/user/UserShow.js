@@ -14,14 +14,13 @@ const UserShow = () => {
   let {userId} = useParams();
   let user = useSelector(getUser(userId));
   let posts = useSelector(getPosts);
-  console.log("posts: ", posts);
   
   useEffect(() => {
     dispatch(fetchUser(userId));
   }, [dispatch, userId]);
   
   if (!user) return null;
-  console.log("user inside component: ", user);
+  
   return (
     <div className="user-show-container">
 

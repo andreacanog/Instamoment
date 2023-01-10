@@ -1,3 +1,5 @@
+import csrfFetch from "./csrf";
+
 export const RECEIVE_COMMENT = 'comments/RECEIVE_COMMENT';
 export const RECEIVE_COMMENTS = 'comments/RECEIVE_COMMENTS';
 export const REMOVE_COMMENT = 'comments/REMOVE_COMMENT';
@@ -25,8 +27,15 @@ export const getComments = (state) => {
     return state?.comments ? Object.values(state.comments) : [];
 }
 
-export const fetchComments = () => async (dispatch) => {
-    const res = await fetch('/api/comments');
+export const fetchComments = (postId) => async (dispatch) => {
+    // const res = await csrfFetch(`/api/comments/${postId}`);
+    let res;
+    // console.log("postId", postId)
+    if (postId) {
+        res = await csrfFetch(`/api/posts/${postId}/comments`);
+    } else {
+        res = await csrfFetch(`/api/comments`);
+    }
 
     if (res.ok) {
         const comments = await res.json();
@@ -35,7 +44,7 @@ export const fetchComments = () => async (dispatch) => {
 }
 
 export const fetchComment = (commentId) => async (dispatch) => {
-    const res = await fetch(`/api/comments/${commentId}`);
+    const res = await csrfFetch(`/api/comments/${commentId}`);
 
     if (res.ok) {
         const comment = await res.json();
@@ -44,8 +53,8 @@ export const fetchComment = (commentId) => async (dispatch) => {
 }
 
 export const createComment = (comment) => async (dispatch) => {
-    console.log("comment in thunk: ", comment);
-    const res = await fetch('/api/comments', {
+    
+    const res = await csrfFetch('/api/comments', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -60,7 +69,7 @@ export const createComment = (comment) => async (dispatch) => {
 }
 
 export const updateComment = (comment) => async (dispatch) => {
-    const res = await fetch(`/api/comments/${comment.id}`, {
+    const res = await csrfFetch(`/api/comments/${comment.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -75,7 +84,7 @@ export const updateComment = (comment) => async (dispatch) => {
 }
 
 export const deleteComment = (commentId) => async (dispatch) => {
-    const res = await fetch(`/api/comments/${commentId}`, {
+    const res = await csrfFetch(`/api/comments/${commentId}`, {
         method: 'DELETE'
     });
 
@@ -88,7 +97,7 @@ export const deleteComment = (commentId) => async (dispatch) => {
 const commententReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = {...state};
-
+    
     switch (action.type) {
         case RECEIVE_COMMENTS:
             return {...state, ...action.comments}

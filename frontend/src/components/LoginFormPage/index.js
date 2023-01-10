@@ -15,9 +15,6 @@ function LoginFormPage() {
   const passwordAnimateRef = useRef(new Array());
   let history = useHistory();
 
-  // useEffect(() => {
-
-  // }, [])
 
 
   if (sessionUser) return <Redirect to="/" />;

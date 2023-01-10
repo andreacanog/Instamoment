@@ -24,6 +24,7 @@ class Api::LikesController < ApplicationController
     end
 
     def destroy
+        # @like = Like.find_by(user_id: like_params[:user_id])
         @like = Like.find_by(id: params[:id])
         if @like&.destroy
             render json: { like: nil }
@@ -35,6 +36,7 @@ class Api::LikesController < ApplicationController
 
     private
     def like_params
+        puts "like_params: #{params}"
         params.require(:like).permit(:post_id, :user_id)
     end
 end

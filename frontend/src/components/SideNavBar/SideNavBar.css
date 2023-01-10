@@ -26,9 +26,10 @@
     display: flex;
     flex-direction: row;
     transition: 0.3s;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     padding-right: 50px;
     text-align: left;
+    margin: 18px;
     
 }
 
@@ -36,7 +37,12 @@
     padding: 8px 8px 8px 18px;
 }
 .sidenav a:hover {
-    color: #9f9696;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50px;
+}
+
+.sidenav a:hover svg {
+    scale: 1.2;
 }
 
 .bars {
@@ -49,7 +55,7 @@
     /* border-radius: 50px; */
     font-size: 25px;
     border: none;
-    background: #fafafa;;
+    /* background: #fafafa;; */
 }
 
 .fa-instagram {
@@ -169,4 +175,9 @@
     direction: ltr;
     padding-left: 16px;
     padding-top: 6px; 
+}
+
+.home {
+    /* color: white; */
+    fill: white;
 }

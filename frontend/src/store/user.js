@@ -1,3 +1,5 @@
+import csrfFetch from "./csrf";
+
 export const RECEIVE_USER = 'users/RECEIVE_USER';
 export const RECEIVE_USERS = 'users/RECEIVE_USERS';
 export const REMOVE_USER = 'users/REMOVE_USER';
@@ -29,7 +31,7 @@ export const getUser = (userId) => (state) => {
 }
 
 export const fetchUsers = () => async (dispatch) => {
-    const res = await fetch('/api/users');
+    const res = await csrfFetch('/api/users');
 
     if (res.ok) {
         const users = await res.json();
@@ -38,16 +40,16 @@ export const fetchUsers = () => async (dispatch) => {
 }
 
 export const fetchUser = (userId) => async (dispatch) => {
-    const res = await fetch(`/api/users/${userId}`);
+    const res = await csrfFetch(`/api/users/${userId}`);
     if (res.ok) {
         const user = await res.json();
-        console.log("user in res: ", user);
+       
         dispatch(receiveUser(user));
     }
 }
 
 export const createUser = (user) => async (dispatch) => {
-    const res = await fetch('/api/users', {
+    const res = await csrfFetch('/api/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -62,7 +64,7 @@ export const createUser = (user) => async (dispatch) => {
 }
 
 export const updateUser = (user) => async (dispatch) => {
-    const res = await fetch(`/api/users/${user.id}`, {
+    const res = await csrfFetch(`/api/users/${user.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -77,7 +79,7 @@ export const updateUser = (user) => async (dispatch) => {
 }
 
 export const deleteUser = (userId) => async (dispatch) => {
-    const res = await fetch(`/api/users/${userId}`, {
+    const res = await csrfFetch(`/api/users/${userId}`, {
         method: 'DELETE'
     });
 
@@ -89,7 +91,7 @@ export const deleteUser = (userId) => async (dispatch) => {
 const userReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = {...state};
-    console.log("action: ", action);
+   
     switch (action.type) {
         case RECEIVE_USER:
             return {...state, [action.user.user.id]: action.user.user}

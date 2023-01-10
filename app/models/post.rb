@@ -10,6 +10,7 @@
 #
 class Post < ApplicationRecord
     validates :user_id, presence: true
+    validate ensure_photo
 
     belongs_to :user,
         foreign_key: :user_id,
@@ -34,5 +35,12 @@ class Post < ApplicationRecord
         source: :user
 
     has_one_attached :photo
+
+
+    def ensure_photo
+        unless self.photo.attached?
+          errors.add(:photo, "must be attached")
+        end
+    end
        
 end

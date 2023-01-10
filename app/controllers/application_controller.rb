@@ -5,8 +5,10 @@ class ApplicationController < ActionController::API
   rescue_from ActionController::InvalidAuthenticityToken,
     with: :invalid_authenticity_token
   
-  # protect_from_forgery with: :exception
+  protect_from_forgery with: :exception
   before_action :snake_case_params, :attach_authenticity_token
+
+  helper_method :logged_in?, :current_user
 
   def test
     if params.has_key?(:login)
