@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useRef } from 'react';
+import './posts.css'
+import {AiOutlineClose} from 'react-icons/ai';
 
-
-function Form () {
+function PostCreateForm () {
     const [title, setTitle] = useState ("");
     const [photoFile, setPhotoFile] = useState (null);
     const [photoUrl, setPhotoUrl] = useState (null);
@@ -10,8 +11,6 @@ function Form () {
     const handleInput = e => {
         setTitle(e.currentTarget.value);
     }
-
-
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -56,20 +55,34 @@ function Form () {
     }
 
     const preview = photoUrl ? <img src={photoUrl} alt="" height="200" /> : null;
+   
+    const closeModal = (e) => {
+        e.preventDefault();
+        let modal = document.getElementById('post-create-modal');
+        modal.style.display = 'none';
+    }
+
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="post-title">Title of Post</label>
-            <input type="text"
-                id="post-title"
-                value={title}
-                onChange={handleInput}/>
-            <input type="file" ref={fileRef} onChange={handleFile}/> 
-            <h3>Image preview</h3>
-                {preview}
-            <button>Make a new Post!</button>
-        </form>
+        <div className='post-create-form-container' id='post-create-modal'>
+            <div className='modal-close-button-container'>
+                <button onClick={closeModal}><AiOutlineClose/></button>
+            </div>
+            <div className='post-create-modal-content'>
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="post-title">Title of Post</label>
+                    <input type="text"
+                        id="post-title"
+                        value={title}
+                        onChange={handleInput}/>
+                    <input type="file" ref={fileRef} onChange={handleFile}/> 
+                    <h3>Image preview</h3>
+                        {preview}
+                    <button>Make a new Post!</button>
+                </form>
+            </div>
+        </div>
     );
 }
 
 
-export default Form;
+export default PostCreateForm;

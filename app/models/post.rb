@@ -10,7 +10,7 @@
 #
 class Post < ApplicationRecord
     validates :user_id, presence: true
-    validate ensure_photo
+    validate :ensure_photo
 
     belongs_to :user,
         foreign_key: :user_id,

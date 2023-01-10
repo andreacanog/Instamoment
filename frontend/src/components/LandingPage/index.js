@@ -9,6 +9,7 @@ import pic3 from '../../login-assets/pic3.png'
 import pic4 from '../../login-assets/pic4.png'
 import { Redirect } from 'react-router-dom';
 
+
 const LandingPage = () => {
     const sessionUser = useSelector(state => state.session.user);
     const imgRef = useRef(new Array());

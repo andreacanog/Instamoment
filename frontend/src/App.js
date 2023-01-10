@@ -6,13 +6,14 @@ import error from './components/error';
 import PostIndex from './components/Posts/PostIndex';
 import SideNavBar from './components/SideNavBar';
 import UserShow from './components/User/UserShow';
-import Form from './store/form';
+import PostCreateForm from './components/Posts/PostCreateForm'; 
 
 
 function App() {
   
   return (
     <>      
+      <PostCreateForm/>
       <SideNavBar />
       <Switch>
         <Route path="/signup">
@@ -25,10 +26,8 @@ function App() {
             <LandingPage/>
         </Route>
         <Route exact path="/feed/posts" component={PostIndex}>
-        <Form />
         </Route>
         <Route path='/users/:userId'>
-          {/* <SideNavBar /> */}
           <UserShow/>
         </Route>
         <Route path={'/*'} component={error} />
