@@ -25,8 +25,7 @@
                     json.extract! comment, :id, :post_id, :user_id, :body
                     json.user do
                         json.extract! comment.user, :id, :username, :name
-                        # json.profilePictureUrl url_for(comment.user.profile_picture) if comment.user.profile_picture.attached?
-                      end
+                    end
                 end
             end
         end

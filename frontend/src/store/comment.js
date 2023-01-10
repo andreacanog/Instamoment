@@ -30,7 +30,7 @@ export const getComments = (state) => {
 export const fetchComments = (postId) => async (dispatch) => {
     // const res = await csrfFetch(`/api/comments/${postId}`);
     let res;
-    // console.log("postId", postId)
+
     if (postId) {
         res = await csrfFetch(`/api/posts/${postId}/comments`);
     } else {
@@ -69,7 +69,8 @@ export const createComment = (comment) => async (dispatch) => {
 }
 
 export const updateComment = (comment) => async (dispatch) => {
-    const res = await csrfFetch(`/api/comments/${comment.id}`, {
+    // console.log("comment: ", comment);
+    const res = await csrfFetch(`/api/comments/${comment.comment.commentId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -100,7 +101,7 @@ const commententReducer = (state = {}, action) => {
     
     switch (action.type) {
         case RECEIVE_COMMENTS:
-            return {...state, ...action.comments}
+            return { ...action.comments}
         case RECEIVE_COMMENT:
             return {...state, [action.comment.id]: action.comment}
         case REMOVE_COMMENT:

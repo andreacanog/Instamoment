@@ -1,29 +1,28 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {getComments} from "../../store/comment";
+// import {getComments} from "../../store/comment";
 import "./comment.css";
 import { fetchComments } from "../../store/comment";
 import CommentIndexItem from "./CommentIndexItem";
 import { getPost } from "../../store/post";
+import {getCommentsForPost} from '../../store/post'
 
 const CommentIndex = ({postId}) => {
     const dispatch = useDispatch();
-    const comments = useSelector(getComments);
+    const comments = useSelector((state) => getCommentsForPost(state, postId))
     const user = useSelector(state => state.session.user);
-    const post = useSelector(getPost);
-   
-    // console.log("post.id inside the component: ", postId);
+    const post = useSelector(getPost);  // post seems to be the function rather than the fetched posts from the store.
+    
     useEffect(() => {
         dispatch(fetchComments(postId));
     }, [dispatch]);
 
     if (!comments) return null;
-    let postComments = comments.filter(comment => comment.postId === post.id);
 
     return (
         <div>
-            {postComments.map(comment => (
-                <CommentIndexItem key={comment.id} comment={comment} user={user} post={post}/>
+            {comments.map((comment, idx) => (
+                <CommentIndexItem key={idx} comment={comment} user={user} post={post}/>
             ))}
         </div>
     )

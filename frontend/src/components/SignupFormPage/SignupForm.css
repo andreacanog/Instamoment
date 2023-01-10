@@ -44,7 +44,6 @@
 
 .signup {
     width: 100%;
-    /* border: 1px solid transparent; */
     outline: 0;
     background-color: var(--btn-bg);
     color: var(--btn-color);

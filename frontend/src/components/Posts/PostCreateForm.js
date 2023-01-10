@@ -31,7 +31,6 @@ function PostCreateForm () {
         if (response.ok) {
 
             const message = await response.json();
-            console.log(message.message);
 
             setTitle("");
             setPhotoFile(null);
@@ -70,14 +69,14 @@ function PostCreateForm () {
             <div className='post-create-modal-content'>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="post-title">Title of Post</label>
-                    <input type="text"
+                    <input className="title-container" type="text"
                         id="post-title"
                         value={title}
                         onChange={handleInput}/>
-                    <input type="file" ref={fileRef} onChange={handleFile}/> 
+                    <input className="file-container" type="file" ref={fileRef} onChange={handleFile}/> 
                     <h3>Image preview</h3>
                         {preview}
-                    <button>Make a new Post!</button>
+                    <button className='create-pots-container'>Make a new post</button>
                 </form>
             </div>
         </div>

@@ -1,14 +1,17 @@
 import { RECEIVE_USER } from "./user";
 import csrfFetch from "./csrf";
+import { RECEIVE_COMMENT } from "./comment";
 
 export const RECEIVE_POSTS = 'posts/RECEIVE_POSTS';
 export const RECEIVE_POST = 'posts/RECEIVE_POST';
 export const REMOVE_POST = 'posts/REMOVE_POST';
 
-const receivePosts = (posts) => ({
-    type: RECEIVE_POSTS,    
-    posts
-});
+const receivePosts = (posts) => {
+    return {
+        type: RECEIVE_POSTS,    
+        posts
+    }
+};
 
 const receivePost = (post) => ({
     type: RECEIVE_POST,
@@ -22,6 +25,7 @@ const removePost = (postId) => ({
 
 
 export const getPost = (postId) => (state) => {
+    // console.log("state in getPost: ", state);
     return state?.posts ? state.posts[postId] : null;
 }
 
@@ -29,14 +33,16 @@ export const getPosts = (state) => {
     return state?.posts ? Object.values(state.posts) : [];
 }
 
-
+export const getCommentsForPost = (state, postId) => {
+    let post = state?.posts[postId]
+    return post.comments ? Object.values(post.comments) : [];
+}
 
 export const fetchPosts = () => async (dispatch) => {
     const res = await csrfFetch('/api/posts');
 
     if (res.ok) {
         const posts = await res.json();
-        // debugger
         dispatch(receivePosts(posts));
     }
 }
@@ -103,6 +109,21 @@ const postReducer = (state = {}, action) => {
         case REMOVE_POST:
             delete newState[action.postId];
             return newState;
+        case RECEIVE_COMMENT:
+            let post = newState[action.comment.post_id]
+            if (post.comments === undefined) {
+                /**
+                 * Doing this for the instance where we are adding a new comment to a post for the first time.
+                 * During the first time, we will not have a key comments to set the new comment to and therefore create
+                 * it to avoid an error.
+                 */
+                post.comments = [];
+            }
+            if (action.comment !== undefined) {
+                post.comments[action.comment.id] = action.comment
+            } 
+           
+            return newState
         case RECEIVE_USER:
             return {...state, ...action.user.posts}
         default:

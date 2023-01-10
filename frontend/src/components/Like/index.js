@@ -14,7 +14,7 @@ const LikeButton = ({ post, user }) => {
     const handleClick = (e) => {
         e.preventDefault();
         if (liked) {
-            dispatch(deleteLike(post.ownLikeId));
+            dispatch(deleteLike(post.ownLikeId, post.id, user.id)); 
         } else {
             dispatch(createLike(post.id));
         }
@@ -33,7 +33,7 @@ const LikeButton = ({ post, user }) => {
         return (
             <div className="like-button-container">
                 <button className="like-button" onClick={handleClick}>
-                    <div className="liked" ><AiFillHeart/></div>
+                    <div className="heart-icon liked" ><AiFillHeart/></div>
                 </button>
             </div>
         )

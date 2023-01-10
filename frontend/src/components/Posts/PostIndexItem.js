@@ -1,19 +1,20 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import './posts.css'
-import MoreButton from "../SideNavBar/MoreButton";
+// import MoreButton from "../SideNavBar/MoreButton";
 import { NavLink } from "react-router-dom";
 import { createComment } from "../../store/comment";
 import {useState} from "react";
-import Comment from "../Comments/CommentIndexItem";
+// import Comment from "../Comments/CommentIndexItem";
 import {CgProfile} from "react-icons/cg";
 import {AiOutlineHeart} from "react-icons/ai";
 import { createLike } from "../../store/like";
 import {FaRegComment} from "react-icons/fa";
 import {BiBookmark} from "react-icons/bi";
-import {AiFillHeart} from "react-icons/ai";
+// import {AiFillHeart} from "react-icons/ai";
 import LikeButton from "../Like";
 import CommentIndex from "../Comments/CommentIndex";
+import {getCommentsForPost} from '../../store/post'
 
 
 
@@ -21,43 +22,36 @@ const PostIndexItem = ({ post, user }) => {
     const dispatch = useDispatch();
     const [comment, setComment] = useState("");
 
-    const [postComments, setPostComments] = useState([]);
-    const [like, setLike] = useState(false)
-    // console.log("post.id inside the component: ", post.id);
-    //let tempComments = [];
+    // const [postComments, setPostComments] = useState([]);
+    // const [like, setLike] = useState(false)
 
-    // if (post.comments !== undefined) {
-    //     // tempComments = Object.entries(post.comments);
-    //     tempComments = [];
-    //     for (let key in post.comments) {
-    //         tempComments.push(post.comments[key]);
-    //     }
-    // }
-
-
+    // const comments = useSelector((state) => getCommentsForPost(state, post.id))
+   
+   
     const handleSubmitWithEnter = (e) => {
         if (e.key === "Enter") {
             e.preventDefault();
             const newComment = {comment: {userId: user.id, body: comment, postId: post.id}}
             dispatch(createComment(newComment));
             e.target.value = "";
+            setComment("");
         }
     };
-
+    
     const handleSubmit = (e) => {
         e.preventDefault();
-       
         const newComment = {comment: {userId: user.id, body: comment, postId: post.id}}
         dispatch(createComment(newComment));
         e.target.value = "";
+        setComment("");
     };
 
-    const handleClick = (e) => {
-        e.preventDefault();
-        const newLike = {like: {userId: user.id, postId: post.id}}
-        dispatch(createLike(newLike));
-        e.target.value = "";
-    };
+    // const handleClick = (e) => {
+    //     e.preventDefault();
+    //     const newLike = {like: {userId: user.id, postId: post.id}}
+    //     dispatch(createLike(newLike));
+    //     e.target.value = "";
+    // };
 
   return (
     <div className="post-index-item">
@@ -123,9 +117,8 @@ const PostIndexItem = ({ post, user }) => {
         <div className="post-index-item-comments">
             <div className="view-comments">View all comments</div>
                 <CommentIndex postId={post.id}/>
-             {/* { tempComments.map((comment, idx) => (
-                <Comment comment={comment}  key= {idx} user={user} postId={post.id}/>
-             )) } */}
+                {/* {comments.map(comment => <p>{comment.body}</p>)} */}
+             
             <div className="comment-container-button">
                 <input className='create-comment-input' onKeyDown={handleSubmitWithEnter} onChange={(e) => setComment(e.target.value)} value={comment} type="text" placeholder="Add a comment..." />
                 <button className="post-button" onClick={handleSubmit}>Post</button>

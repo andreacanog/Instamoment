@@ -60,6 +60,7 @@ table {
     --a-color: #00376b;
 }
 
+
 body {
     font-family: "Roboto", sans-serif;
     background-color: var(--body-bg);
@@ -70,3 +71,9 @@ body {
     display: flex;
     flex-direction: column;
 } */
+
+button {
+    border: 0;
+    background-color: transparent;
+}
+
