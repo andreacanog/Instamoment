@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteComment, updateComment} from "../../store/comment";
-// import { useParams } from "react-router-dom";
 import "./comment.css";
 import { useState } from "react";
 
@@ -9,19 +8,18 @@ import { useState } from "react";
 
 const CommentIndexItem = ({comment, user, post}) => {
     const commentId = comment.id;
+    const postId = comment.post_id;
 
     const [updatedComment, setUpdatedComment] = useState(comment.body);
     const [updatingComment, setUpdatingComment] = useState(false);
 
     
-
     const dispatch = useDispatch();
-
+    
     const handleDelete = (e) => {
         e.preventDefault();
-        dispatch(deleteComment(commentId));
+        dispatch(deleteComment(commentId, postId));
         e.target.value = "";
-
     }
 
     const handleUpdateSubmit = (e) => {

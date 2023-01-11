@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import {getComments} from "../../store/comment";
 import "./comment.css";
 import { fetchComments } from "../../store/comment";
 import CommentIndexItem from "./CommentIndexItem";
@@ -22,7 +21,7 @@ const CommentIndex = ({postId}) => {
     return (
         <div>
             {comments.map((comment, idx) => (
-                <CommentIndexItem key={idx} comment={comment} user={user} post={post}/>
+                <CommentIndexItem key={idx} comment={comment} user={user} post={post} />
             ))}
         </div>
     )

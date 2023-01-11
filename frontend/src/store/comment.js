@@ -14,9 +14,10 @@ const receiveComments = (comments) => ({
     comments
 });
 
-const removeComment = (commentId) => ({
+const removeComment = (commentId, postId) => ({
     type: REMOVE_COMMENT,
-    commentId
+    commentId,
+    postId
 });
 
 export const getComment = (commentId) => (state) => {
@@ -69,7 +70,6 @@ export const createComment = (comment) => async (dispatch) => {
 }
 
 export const updateComment = (comment) => async (dispatch) => {
-    // console.log("comment: ", comment);
     const res = await csrfFetch(`/api/comments/${comment.comment.commentId}`, {
         method: 'PUT',
         headers: {
@@ -84,13 +84,13 @@ export const updateComment = (comment) => async (dispatch) => {
     }
 }
 
-export const deleteComment = (commentId) => async (dispatch) => {
+export const deleteComment = (commentId, postId) => async (dispatch) => {
     const res = await csrfFetch(`/api/comments/${commentId}`, {
         method: 'DELETE'
     });
 
     if (res.ok) {
-        dispatch(removeComment(commentId));
+        dispatch(removeComment(commentId, postId));
     }
 }
 

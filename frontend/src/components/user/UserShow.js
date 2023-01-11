@@ -16,7 +16,7 @@ const UserShow = () => {
   let posts = useSelector(getPosts);
   
   useEffect(() => {
-    dispatch(fetchUser(userId));
+    dispatch(fetchUser(userId)); 
   }, [dispatch, userId]);
   
   if (!user) return null;

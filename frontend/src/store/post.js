@@ -1,6 +1,6 @@
 import { RECEIVE_USER } from "./user";
 import csrfFetch from "./csrf";
-import { RECEIVE_COMMENT } from "./comment";
+import { RECEIVE_COMMENT, REMOVE_COMMENT } from "./comment";
 
 export const RECEIVE_POSTS = 'posts/RECEIVE_POSTS';
 export const RECEIVE_POST = 'posts/RECEIVE_POST';
@@ -25,7 +25,6 @@ const removePost = (postId) => ({
 
 
 export const getPost = (postId) => (state) => {
-    // console.log("state in getPost: ", state);
     return state?.posts ? state.posts[postId] : null;
 }
 
@@ -124,6 +123,11 @@ const postReducer = (state = {}, action) => {
             } 
            
             return newState
+        case REMOVE_COMMENT:
+            let tempPost = newState[action.postId]
+            delete tempPost.comments[action.commentId]
+            return newState
+            
         case RECEIVE_USER:
             return {...state, ...action.user.posts}
         default:
