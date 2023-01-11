@@ -14,7 +14,7 @@ const LikeButton = ({ post, user }) => {
     const handleClick = (e) => {
         e.preventDefault();
         if (liked) {
-            dispatch(deleteLike(post.ownLikeId, post.id, user.id)); 
+            dispatch(deleteLike(post.id)); 
         } else {
             dispatch(createLike(post.id));
         }

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useRef } from 'react';
 import './posts.css'
 import {AiOutlineClose} from 'react-icons/ai';
+import csrfFetch from '../../store/csrf';
 
 function PostCreateForm () {
     const [title, setTitle] = useState ("");
@@ -23,9 +24,12 @@ function PostCreateForm () {
             formData.append('post[photo]', photoFile);
         }
 
-        const response = await fetch('/api/posts', { // csrfFetch
+        const response = await fetch('/api/posts', { 
             method: 'POST',
-            body: formData
+            body: formData,
+            headers: {
+                "X-CSRF-Token": sessionStorage.getItem("X-CSRF-Token")
+            }
         });
 
         if (response.ok) {

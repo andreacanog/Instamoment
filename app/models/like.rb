@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 class Like < ApplicationRecord
-    validates :user_id, :post_id, presence: true
+    validates :user_id, presence: true, uniqueness: { scope: :post_id }
 
     belongs_to :user,
         foreign_key: :user_id,

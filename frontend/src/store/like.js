@@ -61,13 +61,13 @@ export const createLike = (postID) => async (dispatch) => {
     }
 }
 
-export const deleteLike = (likeId) => async (dispatch) => {
-    const res = await csrfFetch(`/api/likes/${likeId}`, {
+export const deleteLike = (postId) => async (dispatch) => {
+    const res = await csrfFetch(`/api/likes/${postId}`, {
         method: 'DELETE',
     });
 
     if (res.ok) {
-        dispatch(removeLike(likeId));
+        dispatch(removeLike(postId));
     }
 }
 

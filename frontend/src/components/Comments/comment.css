@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     max-width: 100px;
-    /* padding-left: 10px; */
+    padding-left: 125px;
     justify-content: space-evenly;
 }
 
@@ -21,6 +21,7 @@
     text-align: center;
     cursor: pointer;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+    padding-right: 13px;
 }
 
 .update-button {
@@ -42,4 +43,36 @@
 
 .post-index-item-comment {
     padding-top: 15px;
+}
+
+.post-index-item-comment-username {
+    display: inline-block; 
+    box-sizing: border-box;
+    position: relative;
+    color: rgb(38, 38, 38);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+
+.post-index-item-comment-body {
+    color: rgb(38, 38, 38);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    pointer-events: auto;
+}
+
+.comment-info-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.post-index-item-comment-username {
+    padding-right: 10px;
 }

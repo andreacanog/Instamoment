@@ -3,6 +3,7 @@
         json.extract! post, :id, :user_id, :title
         json.photoUrl post.photo.url
         json.extract! post.user, :username
+        
         json.likes post.likes.count
         json.commentCount post.comments.count
         

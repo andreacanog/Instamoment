@@ -19,17 +19,21 @@ class Api::CommentsController < ApplicationController
         @comment = Comment.new(comment_params)
         @comment.user_id = current_user.id
         if @comment.save
+            # puts "comment saved #{@comment}"
+            # debugger
             return render json: @comment
+            # render :show
+            # render 'api/comments/show'
+            # render json: { message: "You did it!" }
         else
             render json: { errors: @comment.errors.full_messages }, status: :unprocessable_entity
         end
     end
 
     def update
-        @comment = Comment.find_by(id: comment_params[:comment_id])
-        updated_comment = {id: comment_params[:comment_id], body: comment_params[:body], post_id: comment_params[:post_id], user_id: comment_params[:user_id]}
-
-        if @comment&.update(updated_comment)
+        @comment = Comment.find_by(id: params[:id])
+    
+        if @comment&.update(comment_params)
             return render json: @comment
         else
             render json: { errors: @comment.errors.full_messages }, status: :unprocessable_entity
@@ -52,8 +56,8 @@ class Api::CommentsController < ApplicationController
 
     private
     def comment_params
-        puts "comment_params: #{params}"
-        params.require(:comment).permit(:post_id, :user_id, :body, :comment_id)
+        # puts "comment_params: #{params}"
+        params.require(:comment).permit(:post_id, :user_id, :body)
     end
 
 end 

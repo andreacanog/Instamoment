@@ -1,4 +1,6 @@
 class Api::LikesController < ApplicationController
+    wrap_parameters include: Like.attribute_names 
+
     before_action :require_logged_in
 
     def create
@@ -25,7 +27,7 @@ class Api::LikesController < ApplicationController
 
     def destroy
         # @like = Like.find_by(user_id: like_params[:user_id])
-        @like = Like.find_by(id: params[:id])
+        @like = Like.find_by(user_id: current_user.id, post_id: params[:id])
         if @like&.destroy
             render json: { like: nil }
         else

@@ -14,11 +14,18 @@ const receiveComments = (comments) => ({
     comments
 });
 
-const removeComment = (commentId, postId) => ({
-    type: REMOVE_COMMENT,
-    commentId,
-    postId
-});
+const removeComment = (commentId, postId) => {
+    return {
+        type: REMOVE_COMMENT,
+        commentId,
+        postId
+    }
+};
+// const removeComment = (commentId, postId) => ({
+//     type: REMOVE_COMMENT,
+//     commentId,
+//     postId
+// });
 
 export const getComment = (commentId) => (state) => {
     return state?.comments ? state.comments[commentId] : null;

@@ -37,6 +37,8 @@ export const getCommentsForPost = (state, postId) => {
     return post.comments ? Object.values(post.comments) : [];
 }
 
+
+
 export const fetchPosts = () => async (dispatch) => {
     const res = await csrfFetch('/api/posts');
 
@@ -56,6 +58,7 @@ export const fetchPost = (postId) => async (dispatch) => {
 }
 
 export const createPost = (post) => async (dispatch) => {
+    console.log("post inside createPost", post)
     const res = await csrfFetch('/api/posts', {
         method: 'POST',
         headers: {
@@ -103,12 +106,16 @@ const postReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_POSTS:
             return {...state, ...action.posts}
+            
         case RECEIVE_POST:
             return {...state, [action.post.id]: action.post}
+
         case REMOVE_POST:
             delete newState[action.postId];
             return newState;
+
         case RECEIVE_COMMENT:
+            console.log("action.comment: ", action.comment);
             let post = newState[action.comment.post_id]
             if (post.comments === undefined) {
                 /**
@@ -121,9 +128,10 @@ const postReducer = (state = {}, action) => {
             if (action.comment !== undefined) {
                 post.comments[action.comment.id] = action.comment
             } 
-           
             return newState
+
         case REMOVE_COMMENT:
+            // confirm("Are you sure you want to delete this comment?")
             let tempPost = newState[action.postId]
             delete tempPost.comments[action.commentId]
             return newState

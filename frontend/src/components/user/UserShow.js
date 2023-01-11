@@ -38,7 +38,8 @@ const UserShow = () => {
             </div>
 
             <div className="edit-button-user">
-              <button>Edit Profile</button>
+              <button>Edit Profile</button> 
+              {/* add follow button with if statement  */}
             </div>
 
             <div className="setting-button-user">

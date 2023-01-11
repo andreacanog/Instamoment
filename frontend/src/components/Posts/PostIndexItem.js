@@ -1,31 +1,54 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import './posts.css'
-// import MoreButton from "../SideNavBar/MoreButton";
 import { NavLink } from "react-router-dom";
 import { createComment } from "../../store/comment";
 import {useState} from "react";
-// import Comment from "../Comments/CommentIndexItem";
 import {CgProfile} from "react-icons/cg";
 import {AiOutlineHeart} from "react-icons/ai";
 import { createLike } from "../../store/like";
 import {FaRegComment} from "react-icons/fa";
 import {BiBookmark} from "react-icons/bi";
-// import {AiFillHeart} from "react-icons/ai";
 import LikeButton from "../Like";
 import CommentIndex from "../Comments/CommentIndex";
-import {getCommentsForPost} from '../../store/post'
+import {deletePost, updatePost} from '../../store/post'
+
 
 
 
 const PostIndexItem = ({ post, user }) => {
     const dispatch = useDispatch();
     const [comment, setComment] = useState("");
+    const [showMenu, setShowMenu] = useState(false);
+    
+    const handleShowMore = () => {
+      if (showMenu) return;
+      setShowMenu(true);
+    };
+    
+    useEffect(() => {
+        if (!showMenu) return;
+  
+        const closeMenu = () => {
+            setShowMenu(false);
+        };
+  
+        document.addEventListener('click', closeMenu);
+    
+        return () => document.removeEventListener("click", closeMenu);
 
-    // const [postComments, setPostComments] = useState([]);
-    // const [like, setLike] = useState(false)
+    }, [showMenu]);
+  
 
-    // const comments = useSelector((state) => getCommentsForPost(state, post.id))
+    const Update = (e) => {
+      e.preventDefault();
+      dispatch(updatePost(post.id));
+    };
+
+    const Delete = (e) => {
+        e.preventDefault();
+        dispatch(deletePost(post.id));
+      };
    
    
     const handleSubmitWithEnter = (e) => {
@@ -41,17 +64,16 @@ const PostIndexItem = ({ post, user }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const newComment = {comment: {userId: user.id, body: comment, postId: post.id}}
+        console.log("newComment", newComment)
+        console.log("comment", comment)
+        console.log('post', post)
+        
         dispatch(createComment(newComment));
         e.target.value = "";
         setComment("");
     };
 
-    // const handleClick = (e) => {
-    //     e.preventDefault();
-    //     const newLike = {like: {userId: user.id, postId: post.id}}
-    //     dispatch(createLike(newLike));
-    //     e.target.value = "";
-    // };
+   
 
   return (
     <div className="post-index-item">
@@ -77,7 +99,17 @@ const PostIndexItem = ({ post, user }) => {
             </div>
 
             <div className="post-index-item-dots-container">
-                <i className="fa-solid fa-ellipsis"></i>
+                <button onClick={handleShowMore}><i className="fa-solid fa-ellipsis"></i></button>
+                <div className="post-index-item-dots">
+                    {showMenu && (
+                        <ul className="post-dropdown">
+                        <li>
+                            <button onClick={Update}>Edit</button>
+                            <button onClick={Delete}>Delete</button>
+                        </li>
+                        </ul>
+                    )}
+                </div>
             </div>
 
         </div>
@@ -87,20 +119,21 @@ const PostIndexItem = ({ post, user }) => {
                 ? post.photoUrl
                 : "https://i.imgur.com/8Q9QY7C.png"} alt="post" />
         </div>
+
         <div className="post-icons-container">
+
             <div className="post-icons-left">
                 <LikeButton post={post} user={user}/>
-                {/* <div className="heart-icon unliked" onClick={handleClick}><AiOutlineHeart/></div> */}
                 <div><FaRegComment/></div>
-                {/* <div className="liked"><AiFillHeart/></div> */}
-                {/* <div><i className="fa-regular fa-paper-plane"></i></div> */}
             </div>
+
             <div className="post-icons-right">
                 <div><BiBookmark/></div>
             </div>
+            
         </div>
-        <div>
-            <p>{post.likes} likes</p>
+        <div className="post-count-likes-comments">
+            <div className="likes-count"><p>{post.likes} likes</p></div>
             <p>{post.commentCount} comments</p>
         </div>
         <div className="post-index-item__caption">
@@ -116,6 +149,7 @@ const PostIndexItem = ({ post, user }) => {
 
         <div className="post-index-item-comments">
             <div className="view-comments">View all comments</div>
+
                 <CommentIndex postId={post.id}/>
                 {/* {comments.map(comment => <p>{comment.body}</p>)} */}
              
