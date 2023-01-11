@@ -15,7 +15,7 @@ class Api::PostsController < ApplicationController
         @post = Post.new(post_params)
         @post.user_id = current_user.id
         if @post.save!
-          render json: { message: "You did it!" }
+          render :show
         else
           render json: @post.errors.full_messages, status: 422
         end
@@ -35,7 +35,7 @@ class Api::PostsController < ApplicationController
     def destroy
         @post = Post.find(params[:id])
         if @post&.destroy
-            render json: { post: nil }
+            render :show
         else
             render json: { errors: @post.errors.full_messages }, status: :unprocessable_entity
         end

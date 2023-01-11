@@ -11,7 +11,7 @@ const CommentIndex = ({postId}) => {
     const comments = useSelector((state) => getCommentsForPost(state, postId))
     const user = useSelector(state => state.session.user);
     const post = useSelector(getPost);  // post seems to be the function rather than the fetched posts from the store.
-    console.log("comment inside commentIndex: ", comments);
+    
     useEffect(() => {
         dispatch(fetchComments(postId));
     }, [dispatch]);

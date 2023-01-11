@@ -10,9 +10,6 @@ const CommentIndexItem = ({comment, user, post}) => {
     const commentId = comment.id;
     const postId = comment.postId === undefined ? comment.post_id : comment.postId;
 
-
-    console.log("comment inside", comment)
-    // console.log('postId ', postId)
     const [updatedComment, setUpdatedComment] = useState(comment.body);
     const [updatingComment, setUpdatingComment] = useState(false);
 

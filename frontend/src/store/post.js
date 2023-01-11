@@ -115,8 +115,9 @@ const postReducer = (state = {}, action) => {
             return newState;
 
         case RECEIVE_COMMENT:
-            console.log("action.comment: ", action.comment);
-            let post = newState[action.comment.post_id]
+            let postId = action.comment.post_id === undefined ? action.comment.postId : action.comment.post_id
+            let post = newState[postId]
+            
             if (post.comments === undefined) {
                 /**
                  * Doing this for the instance where we are adding a new comment to a post for the first time.

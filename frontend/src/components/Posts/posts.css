@@ -131,6 +131,7 @@
     display: flex;
     align-items: end;
     margin-bottom: 25px;
+    flex-direction: column;
 }
 
 .user-show-profile-link {
@@ -208,6 +209,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    z-index: 1;
 }
 
 .post-create-modal-content {
@@ -281,4 +283,43 @@
 
 .likes-count {
     padding-right: 10px;
+}
+
+.post-dropdown {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    /* align-content: flex-end; */
+}
+
+.update-buttom-post {
+    background-color: #fafafa;
+    color: #9ccffc; 
+    font-size: 12px;
+    box-sizing: border-box;
+    width: auto;
+    font-weight: 600px;
+    height: auto;
+    border-top-left-radius: 2px;
+    text-overflow: ellipsis;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.delete-buttom-post {
+    background-color: #fafafa;
+    color: #9ccffc;
+    font-size: 12px;
+    box-sizing: border-box;
+    width: auto;
+    font-weight: 600px;
+    height: auto;
+    border-top-left-radius: 2px;
+    text-overflow: ellipsis;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }

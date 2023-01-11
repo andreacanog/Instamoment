@@ -64,10 +64,7 @@ const PostIndexItem = ({ post, user }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const newComment = {comment: {userId: user.id, body: comment, postId: post.id}}
-        console.log("newComment", newComment)
-        console.log("comment", comment)
-        console.log('post', post)
-        
+
         dispatch(createComment(newComment));
         e.target.value = "";
         setComment("");
@@ -103,9 +100,9 @@ const PostIndexItem = ({ post, user }) => {
                 <div className="post-index-item-dots">
                     {showMenu && (
                         <ul className="post-dropdown">
-                        <li>
-                            <button onClick={Update}>Edit</button>
-                            <button onClick={Delete}>Delete</button>
+                        <li className="post-dropdown">
+                            <button className="update-buttom-post" onClick={Update}>Edit</button>
+                            <button className="delete-buttom-post" onClick={Delete}>Delete</button>
                         </li>
                         </ul>
                     )}
