@@ -20,7 +20,7 @@ function LoginFormPage() {
   if (sessionUser) return <Redirect to="/" />;
 
   const handleDemoLogin = (e) => {
-    return dispatch(sessionActions.login({credential: "demo@user.io", password: "password"}))
+    return dispatch(sessionActions.login({credential: "decor@user.io", password: "password"}))
     .then(() => {history.push('/feed/posts')})
   }
 
