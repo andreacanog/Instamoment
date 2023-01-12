@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import {IoSettings} from "react-icons/io"
 import {AiOutlineHeart} from "react-icons/ai"
 import './SideNavBar.css';
 import { useSelector } from 'react-redux';

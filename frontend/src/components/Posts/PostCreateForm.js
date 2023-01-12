@@ -2,16 +2,17 @@ import { useState } from 'react';
 import { useRef } from 'react';
 import './posts.css'
 import {AiOutlineClose} from 'react-icons/ai';
-import csrfFetch from '../../store/csrf';
 import { useDispatch } from "react-redux";
 import { createPost } from '../../store/post';
+
+
 
 function PostCreateForm () {
     const dispatch = useDispatch();
     const [title, setTitle] = useState ("");
     const [photoFile, setPhotoFile] = useState (null);
     const [photoUrl, setPhotoUrl] = useState (null);
-
+    
     const handleInput = e => {
         setTitle(e.currentTarget.value);
     }
@@ -31,6 +32,10 @@ function PostCreateForm () {
         setTitle("");
         setPhotoFile(null);
         setPhotoUrl(null);
+        setTimeout(() => {
+            let modal = document.getElementById('post-create-modal');
+            modal.style.display = 'none';
+        }, 1000)
     }
 
     const fileRef = useRef(null);
