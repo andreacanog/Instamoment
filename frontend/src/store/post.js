@@ -60,13 +60,12 @@ export const fetchPost = (postId) => async (dispatch) => {
 }
 
 export const createPost = (post) => async (dispatch) => {
-    console.log("post inside createPost", post)
-    const res = await csrfFetch('/api/posts', {
+    const res = await fetch('/api/posts', { 
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            "X-CSRF-Token": sessionStorage.getItem("X-CSRF-Token")
         },
-        body: JSON.stringify(post)
+        body: post
     });
 
     if (res.ok) {

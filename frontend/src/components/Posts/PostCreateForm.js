@@ -3,8 +3,11 @@ import { useRef } from 'react';
 import './posts.css'
 import {AiOutlineClose} from 'react-icons/ai';
 import csrfFetch from '../../store/csrf';
+import { useDispatch } from "react-redux";
+import { createPost } from '../../store/post';
 
 function PostCreateForm () {
+    const dispatch = useDispatch();
     const [title, setTitle] = useState ("");
     const [photoFile, setPhotoFile] = useState (null);
     const [photoUrl, setPhotoUrl] = useState (null);
@@ -24,22 +27,10 @@ function PostCreateForm () {
             formData.append('post[photo]', photoFile);
         }
 
-        const response = await fetch('/api/posts', { 
-            method: 'POST',
-            body: formData,
-            headers: {
-                "X-CSRF-Token": sessionStorage.getItem("X-CSRF-Token")
-            }
-        });
-
-        if (response.ok) {
-
-            const message = await response.json();
-
-            setTitle("");
-            setPhotoFile(null);
-            setPhotoUrl(null);
-        }
+        dispatch(createPost(formData));
+        setTitle("");
+        setPhotoFile(null);
+        setPhotoUrl(null);
     }
 
     const fileRef = useRef(null);
