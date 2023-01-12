@@ -22,8 +22,7 @@ class Api::PostsController < ApplicationController
     end
     
 
-    def update 
-        puts "update params: #{params}"
+    def update
         @post = Post.find(params[:id])
 
         if @post&.update(post_params)

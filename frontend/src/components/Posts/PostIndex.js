@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PostIndexItem from './PostIndexItem';
 import { fetchPosts, getPosts } from '../../store/post';
+import { Redirect } from 'react-router-dom';
 
 
 const PostIndex = () => {
@@ -15,13 +16,13 @@ const PostIndex = () => {
 
   if (!posts) return null;
 
-  return (
+  return user ? (
     <div className="post-index">
       {posts.map(post => (
         <PostIndexItem key={post.id} post={post} user={user} />
       ))}
     </div>
-  );
+  ) : (<Redirect to="/login" ></Redirect>);
 }
 
 export default PostIndex;

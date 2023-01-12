@@ -6,6 +6,8 @@ import { RECEIVE_LIKE, REMOVE_LIKE } from "./like";
 export const RECEIVE_POSTS = 'posts/RECEIVE_POSTS';
 export const RECEIVE_POST = 'posts/RECEIVE_POST';
 export const REMOVE_POST = 'posts/REMOVE_POST';
+export const REMOVE_POSTS = 'posts/REMOVE_POSTS';
+
 
 
 const receivePosts = (posts) => {
@@ -23,6 +25,11 @@ const receivePost = (post) => ({
 const removePost = (postId) => ({
     type: REMOVE_POST,
     postId
+});
+
+export const removePosts = () => ({
+    type: REMOVE_POSTS,
+    posts: {}
 });
 
 
@@ -76,7 +83,6 @@ export const createPost = (post) => async (dispatch) => {
 
 
 export const updatePost = (post) => async (dispatch) => {
-    console.log("post inside updatePost", post)
     const res = await csrfFetch(`/api/posts/${post.id}`, {
         method: 'PUT',
         headers: {
@@ -101,6 +107,18 @@ export const deletePost = (postId) => async (dispatch) => {
     }
 }
 
+// export const deletePosts = () => async (dispatch) => {
+//     const res = await csrfFetch(`/api/posts`, {
+//         method: 'DELETE'
+//     });
+
+//     if (res.ok) {
+//         dispatch(removePosts());
+        
+//     }
+// }
+
+
 const postReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = {...state};
@@ -114,6 +132,12 @@ const postReducer = (state = {}, action) => {
 
         case REMOVE_POST:
             delete newState[action.postId];
+
+            return newState;
+
+        case REMOVE_POSTS:
+            newState = {}
+            
             return newState;
 
         case RECEIVE_COMMENT:
@@ -131,21 +155,31 @@ const postReducer = (state = {}, action) => {
             if (action.comment !== undefined) {
                 post.comments[action.comment.id] = action.comment
             } 
-            // post.comments += 1;
+        
+
+            let commentPost = newState[action.comment.postId]
+            commentPost.commentCount += 1
             return newState
 
         case REMOVE_COMMENT:
-            // confirm("Are you sure you want to delete this comment?")
+
             let tempPost = newState[action.postId]
             delete tempPost.comments[action.commentId]
+            tempPost.commentCount -= 1;
             return newState
+
         case RECEIVE_LIKE:
             const postLike = newState[action.like.postId] 
             postLike.likes += 1
+            postLike.liked = true
             return newState
-        // case REMOVE_LIKE:
-        //     postLike.likes -= 1
-        //     return newState
+
+        case REMOVE_LIKE:
+            const postUnLike = newState[action.likeId] 
+            postUnLike.likes -= 1
+            postUnLike.liked = false
+            return newState
+
         case RECEIVE_USER:
             return {...state, ...action.user.posts}
         default:

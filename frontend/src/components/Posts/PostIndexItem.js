@@ -23,7 +23,6 @@ const PostIndexItem = ({ post, user }) => {
     const [updatedTitle, setUpdatedTitle] = useState(post.title);
     const [updatingPostTitle, setUpdatingPostTitle] = useState(false);
     
-
     const handleUpdatePost = (e) => {
         e.preventDefault();
         const postToUpdate = {post: {userId: user.id, title: updatedTitle}, id: post.id}

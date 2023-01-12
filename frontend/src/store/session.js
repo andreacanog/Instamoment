@@ -1,4 +1,6 @@
 import csrfFetch from './csrf';
+import { REMOVE_POSTS } from './post';
+import {removePosts} from './post';
 
 const SET_CURRENT_USER = 'session/setCurrentUser';
 const REMOVE_CURRENT_USER = 'session/removeCurrentUser';
@@ -60,6 +62,7 @@ export const logout = () => async (dispatch) => {
   });
   storeCurrentUser(null);
   dispatch(removeCurrentUser());
+  dispatch(removePosts());
   return response;
 };
 

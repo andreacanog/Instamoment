@@ -24,7 +24,7 @@ const FollowButton = ({ post, user }) => {
         if (post.followed) {
             setFollowed(true) // if the post has likes, set the like button to be liked
         }
-    }, [dispatch]) // if the post has likes, set the like button to be liked
+    }, [dispatch])
 
 
 

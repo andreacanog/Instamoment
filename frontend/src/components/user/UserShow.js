@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Redirect, useParams, Route } from "react-router-dom";
 import UserShowPostItem from "./UserShowPostItem";
 import { useSelector} from "react-redux";
 import { fetchUser, getUser } from "../../store/user";
@@ -8,12 +8,17 @@ import { useEffect } from "react";
 import './UserShowPost.css'
 import { getPosts } from "../../store/post";
 import {CgProfile} from "react-icons/cg"
+import {RiUserUnfollowLine} from "react-icons/ri"
+import { NavLink } from "react-router-dom";
+
 
 const UserShow = () => {
   const dispatch = useDispatch();
   let {userId} = useParams();
   let user = useSelector(getUser(userId));
+  let currentUser = useSelector(state => state.session.user);
   let posts = useSelector(getPosts);
+
   
   useEffect(() => {
     dispatch(fetchUser(userId)); 
@@ -21,7 +26,7 @@ const UserShow = () => {
   
   if (!user) return null;
   
-  return (
+  return currentUser ? (
     <div className="user-show-container">
 
       <div className="user-show-header">
@@ -44,6 +49,10 @@ const UserShow = () => {
 
             <div className="setting-button-user">
               <button>Settings</button>
+            </div>
+
+            <div>
+              {currentUser.id === user.id ? <></> : <RiUserUnfollowLine/>}
             </div>
           </div>
 
@@ -79,7 +88,8 @@ const UserShow = () => {
       </div>
 
     </div>
-  );
+    ) : (<Redirect to="/login" ></Redirect>);
+
 }
 
 export default UserShow;

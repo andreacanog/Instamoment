@@ -11,23 +11,24 @@ const LikeButton = ({ post, user }) => {
     const dispatch = useDispatch();
     const [liked, setLiked] = useState(false);
 
+    useEffect(() => {
+        if (post.liked) {
+            setLiked(true) // if the post has likes, set the like button to be liked
+        } 
+    }, [post]) 
+
+
     const handleClick = (e) => {
         e.preventDefault();
         if (liked) {
             dispatch(deleteLike(post.id)); 
+            setLiked(false)
         } else {
             dispatch(createLike(post.id));
+            setLiked(true)
         }
-        setLiked(!liked);
+        // setLiked(!liked);
     }
-
-    useEffect(() => {
-        if (post.liked) {
-            setLiked(true) // if the post has likes, set the like button to be liked
-        }
-    }, [dispatch]) // if the post has likes, set the like button to be liked
-
-
 
     if (liked) {
         return (

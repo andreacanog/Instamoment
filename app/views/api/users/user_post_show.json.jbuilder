@@ -12,7 +12,7 @@ end
         json.extract! post, :id, :user_id, :title
         json.photoUrl post.photo.url
         # json.likesCount post.likes.count
-        json.commentsCount post.comments.count
+        json.commentsCount post.comments.length
         # json.likedByCurrentUser post.likes.find_by(user_id: current_user.id) ? true : false
         json.comments do
           post.comments.each do |comment|

@@ -54,7 +54,7 @@ const CommentIndexItem = ({comment, user, post}) => {
             </div>
             <div className="update-comment-container" style={{display: updatingComment ? "block" : "none"}}>
                 <input type="text" className="comment-update-input" placeholder="Update Comment" onChange={(e) => setUpdatedComment(e.target.value)} value={updatedComment} name=""/>
-                <button className="update-comment-button" onClick={handleUpdateSubmit}>Edit comment</button>
+                <button className="update-comment-button" onClick={handleUpdateSubmit}>Save Comment</button>
             </div>
         </div>
 
