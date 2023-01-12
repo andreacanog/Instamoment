@@ -26,30 +26,44 @@ ApplicationRecord.transaction do
       email: 'decor@user.io', 
       password: 'password'
     })
-    # decorideas.profile_picture.attach(io: URI.open("https://instapound-aa-dev.s3.us-west-1.amazonaws.com/demo-logo.jpg/#{decorideas.username}.jpg"), filename: "#{decorideas.username}.jpg")
+    decorideas.profile_picture.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/demo-logo.jpg'), filename: 'demo-logo.jpg')
 
     cutepets = User.create!({username: 'cutepets', name: 'Love for pets', email: 'cutepets@gmail.com', password: 'ilovepets'})
-    # cutepets.profile_picture.attach(io: URI.open("https://instapound-aa-dev.s3.us-west-1.amazonaws.com/pets-logo.jpg/#{cutepets.username}.jpg"), filename: "#{cutepets.username}.jpg")
+    cutepets.profile_picture.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/pets-logo.jpg'), filename: 'pets-logo.jpg')
 
     appacademy = User.create!({username: 'appacademy', name: 'App Academy', email: 'admisions@appacademy.com', password: 'appacademyforver'})
-    # appacademy.profile_picture.attach(io: URI.open("https://instapound-aa-dev.s3.us-west-1.amazonaws.com/app-logo.png/#{appacademy.username}.jpg"), filename: "#{appacademy.username}.jpg")
+    appacademy.profile_picture.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/app-logo.png'), filename: 'app-logo.png')
 
     sflocations = User.create!({username: 'sflocations', name: 'SF Pictures', email: 'sfpics@gmail.com', password: 'sfbestcity'})
-    # sflocations.profile_picture.attach(io: URI.open("https://instapound-aa-dev.s3.us-west-1.amazonaws.com/sf-logo.jpg/#{sflocations.username}.jpg"), filename: "#{sflocations.username}.jpg")
+    sflocations.profile_picture.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/sf-logo.jpg'), filename: 'sf-logo.jpg')
 
     valenciaciudad = User.create!({username: 'valenciaciudad', name: 'Valencia', email: 'valencia@gmail.com', password: 'valenciaisbetterthansf'})
-    # valenciaciudad.profile_picture.attach(io: URI.open("https://instapound-aa-dev.s3.us-west-1.amazonaws.com/valencia-logo.jpg/#{valenciaciudad.username}.jpg"), filename: "#{valenciaciudad.username}.jpg")
+    valenciaciudad.profile_picture.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/valencia-logo.jpg'), filename: 'valencia-logo.jpg')
 
     fcbarcelona = User.create!({username: 'fcbarcelona', name: 'FC Barcelona', email: 'fcbarcelona@gmail.com', password: 'bestteamever'})
-    # fcbarcelona.profile_picture.attach(io: URI.open("https://instapound-aa-dev.s3.us-west-1.amazonaws.com/barca-logo.jpg/#{fcbarcelona.username}.jpg"), filename: "#{fcbarcelona.username}.jpg")
+    fcbarcelona.profile_picture.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/barca-logo.jpg'), filename: 'barca-logo.jpg')
 
     stevejobs = User.create!({username: 'stevejobs', name: 'Steve Jobs', email: 'stevejobs@gmail.com', password: 'appleisbetterthansamsung'})
-    # stevejobs.profile_picture.attach(io: URI.open("https://instapound-aa-dev.s3.us-west-1.amazonaws.com/steve-logo.jpg/#{stevejobs.username}.jpg"), filename: "#{stevejobs.username}.jpg")
+    stevejobs.profile_picture.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/steve-logo.jpg'), filename: 'steve-logo.jpg')
 
     zarastore = User.create!(username: 'zarastore', name: 'Zara Store', email: 'zaraclothes@gmail.com', password: 'zaraclothes')
-    # zarastore.profile_picture.attach(io: URI.open("https://instapound-aa-dev.s3.us-west-1.amazonaws.com/zara-logo.jpg/#{zarastore.username}.jpg"), filename: "#{zarastore.username}.jpg")
+    zarastore.profile_picture.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/zara-logo.jpg'), filename: 'zara-logo.jpg')
 
   
+    follow_1 = Follow.create!(follower_id: decorideas.id, followee_id: cutepets.id)
+    follow_2 = Follow.create!(follower_id: decorideas.id, followee_id: appacademy.id)
+    follow_3 = Follow.create!(follower_id: decorideas.id, followee_id: sflocations.id)
+    follow_4 = Follow.create!(follower_id: decorideas.id, followee_id: valenciaciudad.id)
+    follow_5 = Follow.create!(follower_id: decorideas.id, followee_id: fcbarcelona.id)
+    follow_6 = Follow.create!(follower_id: cutepets.id, followee_id: decorideas.id)
+    follow_7 = Follow.create!(follower_id: cutepets.id, followee_id: appacademy.id)
+    follow_8 = Follow.create!(follower_id: cutepets.id, followee_id: sflocations.id)
+    follow_9 = Follow.create!(follower_id: cutepets.id, followee_id: valenciaciudad.id)
+    follow_10 = Follow.create!(follower_id: cutepets.id, followee_id: fcbarcelona.id)
+    follow_11 = Follow.create!(follower_id: appacademy.id, followee_id: decorideas.id)
+    follow_12 = Follow.create!(follower_id: appacademy.id, followee_id: cutepets.id)
+    follow_13 = Follow.create!(follower_id: appacademy.id, followee_id: sflocations.id)
+    follow_14 = Follow.create!(follower_id: appacademy.id, followee_id: valenciaciudad.id)
     
     post_38 = Post.new(user_id: decorideas.id, title: 'Modern minimalist home design #interior #design #minimalist')
     post_38.photo.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/white.jpg'), filename: 'white.jpg')

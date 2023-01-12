@@ -25,13 +25,15 @@ const UserShow = () => {
   }, [dispatch, userId]);
   
   if (!user) return null;
+
+  console.log(user.profilePictureUrl)
   
   return currentUser ? (
     <div className="user-show-container">
 
       <div className="user-show-header">
         <div className="user-profile-pic">
-        {user.profilePhotoUrl ? <img src={user.profilePhotoUrl} alt="profile"  /> : <i className="fa-regular fa-user cg-profile"></i>}
+        {user.profilePictureUrl ? <img src={user.profilePictureUrl} alt="profile"  /> : <i className="fa-regular fa-user cg-profile"></i>}
           {/* {user.profilePhotoUrl ? <img src={user.profilePhotoUrl} alt="profile"  /> : <CgProfile className="cg-profile"/>} */}
           {/* <img src={user.profilePhotoUrl ? user.profilePhotoUrl : } /> */}
         </div>

@@ -17,9 +17,10 @@
 }
 
 
-.user-profile-pic {
-    width: 149px;
-    height: 149px;
+.user-profile-pic img{
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
 }
     
 
@@ -81,4 +82,3 @@
     height: 293px;
     object-fit: cover;
 }
-

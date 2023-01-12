@@ -42,24 +42,28 @@ class User < ApplicationRecord
       foreign_key: :user_id,
       class_name: :Like,
       dependent: :destroy
-  
+
+
+  has_many :follows,
+    class_name: :Follow,
+    foreign_key: :follower_id, 
+    dependent: :destroy
+
+  has_many :is_followed, 
+    class_name: :Follow,
+    foreign_key: :followee_id,
+    dependent: :destroy
+
   has_many :followers,
-      foreign_key: :follower_id,
-      class_name: :Follow,
-      dependent: :destroy
-
-  has_many :followed_users,
-      through: :follows,
-      source: :followed_user
+    through: :is_followed,
+    source: :user
   
-  has_many :followees, 
-      foreign_key: :followee_id, 
-      class_name: :Follow,
-      dependent: :destroy
+  has_many :followees,
+    through: :follows,
+    source: :followee
+  
 
-  has_many :following_users,
-      through: :followees,
-      source: :follower
+  has_one_attached :profile_picture
 
 
   before_validation :ensure_session_token

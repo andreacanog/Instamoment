@@ -14,11 +14,11 @@
             json.liked false
         end
 
-        # json.likes do
-        #     post.likes.each do |like|
 
-        #     end
-        # end
+        json.user do
+            json.extract! post.user, :id, :username, :name
+            json.profilePictureUrl post.user.profile_picture.url #if @user.profile_picture.attached?
+        end
                 
         json.comments do
             post.comments.each do |comment|
@@ -34,3 +34,4 @@
         
     end
 end
+
