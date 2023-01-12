@@ -10,6 +10,7 @@ import { getPosts } from "../../store/post";
 import {CgProfile} from "react-icons/cg"
 import {RiUserUnfollowLine} from "react-icons/ri"
 import { NavLink } from "react-router-dom";
+import {FiSettings} from "react-icons/fi"
 
 
 const UserShow = () => {
@@ -44,17 +45,17 @@ const UserShow = () => {
               {user.username ? user.username : "Anonymous"}
             </div>
 
-            <div className="edit-button-user">
-              <button>Edit Profile</button> 
+            <div className="edit-follow-button-user">
+              {currentUser.id === user.id ?  <button className="edit-profile-button">Edit Profile</button> : <button className="follow-profile-button">Follow<RiUserUnfollowLine/></button>}
               {/* add follow button with if statement  */}
             </div>
 
             <div className="setting-button-user">
-              <button>Settings</button>
+            {currentUser.id === user.id ?  <button className="settings-profile-button"><FiSettings/></button> : <button className="more-profile-button"><i className="fa-solid fa-ellipsis"></i></button>}
             </div>
 
             <div>
-              {currentUser.id === user.id ? <></> : <RiUserUnfollowLine/>}
+              {/* {currentUser.id === user.id ? <></> : <RiUserUnfollowLine/>} */}
             </div>
           </div>
 
