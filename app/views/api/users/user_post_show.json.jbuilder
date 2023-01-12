@@ -1,5 +1,5 @@
 json.user do
-  json.extract! @user, :id, :username, :name, :bio, :created_at, :updated_at
+  json.extract! @user, :id, :username, :name, :bio, :created_at, :updated_at, :followee_ids, :follower_ids, :post_ids
 end
   json.user do
     json.extract! @user, :id, :username, :name

@@ -45,13 +45,19 @@ export const fetchFollow = (followId) => async (dispatch) => {
     }
 }
 
-export const createFollow = (followeeID) => async (dispatch) => {
+export const createFollow = (followeeId) => async (dispatch) => {
+    const follow = {
+        // follow: {
+            // followerId: currentUser,
+            followeeId
+        // }
+    }
     const res = await csrfFetch('/api/follows', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({followeeID})
+        body: JSON.stringify({follow})
     });
 
     if (res.ok) {
@@ -61,13 +67,13 @@ export const createFollow = (followeeID) => async (dispatch) => {
 }
 
 
-export const deleteFollow = (followId) => async (dispatch) => {
-    const res = await csrfFetch(`/api/follows/${followId}`, {
+export const deleteFollow = (followeeId) => async (dispatch) => {
+    const res = await csrfFetch(`/api/follows/${followeeId}`, {
         method: 'DELETE'
     });
 
     if (res.ok) {
-        dispatch(removeFollow(followId));
+        dispatch(removeFollow(followeeId));
     }
 }
 

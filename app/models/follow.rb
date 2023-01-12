@@ -9,7 +9,8 @@
 #  updated_at  :datetime         not null
 #
 class Follow < ApplicationRecord
-    validates :followee_id, presence: true, uniqueness: { scope: :follower_id }
+    validates :follower_id, presence: true, uniqueness: { scope: :followee_id }
+    validates :followee_id, presence: true
 
     belongs_to :followee,
         foreign_key: :followee_id,

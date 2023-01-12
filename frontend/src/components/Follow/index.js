@@ -1,27 +1,30 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { createLike, deleteLike } from "../../store/like";
-import "./Like.css";
 import {RiUserFollowLine} from "react-icons/ri"; //follow 
 import {RiUserUnfollowLine} from "react-icons/ri"; //unfollow
+import { useSelector, useDispatch } from "react-redux";
+import { deleteFollow, createFollow } from "../../store/follow";
+import { useState } from "react";
 
 
-const FollowButton = ({ post, user }) => {
+const FollowButton = ({ user }) => {
+    const currentUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const [followed, setFollowed] = useState(false);
 
     const handleClick = (e) => {
         e.preventDefault();
-        if (followed) {
-            dispatch(deleteFollow(post.id)); 
+        if (followed) { 
+            console.log('user follows this user')
+            dispatch(deleteFollow(user.id)); 
         } else {
-            dispatch(createFollow(post.id));
+            console.log('user does not follow this user')
+            dispatch(createFollow(user.id));
         }
-        setLiked(!followed);
+        setFollowed(!followed);
     }
 
     useEffect(() => {
-        if (post.followed) {
+        if (user.followerIds.includes(currentUser.id)) {
             setFollowed(true) // if the post has likes, set the like button to be liked
         }
     }, [dispatch])
@@ -32,7 +35,7 @@ const FollowButton = ({ post, user }) => {
         return (
             <div className="follow-button-container">
                 <button className="follow-button" onClick={handleClick}>
-                    <div className="follow-button-person follow" ><RiUserFollowLine/></div>
+                    <div className="follow-button-person follow">Following<RiUserFollowLine/></div>
                 </button>
             </div>
         )
@@ -40,7 +43,7 @@ const FollowButton = ({ post, user }) => {
         return (
             <div className="follow-button-container">
                 <button className="follow-button" onClick={handleClick}>
-                    <div className="follow-button-person unfollow"><RiUserUnfollowLine/></div>
+                    <div className="follow-button-person unfollow">Follow<RiUserUnfollowLine/></div>
                 </button>
             </div>
         )

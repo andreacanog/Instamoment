@@ -11,6 +11,7 @@ import {CgProfile} from "react-icons/cg"
 import {RiUserUnfollowLine} from "react-icons/ri"
 import { NavLink } from "react-router-dom";
 import {FiSettings} from "react-icons/fi"
+import FollowButton from "../Follow";
 
 
 const UserShow = () => {
@@ -33,36 +34,32 @@ const UserShow = () => {
     <div className="user-show-container">
 
       <div className="user-show-header">
+
         <div className="user-profile-pic">
         {user.profilePictureUrl ? <img src={user.profilePictureUrl} alt="profile"  /> : <i className="fa-regular fa-user cg-profile"></i>}
-          {/* {user.profilePhotoUrl ? <img src={user.profilePhotoUrl} alt="profile"  /> : <CgProfile className="cg-profile"/>} */}
-          {/* <img src={user.profilePhotoUrl ? user.profilePhotoUrl : } /> */}
         </div>
         
         <div className="user-info-rows-container">
+
           <div className="first-row">
             <div className="user-username">
               {user.username ? user.username : "Anonymous"}
             </div>
 
             <div className="edit-follow-button-user">
-              {currentUser.id === user.id ?  <button className="edit-profile-button">Edit Profile</button> : <button className="follow-profile-button">Follow<RiUserUnfollowLine/></button>}
-              {/* add follow button with if statement  */}
+              {currentUser.id === user.id ?  <button className="edit-profile-button">Edit Profile</button> : <FollowButton user={user}/>}
             </div>
 
             <div className="setting-button-user">
             {currentUser.id === user.id ?  <button className="settings-profile-button"><FiSettings/></button> : <button className="more-profile-button"><i className="fa-solid fa-ellipsis"></i></button>}
             </div>
 
-            <div>
-              {/* {currentUser.id === user.id ? <></> : <RiUserUnfollowLine/>} */}
-            </div>
           </div>
 
           <div className="second-row">
-            <div className="posts-number"><span>Posts</span></div>
-            <div className="followers-number"><span>Followers</span></div>
-            <div className="following-number"><span>Following</span></div>
+            <div><span>{user.postIds.length} Posts</span></div>
+            <div><span>{user.followerIds.length} Followers</span></div>
+            <div><span>{user.followeeIds.length} Following</span></div>
           </div>
 
           <div className="third-row">
@@ -74,11 +71,12 @@ const UserShow = () => {
               {user.bio ? user.bio : ""}
             </div>
           </div>
+          
         </div>
 
       </div>
 
-      <div className="line"></div>
+      {/* <div className="line"></div> */}
 
       <div>
         <div className="user-show-body"> 

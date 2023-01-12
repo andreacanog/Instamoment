@@ -12,6 +12,8 @@ import {BiBookmark} from "react-icons/bi";
 import LikeButton from "../Like";
 import CommentIndex from "../Comments/CommentIndex";
 import {deletePost, updatePost} from '../../store/post'
+import FollowButton from "../Follow";
+
 
 
 
@@ -96,7 +98,7 @@ const PostIndexItem = ({ post, user }) => {
                 <div className="user-post-profile-pic"> 
                     {/* <NavLink className="user-show-profile-link" exact to={`/users/${user.id}`}><CgProfile/></NavLink> */}
                     {/* <img src={post.user ? post.user.profilePictureUrl : ""} alt="profile" /> */}
-                    <NavLink className="user-show-profile-link" exact to={`/users/${user.id}`}>{post.user.profilePictureUrl ? <img src={post.user.profilePictureUrl} alt="profile"  /> : <CgProfile/>}</NavLink>
+                    <NavLink className="user-show-profile-link" exact to={`/users/${post.user.id}`}>{post.user.profilePictureUrl ? <img src={post.user.profilePictureUrl} alt="profile"  /> : <CgProfile/>}</NavLink>
                 </div>
                 
                 <div className="post-index-item-user-info-username">
