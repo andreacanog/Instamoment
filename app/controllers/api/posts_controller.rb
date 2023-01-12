@@ -23,6 +23,7 @@ class Api::PostsController < ApplicationController
     
 
     def update 
+        puts "update params: #{params}"
         @post = Post.find(params[:id])
 
         if @post&.update(post_params)
@@ -44,7 +45,7 @@ class Api::PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:title, :photo)
+        params.require(:post).permit(:user_id, :title, :photo)
     end
 
 end

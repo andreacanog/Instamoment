@@ -20,7 +20,25 @@ const PostIndexItem = ({ post, user }) => {
     const dispatch = useDispatch();
     const [comment, setComment] = useState("");
     const [showMenu, setShowMenu] = useState(false);
+    const [updatedTitle, setUpdatedTitle] = useState(post.title);
+    const [updatingPostTitle, setUpdatingPostTitle] = useState(false);
     
+
+    const handleUpdatePost = (e) => {
+        e.preventDefault();
+        const postToUpdate = {post: {userId: user.id, title: updatedTitle}, id: post.id}
+        dispatch(updatePost(postToUpdate));
+        setUpdatingPostTitle(false);
+        e.target.value = "";
+    };
+  
+  
+    const handleShowUpdatetitle = (e) => {
+        e.preventDefault();
+        setUpdatingPostTitle(true);
+    }
+
+
     const handleShowMore = () => {
       if (showMenu) return;
       setShowMenu(true);
@@ -40,12 +58,8 @@ const PostIndexItem = ({ post, user }) => {
     }, [showMenu]);
   
 
-    const Update = (e) => {
-      e.preventDefault();
-      dispatch(updatePost(post.id));
-    };
 
-    const Delete = (e) => {
+    const handleDeletePost = (e) => {
         e.preventDefault();
         dispatch(deletePost(post.id));
       };
@@ -69,7 +83,6 @@ const PostIndexItem = ({ post, user }) => {
         e.target.value = "";
         setComment("");
     };
-
    
 
   return (
@@ -100,10 +113,10 @@ const PostIndexItem = ({ post, user }) => {
                 <div className="post-index-item-dots">
                     {showMenu && (
                         <ul className="post-dropdown">
-                        <li className="post-dropdown">
-                            <button className="update-buttom-post" onClick={Update}>Edit</button>
-                            <button className="delete-buttom-post" onClick={Delete}>Delete</button>
-                        </li>
+                            <li className="post-dropdown">
+                                { (user.id === post.user_id || user.id === post.userId) ? <button className="update-buttom-post" onClick={handleShowUpdatetitle}>Edit</button> : <></>}
+                                { (user.id === post.user_id || user.id === post.userId) ? <button className="delete-buttom-post" onClick={handleDeletePost}>Delete</button> : <></>}
+                            </li>
                         </ul>
                     )}
                 </div>
@@ -140,7 +153,11 @@ const PostIndexItem = ({ post, user }) => {
             </div> */}
             <div className="post-index-item-caption-container">
                 <div className="post-caption-username">{post.username}</div>
-                <div className="post-caption-title">{post.title}</div>  
+                <div className="post-caption-title" style={{display: !updatingPostTitle ? "block" : "none"}} >{post.title}</div> 
+                    <div className="update-post-container" style={{display: updatingPostTitle ? "block" : "none"}}>
+                        <input type="text" className="comment-post-input" placeholder="Edit title" onChange={(e) => setUpdatedTitle(e.target.value)} value={updatedTitle} name=""/>
+                        <button className="update-post-button" onClick={handleUpdatePost}>Save</button>
+                    </div>
             </div>
         </div>
 

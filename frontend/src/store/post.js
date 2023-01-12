@@ -1,10 +1,12 @@
 import { RECEIVE_USER } from "./user";
 import csrfFetch from "./csrf";
 import { RECEIVE_COMMENT, REMOVE_COMMENT } from "./comment";
+import { RECEIVE_LIKE, REMOVE_LIKE } from "./like";
 
 export const RECEIVE_POSTS = 'posts/RECEIVE_POSTS';
 export const RECEIVE_POST = 'posts/RECEIVE_POST';
 export const REMOVE_POST = 'posts/REMOVE_POST';
+
 
 const receivePosts = (posts) => {
     return {
@@ -75,6 +77,7 @@ export const createPost = (post) => async (dispatch) => {
 
 
 export const updatePost = (post) => async (dispatch) => {
+    console.log("post inside updatePost", post)
     const res = await csrfFetch(`/api/posts/${post.id}`, {
         method: 'PUT',
         headers: {
@@ -129,6 +132,7 @@ const postReducer = (state = {}, action) => {
             if (action.comment !== undefined) {
                 post.comments[action.comment.id] = action.comment
             } 
+            // post.comments += 1;
             return newState
 
         case REMOVE_COMMENT:
@@ -136,7 +140,13 @@ const postReducer = (state = {}, action) => {
             let tempPost = newState[action.postId]
             delete tempPost.comments[action.commentId]
             return newState
-            
+        case RECEIVE_LIKE:
+            const postLike = newState[action.like.postId] 
+            postLike.likes += 1
+            return newState
+        // case REMOVE_LIKE:
+        //     postLike.likes -= 1
+        //     return newState
         case RECEIVE_USER:
             return {...state, ...action.user.posts}
         default:

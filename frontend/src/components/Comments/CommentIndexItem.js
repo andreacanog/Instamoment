@@ -45,7 +45,7 @@ const CommentIndexItem = ({comment, user, post}) => {
                 : ""} alt="profile" /> */}
                 </div>
                 <div className="post-index-item-comment-username">{comment.user !== undefined ? comment.user.username : "user"}</div>
-                <div className="post-index-item-comment-body">{comment.body}</div>
+                <div className="post-index-item-comment-body" style={{display: !updatingComment ? "block" : "none"}} >{comment.body}</div>
             </div>
             <div className="button-container-update-delete">
                 { (user.id === comment.user_id || user.id === comment.userId) ? <button className="delete-botton" onClick={handleDelete} >Delete</button> : <></>}
