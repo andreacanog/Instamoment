@@ -57,6 +57,7 @@ require 'open-uri'
   Follow.create!(follower_id: decorideas.id, followee_id: valenciaciudad.id)
   Follow.create!(follower_id: decorideas.id, followee_id: fcbarcelona.id)
   Follow.create!(follower_id: decorideas.id, followee_id: stevejobs.id)
+  Follow.create!(follower_id: decorideas.id, followee_id: zarastore.id)
     
   Follow.create!(follower_id: cutepets.id, followee_id: decorideas.id)
   Follow.create!(follower_id: cutepets.id, followee_id: appacademy.id)
@@ -247,5 +248,26 @@ require 'open-uri'
     post_41 = Post.new(user_id: appacademy.id, title: 'Cupppa Joe makes me happy! #coffee #coding #appacademy')
     post_41.photo.attach(io: URI.open('https://instapound-aa-dev.s3.us-west-1.amazonaws.com/matthew-coffe.jpg'), filename: 'matthew-coffe.jpg')
     post_41.save!
+
+    Comment.create!(user_id: stevejobs.id, post_id: post_41.id, body: 'I love this picture!')
+    Comment.create!(user_id: appacademy.id, post_id: post_41.id, body: 'Thanks Steve!')
+
+    Comment.create!(user_id: cutepets.id, post_id: post_38.id, body: 'So cute!')
+    Comment.create!(user_id: decorideas.id, post_id: post_38.id, body: 'Thanks!')
+
+    Comment.create!(user_id: sflocations.id, post_id: post_23.id, body: 'yayyy!')
+
+    Comment.create!(user_id: zarastore.id, post_id: post_5.id, body: 'Awwww')
+    Comment.create!(user_id: valenciaciudad.id, post_id: post_5.id, body: 'So cute!')
+    Comment.create!(user_id: fcbarcelona.id, post_id: post_5.id, body: 'I love cats!')
+
+
+    Like.create!(user_id: stevejobs.id, post_id: post_41.id)
+    Like.create!(user_id: appacademy.id, post_id: post_41.id)
+
+    Like.create!(user_id: cutepets.id, post_id: post_38.id)
+    Like.create!(user_id: decorideas.id, post_id: post_38.id)
+    Like.create!(user_id: sflocations.id, post_id: post_38.id)
+
 
 # end

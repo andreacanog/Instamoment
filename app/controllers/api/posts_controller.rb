@@ -2,7 +2,7 @@ class Api::PostsController < ApplicationController
     wrap_parameters include: Post.attribute_names + [:photo]
 
     def index 
-        puts current_user.followees.pluck("followee_id")
+
         current_followes = current_user.followees.pluck("followee_id")
         current_followes << current_user.id
         @posts = Post.where(user_id: current_followes).order(created_at: :desc)
