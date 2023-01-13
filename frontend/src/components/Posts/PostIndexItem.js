@@ -13,6 +13,7 @@ import LikeButton from "../Like";
 import CommentIndex from "../Comments/CommentIndex";
 import {deletePost, updatePost} from '../../store/post'
 import FollowButton from "../Follow";
+import { getCommentsForPost } from "../../store/post";
 
 
 
@@ -24,6 +25,11 @@ const PostIndexItem = ({ post, user }) => {
     const [showMenu, setShowMenu] = useState(false);
     const [updatedTitle, setUpdatedTitle] = useState(post.title);
     const [updatingPostTitle, setUpdatingPostTitle] = useState(false);
+
+    const comments = useSelector((state) => getCommentsForPost(state, post.id))
+
+
+   
     
     const handleUpdatePost = (e) => {
         e.preventDefault();
@@ -96,17 +102,13 @@ const PostIndexItem = ({ post, user }) => {
                 
             <div className="post-index-item-user-info">
                 <div className="user-post-profile-pic"> 
-                    {/* <NavLink className="user-show-profile-link" exact to={`/users/${user.id}`}><CgProfile/></NavLink> */}
-                    {/* <img src={post.user ? post.user.profilePictureUrl : ""} alt="profile" /> */}
-                    <NavLink className="user-show-profile-link" exact to={`/users/${post.user.id}`}>{post.user.profilePictureUrl ? <img src={post.user.profilePictureUrl} alt="profile"  /> : <CgProfile/>}</NavLink>
+                    <NavLink className="user-show-profile-link" exact to={`/users/${post.userId}`}>{post.userProfilePic ? <img src={post.user.profilePictureUrl} alt="profile"  /> : <CgProfile/>}</NavLink>
                 </div>
                 
                 <div className="post-index-item-user-info-username">
                     {post.username ? post.username : "Anonymous"}
                 </div>  
-                {/* <div className="post-index-item__user__info__location">
-                    {post?.location}
-                </div> */}
+    
             </div>
 
             <div className="post-index-item-dots-container">
@@ -115,8 +117,8 @@ const PostIndexItem = ({ post, user }) => {
                     {showMenu && (
                         <ul className="post-dropdown">
                             <li className="post-dropdown">
-                                { (user.id === post.user_id || user.id === post.userId) ? <button className="update-buttom-post" onClick={handleShowUpdatetitle}>Edit</button> : <></>}
-                                { (user.id === post.user_id || user.id === post.userId) ? <button className="delete-buttom-post" onClick={handleDeletePost}>Delete</button> : <></>}
+                                { (user.id === post.user.id|| user.id === post.userId) ? <button className="update-buttom-post" onClick={handleShowUpdatetitle}>Edit</button> : <></>}
+                                { (user.id === post.user.id || user.id === post.userId) ? <button className="delete-buttom-post" onClick={handleDeletePost}>Delete</button> : <></>}
                             </li>
                         </ul>
                     )}
@@ -145,7 +147,7 @@ const PostIndexItem = ({ post, user }) => {
         </div>
         <div className="post-count-likes-comments">
             <div className="likes-count"><p>{post.likes} likes</p></div>
-            <p>{post.commentCount} comments</p>
+            <p>{comments.length} comments</p>
         </div>
         <div className="post-index-item__caption">
             {/* <div className="post-index-item__caption__username">
@@ -165,7 +167,7 @@ const PostIndexItem = ({ post, user }) => {
         <div className="post-index-item-comments">
             <div className="view-comments">View all comments</div>
 
-                <CommentIndex postId={post.id}/>
+                <CommentIndex postId={post.id} comments={comments}/>
                 {/* {comments.map(comment => <p>{comment.body}</p>)} */}
              
             <div className="comment-container-button">

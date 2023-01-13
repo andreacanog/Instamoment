@@ -36,12 +36,13 @@ const SideNav = () => {
     return sessionUser ? (
         <div className='sidenav'>
             <button className="side-navbar-link insta"><div className='logo-side-nav'>Instapound</div></button>
-            <NavLink title="Home" className="side-navbar-link home" exact to="/feed/posts"><GrHomeRounded/><div className='side-nav-home'>Home</div></NavLink>
+            <NavLink className="side-navbar-link home" exact to="/feed/posts"><GrHomeRounded/><div className='side-nav-home'>Home</div></NavLink>
             
             {/* <form className="side-form-search search" onSubmit={handleSubmit}><FiSearch/>
                 <div className='side-nav-search'>Search</div>
                 <input type="text" value={search} onChange={(e) => setSearch(e.target.value)}></input>
             </form> */}
+            <NavLink className="side-navbar-link home" exact to="/feed/posts"><FiSearch/><div className='side-nav-search'>Search</div></NavLink>
             
             <a title="Create" onClick={openModal} className="side-navbar-link create"><AiOutlinePlusSquare/><div className='side-nav-create'>Create</div></a>
             {/* <NavLink title="Create" onClick={openModal} className="side-navbar-link create" exact to="/"><AiOutlinePlusSquare/><div className='side-nav-create'>Create</div></NavLink> */}

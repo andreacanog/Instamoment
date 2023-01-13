@@ -19,6 +19,7 @@ class Api::PostsController < ApplicationController
     def create
         @post = Post.new(post_params)
         @post.user_id = current_user.id
+        @user = current_user
         if @post.save!
           render :show
         else
@@ -29,7 +30,7 @@ class Api::PostsController < ApplicationController
 
     def update
         @post = Post.find(params[:id])
-
+        @user = @post.user
         if @post&.update(post_params)
             render :show
         else
@@ -40,7 +41,7 @@ class Api::PostsController < ApplicationController
     def destroy
         @post = Post.find(params[:id])
         if @post&.destroy
-            render :show
+            head :no_content
         else
             render json: { errors: @post.errors.full_messages }, status: :unprocessable_entity
         end

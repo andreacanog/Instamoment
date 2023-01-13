@@ -28,7 +28,7 @@ const UserShow = () => {
   
   if (!user) return null;
 
-  console.log(user.profilePictureUrl)
+ 
   
   return currentUser ? (
     <div className="user-show-container">

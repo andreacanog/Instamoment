@@ -14,10 +14,10 @@ const FollowButton = ({ user }) => {
     const handleClick = (e) => {
         e.preventDefault();
         if (followed) { 
-            console.log('user follows this user')
+            
             dispatch(deleteFollow(user.id)); 
         } else {
-            console.log('user does not follow this user')
+          
             dispatch(createFollow(user.id));
         }
         setFollowed(!followed);

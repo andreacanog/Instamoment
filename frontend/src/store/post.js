@@ -117,7 +117,7 @@ const postReducer = (state = {}, action) => {
             return {...state, ...action.posts}
             
         case RECEIVE_POST:
-            return {...state, [action.post.id]: action.post}
+            return {...state, [action.post.post.id]: action.post.post}
 
         case REMOVE_POST:
             delete newState[action.postId];
@@ -170,7 +170,7 @@ const postReducer = (state = {}, action) => {
             return newState
 
         case RECEIVE_USER:
-            return {...state, ...action.user.posts}
+            return action.user.posts;
         default:
             return state;
     }

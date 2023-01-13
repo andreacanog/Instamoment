@@ -6,9 +6,8 @@ import CommentIndexItem from "./CommentIndexItem";
 import { getPost } from "../../store/post";
 import {getCommentsForPost} from '../../store/post'
 
-const CommentIndex = ({postId}) => {
+const CommentIndex = ({postId, comments}) => {
     const dispatch = useDispatch();
-    const comments = useSelector((state) => getCommentsForPost(state, postId))
     const user = useSelector(state => state.session.user);
     const post = useSelector(getPost);  // post seems to be the function rather than the fetched posts from the store.
     

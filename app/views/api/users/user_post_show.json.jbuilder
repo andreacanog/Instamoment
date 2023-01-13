@@ -1,11 +1,7 @@
 json.user do
   json.extract! @user, :id, :username, :name, :bio, :created_at, :updated_at, :followee_ids, :follower_ids, :post_ids
+  json.profilePictureUrl @user.profile_picture.url #if @user.profile_picture.attached?
 end
-  json.user do
-    json.extract! @user, :id, :username, :name
-  #   json.profilePictureUrl url_for(@user.profile_picture) if @user.profile_picture.attached?
-    json.profilePictureUrl @user.profile_picture.url #if @user.profile_picture.attached?
-  end
 
   json.posts do 
     @user.posts.each do |post|
