@@ -186,7 +186,7 @@
 
 .first-row {
     display: flex;
-    /* flex-direction: row; */
+    padding-bottom: 15px;
 }
 
 .first-row > div {
@@ -195,13 +195,113 @@
 
 .second-row {
     display: flex;
-    /* flex-direction: row; */
 }
 .second-row > div {
-    margin-right: 50px;
+    /* margin-right: 10px; */
 }
 
 .third-row {
     display: flex;
-    /* flex-direction: row; */
+    flex-direction: column;
+}
+
+.user-username {
+    line-height: 25px;
+    font-weight: 400;
+    color: rgb(38, 38, 38);
+    overflow-x: visible;
+    font-size: 20px;
+    line-height: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    white-space: pre-line;
+    word-break: break-word;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.user-name {
+    line-height: 25px;
+    font-weight: 600;
+    color: rgb(38, 38, 38);
+    overflow-x: visible;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    white-space: pre-line;
+    word-break: break-word;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-top: 20px ;
+}
+
+.edit-follow-button-user {
+    padding-top: 12px;
+}
+
+.fa-solid {
+    padding-top: 20px;
+    font-size: 20px ;
+}
+
+.numbers-second-row {
+    line-height: 25px;
+    font-weight: 700;
+    color: rgb(38, 38, 38);
+    overflow-x: visible;
+    font-size: 16px;
+    line-height: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    padding-right: 3px;
+    margin-top: 5px;
+}
+
+.user-bio {
+    color: rgb(38, 38, 38);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    /* margin-block-start: 1em;
+    margin-block-end: 1em; */
+}
+
+.names-second-row {
+    margin-top: 5px;
+    padding-right: 40px;
+    font-weight: 400;
+    color: rgb(38, 38, 38);
+    font-size: 16px;
+    line-height: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.edit-profile-button {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: rgb(38, 38, 38);
+    text-align: center;
+    cursor: pointer;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    background-color: #EBEDF0;
+    border-radius: 4px;
+    padding: 8px 19px;
+}
+
+.edit-profile-button:hover {
+    background-color:  #ccccccc2;;
+    border-radius: 4px;
+}
+
+.settings-profile-button {
+    padding-top: 15px;
+    font-size: 25px ;
 }

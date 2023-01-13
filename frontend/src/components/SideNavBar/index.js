@@ -25,13 +25,6 @@ const SideNav = () => {
         modal.style.display = 'flex';
     }
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-
-    //     dispatch(getUser(user));
-        
-    // }
-
 
     return sessionUser ? (
         <div className='sidenav'>
@@ -45,13 +38,13 @@ const SideNav = () => {
             <NavLink className="side-navbar-link home" exact to="/feed/posts"><FiSearch/><div className='side-nav-search'>Search</div></NavLink>
             
             <a title="Create" onClick={openModal} className="side-navbar-link create"><AiOutlinePlusSquare/><div className='side-nav-create'>Create</div></a>
-            {/* <NavLink title="Create" onClick={openModal} className="side-navbar-link create" exact to="/"><AiOutlinePlusSquare/><div className='side-nav-create'>Create</div></NavLink> */}
             <NavLink title="Notifications"className="side-navbar-link notifications" exact to="/feed/posts"><AiOutlineHeart/><div className='side-nav-notifications'>Notifications</div></NavLink>
-            <NavLink title="Profile" className="side-navbar-link user-ico profile" exact to={`/users/${sessionUser.id}`}><CgProfile/><div className='side-nav-profile'>Profile</div></NavLink>
+            <NavLink title="Profile" className="side-navbar-link user-ico profile" exact to={`/users/${sessionUser.id}`}>{sessionUser?.profilePictureUrl ? <img className='profile-nav-bar' src={sessionUser?.profilePictureUrl} alt="profile"  /> : <CgProfile/>}<div className='side-nav-profile'>Profile</div></NavLink>
             <button title="Settings" className="side-navbar-link bars settings"><MoreButton user={sessionUser}/><div className='side-nav-more'>More</div></button>
+
+        
         </div>
     ) : <></>;
 };
     
 export default SideNav;
-

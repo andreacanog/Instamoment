@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { deleteComment, updateComment} from "../../store/comment";
 import "./comment.css";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 
 
@@ -44,7 +45,7 @@ const CommentIndexItem = ({comment, user, post}) => {
                 ? post.user.profilePhotoUrl
                 : ""} alt="profile" /> */}
                 </div>
-                <div className="post-index-item-comment-username">{comment.user !== undefined ? comment.user.username : "user"}</div>
+                <NavLink exact to={`/users/${user.id}`}><div className="post-index-item-comment-username">{comment.user !== undefined ? comment.user.username : "user"}</div></NavLink>
                 <div className="post-index-item-comment-body" style={{display: !updatingComment ? "block" : "none"}} >{comment.body}</div>
             </div>
             <div className="button-container-update-delete">

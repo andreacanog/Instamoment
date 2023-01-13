@@ -4,6 +4,7 @@ import {RiUserUnfollowLine} from "react-icons/ri"; //unfollow
 import { useSelector, useDispatch } from "react-redux";
 import { deleteFollow, createFollow } from "../../store/follow";
 import { useState } from "react";
+import "./follow.css"
 
 
 const FollowButton = ({ user }) => {
@@ -35,7 +36,7 @@ const FollowButton = ({ user }) => {
         return (
             <div className="follow-button-container">
                 <button className="follow-button" onClick={handleClick}>
-                    <div className="follow-button-person follow">Following<RiUserFollowLine/></div>
+                    <div className="follow-button-person follow">Following <RiUserFollowLine/></div>
                 </button>
             </div>
         )
@@ -43,7 +44,7 @@ const FollowButton = ({ user }) => {
         return (
             <div className="follow-button-container">
                 <button className="follow-button" onClick={handleClick}>
-                    <div className="follow-button-person unfollow">Follow<RiUserUnfollowLine/></div>
+                    <div className="follow-button-person unfollow">Follow <RiUserUnfollowLine/></div>
                 </button>
             </div>
         )

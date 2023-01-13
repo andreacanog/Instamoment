@@ -57,9 +57,9 @@ const UserShow = () => {
           </div>
 
           <div className="second-row">
-            <div><span>{user.postIds.length} Posts</span></div>
-            <div><span>{user.followerIds.length} Followers</span></div>
-            <div><span>{user.followeeIds.length} Following</span></div>
+            <div className="numbers-second-row">{user.postIds.length}</div><div className="names-second-row"> Posts</div>
+            <div className="numbers-second-row">{user.followerIds.length}</div><div className="names-second-row"> Followers</div>
+            <div className="numbers-second-row">{user.followeeIds.length}</div><div className="names-second-row"> Following</div>
           </div>
 
           <div className="third-row">

@@ -7,10 +7,6 @@ class Api::FollowsController < ApplicationController
         @follow = Follow.new(follow_params)
 
         @follow.follower_id = current_user.id
-
-        puts "#= #= #=" 
-        puts @follow.followee_id
-
         if @follow.save!
             render :show
         else
