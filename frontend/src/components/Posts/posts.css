@@ -386,3 +386,12 @@
     margin-top: 10px;
     margin-left: 70px;
 }
+
+/* @media screen and (max-width: 880px) {
+    .post-index-item-image-container {
+        width: 100%;
+    }
+    .post-index-item {
+        margin-top: 0;
+    }  
+} */

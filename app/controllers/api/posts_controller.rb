@@ -6,6 +6,8 @@ class Api::PostsController < ApplicationController
         current_followes = current_user.followees.pluck("followee_id")
         current_followes << current_user.id
         @posts = Post.where(user_id: current_followes).order(created_at: :desc)
+
+        
         # @posts = Post.where(user_id: params[:user_id])
         render :index
     end
@@ -18,6 +20,7 @@ class Api::PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
+
         @post.user_id = current_user.id
         @user = current_user
         if @post.save!

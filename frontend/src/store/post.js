@@ -114,7 +114,8 @@ const postReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_POSTS:
-            return {...state, ...action.posts}
+            // return {...state, ...action.posts}
+            return action.posts
             
         case RECEIVE_POST:
             return {...state, [action.post.post.id]: action.post.post}

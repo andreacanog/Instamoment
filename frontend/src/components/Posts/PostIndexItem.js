@@ -132,52 +132,54 @@ const PostIndexItem = ({ post, user }) => {
                 ? post.photoUrl
                 : "https://i.imgur.com/8Q9QY7C.png"} alt="post" />
         </div>
-
-        <div className="post-icons-container">
-
-            <div className="post-icons-left">
-                <LikeButton post={post} user={user}/>
-                <div><FaRegComment/></div>
-            </div>
-
-            <div className="post-icons-right">
-                <div><BiBookmark/></div>
-            </div>
-            
-        </div>
-        <div className="post-count-likes-comments">
-            <div className="likes-count"><p>{post.likes} likes</p></div>
-            <p>{comments.length} comments</p>
-        </div>
+        
         <div className="post-index-item__caption">
-            {/* <div className="post-index-item__caption__username">
-                {post.user ? post.user
-                    .username : "Anonymous"}
-            </div> */}
-            <div className="post-index-item-caption-container">
-                <div className="post-caption-username">{post.username}</div>
-                <div className="post-caption-title" style={{display: !updatingPostTitle ? "block" : "none"}} >{post.title}</div> 
-                    <div className="update-post-container" style={{display: updatingPostTitle ? "block" : "none"}}>
-                        <input type="text" className="comment-post-input" placeholder="Edit title" onChange={(e) => setUpdatedTitle(e.target.value)} value={updatedTitle} name=""/>
-                        <button className="update-post-button" onClick={handleUpdatePost}>Save</button>
-                    </div>
+            <div className="post-icons-container">
+
+                <div className="post-icons-left">
+                    <LikeButton post={post} user={user}/>
+                    <div><FaRegComment/></div>
+                </div>
+
+                <div className="post-icons-right">
+                    <div><BiBookmark/></div>
+                </div>
+                
             </div>
-        </div>
-
-        <div className="post-index-item-comments">
-            <div className="view-comments">View all comments</div>
-
-                <CommentIndex postId={post.id} comments={comments}/>
-                {/* {comments.map(comment => <p>{comment.body}</p>)} */}
-             
-            <div className="comment-container-button">
-                <input className='create-comment-input' onKeyDown={handleSubmitWithEnter} onChange={(e) => setComment(e.target.value)} value={comment} type="text" placeholder="Add a comment..." />
-                <button className="post-button" onClick={handleSubmit}>Post</button>
+            <div className="post-count-likes-comments">
+                <div className="likes-count"><p>{post.likes} likes</p></div>
+                <p>{comments.length} comments</p>
+            </div>
+            <div className="post-index-item__caption">
+                {/* <div className="post-index-item__caption__username">
+                    {post.user ? post.user
+                        .username : "Anonymous"}
+                </div> */}
+                <div className="post-index-item-caption-container">
+                    <div className="post-caption-username">{post.username}</div>
+                    <div className="post-caption-title" style={{display: !updatingPostTitle ? "block" : "none"}} >{post.title}</div> 
+                        <div className="update-post-container" style={{display: updatingPostTitle ? "block" : "none"}}>
+                            <input type="text" className="comment-post-input" placeholder="Edit title" onChange={(e) => setUpdatedTitle(e.target.value)} value={updatedTitle} name=""/>
+                            <button className="update-post-button" onClick={handleUpdatePost}>Save</button>
+                        </div>
+                </div>
             </div>
 
-        </div>
+            <div className="post-index-item-comments">
+                <div className="view-comments">View all comments</div>
 
-        <div className="item-bottom-line">
+                    <CommentIndex postId={post.id} comments={comments}/>
+                    {/* {comments.map(comment => <p>{comment.body}</p>)} */}
+                
+                <div className="comment-container-button">
+                    <input className='create-comment-input' onKeyDown={handleSubmitWithEnter} onChange={(e) => setComment(e.target.value)} value={comment} type="text" placeholder="Add a comment..." />
+                    <button className="post-button" onClick={handleSubmit}>Post</button>
+                </div>
+
+            </div>
+
+            <div className="item-bottom-line">
+            </div>
         </div>
         
     </div>
