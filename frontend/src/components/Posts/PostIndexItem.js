@@ -138,12 +138,12 @@ const PostIndexItem = ({ post, user }) => {
 
                 <div className="post-icons-left">
                     <LikeButton post={post} user={user}/>
-                    <div><FaRegComment/></div>
+                    {/* <div><FaRegComment/></div> */}
                 </div>
 
-                <div className="post-icons-right">
+                {/* <div className="post-icons-right">
                     <div><BiBookmark/></div>
-                </div>
+                </div> */}
                 
             </div>
             <div className="post-count-likes-comments">
@@ -166,7 +166,7 @@ const PostIndexItem = ({ post, user }) => {
             </div>
 
             <div className="post-index-item-comments">
-                <div className="view-comments">View all comments</div>
+                {/* <div className="view-comments">View all comments</div> */}
 
                     <CommentIndex postId={post.id} comments={comments}/>
                     {/* {comments.map(comment => <p>{comment.body}</p>)} */}

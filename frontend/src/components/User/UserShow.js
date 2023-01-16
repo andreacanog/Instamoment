@@ -50,9 +50,9 @@ const UserShow = () => {
               {currentUser.id === user.id ?  <button className="edit-profile-button">Edit Profile</button> : <FollowButton user={user}/>}
             </div>
 
-            <div className="setting-button-user">
+            {/* <div className="setting-button-user">
             {currentUser.id === user.id ?  <button className="settings-profile-button"><FiSettings/></button> : <button className="more-profile-button"><i className="fa-solid fa-ellipsis"></i></button>}
-            </div>
+            </div> */}
 
           </div>
 
