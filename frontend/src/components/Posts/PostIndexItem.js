@@ -27,9 +27,6 @@ const PostIndexItem = ({ post, user }) => {
     const [updatingPostTitle, setUpdatingPostTitle] = useState(false);
 
     const comments = useSelector((state) => getCommentsForPost(state, post.id))
-
-
-   
     
     const handleUpdatePost = (e) => {
         e.preventDefault();
@@ -39,12 +36,10 @@ const PostIndexItem = ({ post, user }) => {
         e.target.value = "";
     };
   
-  
     const handleShowUpdatetitle = (e) => {
         e.preventDefault();
         setUpdatingPostTitle(true);
     }
-
 
     const handleShowMore = () => {
       if (showMenu) return;
@@ -57,15 +52,11 @@ const PostIndexItem = ({ post, user }) => {
         const closeMenu = () => {
             setShowMenu(false);
         };
-  
         document.addEventListener('click', closeMenu);
-    
         return () => document.removeEventListener("click", closeMenu);
 
     }, [showMenu]);
   
-
-
     const handleDeletePost = (e) => {
         e.preventDefault();
         dispatch(deletePost(post.id));

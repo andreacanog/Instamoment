@@ -19,9 +19,7 @@ function PostCreateForm () {
 
     const handleSubmit = async e => {
         e.preventDefault();
-
         const formData = new FormData();
-
         formData.append('post[title]', title);
 
         if (photoFile) {
