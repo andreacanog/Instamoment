@@ -18,18 +18,20 @@ For the frontend I used JavaScript. React and Redux were used to render componen
 
 #### Post
 Users can create, update and delete their own posts.
-
+![](https://github.com/andreacanog/Instapound/blob/main/frontend/assets/post-instapound.gif)
 
 #### Comments
 Users can create, update and delete their own comments. Users can comment on their own post and on other users' post.
-
+![](https://github.com/andreacanog/Instapound/blob/main/frontend/assets/comments-instapound.gif)
 
 #### Likes
 Users can like and unlike a post.
+![](https://github.com/andreacanog/Instapound/blob/main/frontend/assets/likes-instagram.gif)
 
 
 #### Follows
 Users can follow and unfullow other users.
+![](https://github.com/andreacanog/Instapound/blob/main/frontend/assets/follows-instapound.gif)
 
 
 ### Significant Code
