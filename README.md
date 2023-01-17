@@ -33,6 +33,27 @@ Users can follow and unfullow other users.
 
 
 ### Significant Code
+```JavaScript
+  const handleSubmit = async e => {
+      e.preventDefault();
+      const formData = new FormData();
+      formData.append('post[title]', title);
+
+      if (photoFile) {
+          formData.append('post[photo]', photoFile);
+      }
+
+      dispatch(createPost(formData));
+      setTitle("");
+      setPhotoFile(null);
+      setPhotoUrl(null);
+      setTimeout(() => {
+          let modal = document.getElementById('post-create-modal');
+          modal.style.display = 'none';
+      }, 1000)
+  }
+
+```
 
 
 ### Future Features 
