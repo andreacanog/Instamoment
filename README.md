@@ -33,6 +33,8 @@ Users can follow and unfullow other users.
 
 
 ### Significant Code
+Function handleling the submition of a post
+
 ```JavaScript
   const handleSubmit = async e => {
       e.preventDefault();
@@ -54,6 +56,7 @@ Users can follow and unfullow other users.
   }
 
 ```
+
 
 
 ### Future Features 
