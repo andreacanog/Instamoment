@@ -4,6 +4,7 @@
     max-width: 100px;
     padding-left: 125px;
     justify-content: space-evenly;
+    padding-left: 289px;
 }
 
 .delete-botton {
@@ -22,6 +23,7 @@
     cursor: pointer;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
     padding-right: 13px;
+    margin-left: 34px;
 }
 
 .update-button {
@@ -75,4 +77,36 @@
 
 .post-index-item-comment-username {
     padding-right: 10px;
+}
+
+div.comment-line {
+    display: inline-flex;
+}
+
+.update-comment-button {
+    border: none;
+    background-color: #fafafa;;
+    color: #b3dbff;
+    font-size: 12px;
+    box-sizing: border-box;
+    width: auto;
+    font-weight: 600px;
+    height: auto;
+    border-top-left-radius: 2px;
+    text-overflow: ellipsis;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+    padding-right: 13px;
+    margin-left: 34px;
+}
+
+.comment-update-input{
+    /* border-color: #fafafa; */
+    background-color: #fafafa;
+}
+
+.comment-update-input:focus {
+    outline: none;
 }

@@ -34,7 +34,11 @@ const CommentIndexItem = ({comment, user, post}) => {
 
     const handleShowUpdateField = (e) => {
         e.preventDefault();
+        if (updatingComment === true) {
+            setUpdatingComment(false) 
+        } else {
         setUpdatingComment(true);
+        }
     }
 
 
@@ -45,17 +49,16 @@ const CommentIndexItem = ({comment, user, post}) => {
                 ? post.user.profilePhotoUrl
                 : ""} alt="profile" /> */}
                 </div>
-                <NavLink exact to={`/users/${user.id}`}><div className="post-index-item-comment-username">{comment.user !== undefined ? comment.user.username : "user"}</div></NavLink>
-                <div className="post-index-item-comment-body" style={{display: !updatingComment ? "block" : "none"}} >{comment.body}</div>
-            </div>
-            <div className="button-container-update-delete">
-                { (user.id === comment.user_id || user.id === comment.userId) ? <button className="delete-botton" onClick={handleDelete} >Delete</button> : <></>}
-                { (user.id === comment.user_id || user.id === comment.userId) ? <button className="update-button" onClick={handleShowUpdateField} >Edit
-                </button> : <></>}
-            </div>
-            <div className="update-comment-container" style={{display: updatingComment ? "block" : "none"}}>
-                <input type="text" className="comment-update-input" placeholder="Update Comment" onChange={(e) => setUpdatedComment(e.target.value)} value={updatedComment} name=""/>
-                <button className="update-comment-button" onClick={handleUpdateSubmit}>Save Comment</button>
+                <div className="comment-line">
+                    <NavLink exact to={`/users/${user.id}`}><div className="post-index-item-comment-username">{comment.user !== undefined ? comment.user.username : "user"}</div></NavLink>
+                    <h3 className="post-index-item-comment-body" style={{display: !updatingComment ? "block" : "none"}} >{comment.body}</h3>
+                    <input type="text" className="comment-update-input" placeholder="Update Comment" onChange={(e) => setUpdatedComment(e.target.value)} value={updatedComment} name="" style={{display: updatingComment ? "block" : "none"}}/>
+                    <div className="button-container-update-delete"> 
+                        <button className="update-comment-button" onClick={handleUpdateSubmit} style={{display: updatingComment ? "block" : "none"}}>Save</button>
+                        { (user.id === comment.user_id || user.id === comment.userId) ? <button className="update-button" onClick={handleShowUpdateField} >{updatingComment ? "Close" : "Edit"}</button> : <></>}
+                        { (user.id === comment.user_id || user.id === comment.userId) ? <button className="delete-botton" onClick={handleDelete} >{updatingComment ? "" : "Delete"}</button> : <></>}
+                    </div>
+                </div>
             </div>
         </div>
 

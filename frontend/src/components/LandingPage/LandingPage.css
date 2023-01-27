@@ -105,3 +105,19 @@
         background-color: transparent;
     }
 }
+
+.links {
+    font-size: 50px;
+    text-align: center;
+    padding-left: 500px;
+    margin-bottom: 120px;
+}
+
+.linkedin {
+    color: var(--btn-bg);
+    padding-right: 10px;
+}
+
+.github {
+    color: var(--btn-bg);
+}

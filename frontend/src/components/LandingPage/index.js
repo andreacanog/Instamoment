@@ -8,6 +8,8 @@ import pic2 from '../../login-assets/pic2.png'
 import pic3 from '../../login-assets/pic3.png'
 import pic4 from '../../login-assets/pic4.png'
 import { Redirect } from 'react-router-dom';
+import {AiFillLinkedin} from 'react-icons/ai'
+import {BsGithub} from 'react-icons/bs'
 
 
 const LandingPage = () => {
@@ -71,6 +73,14 @@ const LandingPage = () => {
                         </div>
                     </div> */}
                 </div>
+            </div>
+            <div className='links'>
+                <a href="https://www.linkedin.com/in/andrea-cano-gisbert-4402151b8/" target="_blank" rel="noreferrer">
+                    <i className="linkedin"><AiFillLinkedin/></i>
+                </a>
+                <a href="https://github.com/andreacanog" target="_blank">
+                    <i className="github"><BsGithub/></i>
+                </a>
             </div>
         </div>
     ) : <></>

@@ -159,8 +159,8 @@ const postReducer = (state = {}, action) => {
             return newState
 
         case RECEIVE_LIKE:
-            const postLike = newState[action.like.postId] 
-            postLike.likes += 1
+            const postLike = newState[action.like.postId]; 
+            postLike.likes === undefined ? postLike.likes = 1 : postLike.likes += 1
             postLike.liked = true
             return newState
 

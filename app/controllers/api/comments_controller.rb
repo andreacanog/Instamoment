@@ -20,8 +20,6 @@ class Api::CommentsController < ApplicationController
         @comment.user_id = current_user.id
 
         if @comment.save!
-            # return render json: @comment
-            # render :show
             render 'api/comments/show_comment_post'
         else
             render json: { errors: @comment.errors.full_messages }, status: :unprocessable_entity

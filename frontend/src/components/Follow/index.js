@@ -15,10 +15,8 @@ const FollowButton = ({ user }) => {
     const handleClick = (e) => {
         e.preventDefault();
         if (followed) { 
-            
             dispatch(deleteFollow(user.id)); 
         } else {
-          
             dispatch(createFollow(user.id));
         }
         setFollowed(!followed);

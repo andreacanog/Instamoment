@@ -1,4 +1,5 @@
 import csrfFetch from "./csrf";
+import { fetchPost } from "./post";
 
 export const RECEIVE_LIKE = 'comments/RECEIVE_LIKE';
 export const RECEIVE_LIKES = 'comments/RECEIVE_LIKES';
@@ -58,6 +59,7 @@ export const createLike = (postID) => async (dispatch) => {
     if (res.ok) {
         const like = await res.json();
         dispatch(receiveLike(like));
+        // dispatch(fetchPost(postID));
     }
 }
 
@@ -68,6 +70,7 @@ export const deleteLike = (postId) => async (dispatch) => {
 
     if (res.ok) {
         dispatch(removeLike(postId));
+        // dispatch(fetchPost(postId));
     }
 }
 

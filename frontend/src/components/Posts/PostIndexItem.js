@@ -45,6 +45,9 @@ const PostIndexItem = ({ post, user }) => {
       if (showMenu) return;
       setShowMenu(true);
     };
+
+    // console.log("post", post)
+    // console.log("post.likes", post.likes)
     
     useEffect(() => {
         if (!showMenu) return;
@@ -56,6 +59,12 @@ const PostIndexItem = ({ post, user }) => {
         return () => document.removeEventListener("click", closeMenu);
 
     }, [showMenu]);
+
+    // useEffect(() => {
+    //     if (post.liked) {
+    //         setLiked(true) 
+    //     }
+    // }, [post])
   
     const handleDeletePost = (e) => {
         e.preventDefault();
@@ -135,11 +144,12 @@ const PostIndexItem = ({ post, user }) => {
                 {/* <div className="post-icons-right">
                     <div><BiBookmark/></div>
                 </div> */}
-                
+    
             </div>
             <div className="post-count-likes-comments">
-                <div className="likes-count"><p>{post.likes} likes</p></div>
-                <p>{comments.length} comments</p>
+                <div className="likes-count"><p>{(post.likes === 0 || post.likes === undefined) ? "" : post.likes + "  likes"}</p></div>
+                <p className="comments-count">{(comments.length === 0) ? "" : comments.length + "  comments"}</p>
+                
             </div>
             <div className="post-index-item__caption">
                 {/* <div className="post-index-item__caption__username">
