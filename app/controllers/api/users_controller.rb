@@ -1,5 +1,21 @@
 class Api::UsersController < ApplicationController
     wrap_parameters include: User.attribute_names + ['password']
+
+    def index 
+      if params[:type] == "query"
+        @users = User.where("username LIKE ?", params[:query])
+
+      elsif (params[:type] == "suggestions")
+          currentUserFollowees = current_user.followees.pluck("followee_id")
+          currentUserFollowees.push(current_user.id)
+          @users = User.where.not(id: currentUserFollowees).limit(5)
+
+      else
+        @users = User.all
+      end
+
+      render :index
+    end
   
     def create
       @user = User.new(user_params)

@@ -30,12 +30,20 @@ export const getUser = (userId) => (state) => {
     return state?.users ? state.users[userId] : null;   
 }
 
-export const fetchUsers = () => async (dispatch) => {
-    const res = await csrfFetch('/api/users');
+// export const fetchUsers = () => async (dispatch) => {
+//     const res = await csrfFetch('/api/users');
 
-    if (res.ok) {
-        const users = await res.json();
-        dispatch(receiveUsers(users));
+//     if (res.ok) {
+//         const users = await res.json();
+//         dispatch(receiveUsers(users));
+//     }
+// }
+
+export const fetchUsers = (type) => async dispatch => {
+    const res = await csrfFetch(`/api/users?type=${type}`);
+    if(res.ok) {
+      const users = await res.json();
+      dispatch(receiveUsers(users));
     }
 }
 

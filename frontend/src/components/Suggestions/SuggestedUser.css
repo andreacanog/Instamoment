@@ -1,0 +1,41 @@
+.suggested-user-container {
+    display: block;
+    position: absolute;
+    padding-left: 1000px;
+    top: 10px;
+    /* border: 2px solid blue; */
+    padding-top: 94px;
+}
+
+.suggested-user-header {
+    color: rgba(142, 142, 142);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.profile-pic-suggestions {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.suggested-user-item-left{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.suggested-user-item-left-info {
+    font-weight: 600;
+    color: rgba(38, 38, 38); 
+    font-size: 14px;
+    line-height: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    text-align: inherit;
+    pointer-events: auto;
+    margin-bottom: 10px;
+}
+

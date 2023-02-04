@@ -47,10 +47,7 @@ export const fetchFollow = (followId) => async (dispatch) => {
 
 export const createFollow = (followeeId) => async (dispatch) => {
     const follow = {
-        // follow: {
-            // followerId: currentUser,
             followeeId
-        // }
     }
     const res = await csrfFetch('/api/follows', {
         method: 'POST',

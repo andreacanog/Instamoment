@@ -7,6 +7,8 @@ import PostIndex from './components/Posts/PostIndex';
 import SideNavBar from './components/SideNavBar';
 import UserShow from './components/User/UserShow';
 import PostCreateForm from './components/Posts/PostCreateForm'; 
+import SuggestedUsers from './components/Suggestions/SuggestedUsers';
+
 
 
 function App() {
@@ -25,7 +27,9 @@ function App() {
         <Route exact path="/">
             <LandingPage/>
         </Route>
-        <Route exact path="/feed/posts" component={PostIndex}>
+        <Route exact path="/feed/posts">
+          <PostIndex/>
+          <SuggestedUsers/>
         </Route>
         <Route path='/users/:userId'>
           <UserShow/>

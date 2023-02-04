@@ -24,10 +24,9 @@ const FollowButton = ({ user }) => {
 
     useEffect(() => {
         if (user.followerIds.includes(currentUser.id)) {
-            setFollowed(true) // if the post has likes, set the like button to be liked
+            setFollowed(true) 
         }
     }, [dispatch])
-
 
 
     if (followed) {
