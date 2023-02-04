@@ -42,7 +42,7 @@ const SuggestedUsers = () => {
                                 </div>
                                 <div className="suggested-user-item-right">
                                     <br/>
-                                    <FollowButton user={user} />
+                                    <FollowButton user={user}  />
                                 </div>
                             </div>
                         </div>
