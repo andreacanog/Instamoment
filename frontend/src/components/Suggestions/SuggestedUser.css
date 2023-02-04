@@ -26,6 +26,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 300px;
 }
 
 .suggested-user-item-left-info {
@@ -37,5 +38,6 @@
     text-align: inherit;
     pointer-events: auto;
     margin-bottom: 10px;
+
 }
 

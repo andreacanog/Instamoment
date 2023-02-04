@@ -38,7 +38,7 @@ const SuggestedUsers = () => {
                                 <NavLink className="user-show-profile-link" exact to={`/users/${user.id}`}>{user.profilePictureUrl ? <img src={user.profilePictureUrl} alt="profile"  /> : <></>}</NavLink>
                                 {/* <img src={user.profilePictureUrl} alt="user-profile-pic" className="profile-pic-suggestions"/> */}
                                 <div className="suggested-user-item-left-info">
-                                    <p>{user.username}</p>
+                                    <p>{user !== sessionUser ? user.username : <></>}</p>
                                 </div>
                                 <div className="suggested-user-item-right">
                                     <br/>

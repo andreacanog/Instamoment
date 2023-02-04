@@ -201,11 +201,13 @@
 .unliked svg{
     color: black;
     fill: black;
+    cursor: pointer;
 }
 
 .liked svg{
     color: red;
     fill: red;
+    cursor: pointer;
 }
 
 .post-create-form-container {
