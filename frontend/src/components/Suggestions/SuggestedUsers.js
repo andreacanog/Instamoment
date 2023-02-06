@@ -44,9 +44,10 @@ const SuggestedUsers = () => {
                                     <br/>
                                     <FollowButton user={user}  />
                                 </div>
-                                
+                               
                             </div>
                         </div>
+                       
                     )
                 })}
             </div>
