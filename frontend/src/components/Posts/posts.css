@@ -406,9 +406,13 @@
     }  
 } */
 
+.cancel-button-title {
+    margin-left: 10px;
+}
+
 .comment-post-input {
     border: none;
-    padding-top: 15px;
+    padding-top: -4px;
     background-color: #fafafa;
     width: 27vw;
 }
@@ -416,7 +420,7 @@
 .update-post-button {
     background-color: #fafafa;
     color: #9ccffc;
-    font-size: 12px;
+    font-size: 13px;
     box-sizing: border-box;
     width: auto;
     font-weight: 600px;

@@ -41,6 +41,11 @@ const PostIndexItem = ({ post, user }) => {
         setUpdatingPostTitle(true);
     }
 
+    const handleCancelTitle = (e) => {
+        e.preventDefault();
+        setUpdatingPostTitle(false);
+    }
+
     const handleShowMore = () => {
       if (showMenu) return;
       setShowMenu(true);
@@ -156,6 +161,7 @@ const PostIndexItem = ({ post, user }) => {
                         <div className="update-post-container" style={{display: updatingPostTitle ? "block" : "none"}}>
                             <input type="text" className="comment-post-input" placeholder="Edit title" onChange={(e) => setUpdatedTitle(e.target.value)} value={updatedTitle} name=""/>
                             <button className="update-post-button" onClick={handleUpdatePost}>Save</button>
+                            <button className="update-post-button cancel-button-title" onClick={handleCancelTitle}>Cancel</button>
                         </div>
                 </div>
             </div>
