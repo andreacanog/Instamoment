@@ -46,8 +46,6 @@ const PostIndexItem = ({ post, user }) => {
       setShowMenu(true);
     };
 
-    // console.log("post", post)
-    // console.log("post.likes", post.likes)
     
     useEffect(() => {
         if (!showMenu) return;
@@ -60,11 +58,7 @@ const PostIndexItem = ({ post, user }) => {
 
     }, [showMenu]);
 
-    // useEffect(() => {
-    //     if (post.liked) {
-    //         setLiked(true) 
-    //     }
-    // }, [post])
+
   
     const handleDeletePost = (e) => {
         e.preventDefault();

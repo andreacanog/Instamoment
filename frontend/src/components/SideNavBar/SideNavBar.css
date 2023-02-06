@@ -58,6 +58,15 @@
     scale: 1.2;
 }
 
+.settings:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50px;
+}
+
+.settings:hover svg {
+    scale: 1.2;
+}
+
 .bars {
     margin-top: 250px;
 }

@@ -41,3 +41,14 @@
 
 }
 
+.suggested-user-container{
+    z-index: -1;
+}
+
+.suggested-user-item-left-info{
+    margin-top: 10px;
+}
+
+.suggested-user-item-right{
+    margin-bottom: 10px;
+}

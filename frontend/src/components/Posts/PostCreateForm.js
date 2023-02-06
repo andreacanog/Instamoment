@@ -51,7 +51,7 @@ function PostCreateForm () {
         }
     }
 
-    const preview = photoUrl ? <img src={photoUrl} alt="" height="200" /> : null;
+    const preview = photoUrl ? <img src={photoUrl} alt="" height="300" /> : null;
    
     const closeModal = (e) => {
         e.preventDefault();
@@ -73,7 +73,8 @@ function PostCreateForm () {
                         value={title}
                         onChange={handleInput}/>
                     <input className="file-container" type="file" ref={fileRef} onChange={handleFile}/> 
-                    <h3>Image preview</h3>
+                    <br/>
+                    <h3></h3>
                         {preview}
                     <button className='create-pots-container'>Make a new post</button>
                 </form>
