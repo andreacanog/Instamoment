@@ -4,14 +4,14 @@
     max-width: 100px;
     padding-left: 125px;
     justify-content: space-evenly;
-    padding-left: 289px;
+    padding-left: 132px;
 }
 
 .delete-botton {
     border: none;
     background-color: #fafafa;;
     color: #b3dbff;
-    font-size: 12px;
+    font-size: 13px;
     box-sizing: border-box;
     width: auto;
     font-weight: 600px;
@@ -23,14 +23,14 @@
     cursor: pointer;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
     padding-right: 13px;
-    margin-left: 34px;
+    margin-left: 19px;
 }
 
 .update-button {
     border: none;
     background-color: #fafafa;;
     color: #b3dbff;
-    font-size: 12px;
+    font-size: 13px;
     box-sizing: border-box;
     width: auto;
     font-weight: 600px;
@@ -97,7 +97,7 @@ div.comment-line {
     border: none;
     background-color: #fafafa;;
     color: #b3dbff;
-    font-size: 12px;
+    font-size: 13px;
     box-sizing: border-box;
     width: auto;
     font-weight: 600px;
@@ -110,6 +110,10 @@ div.comment-line {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
     padding-right: 13px;
     margin-left: 34px;
+}
+
+.update-comment-button:hover {
+    color: #1877F2;
 }
 
 .comment-update-input{
