@@ -1,7 +1,8 @@
 .suggested-user-container {
     display: block;
     position: absolute;
-    padding-left: 1000px;
+    /* padding-left: 1000px; */
+    margin-left: 1000px;
     top: 10px;
     /* border: 2px solid blue; */
     padding-top: 94px;
@@ -44,7 +45,7 @@
 }
 
 .suggested-user-container{
-    z-index: -1;
+    /* z-index: -1; */
 }
 
 .suggested-user-item-left-info{

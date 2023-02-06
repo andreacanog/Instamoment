@@ -21,7 +21,7 @@ const SuggestedUsers = () => {
 
     useEffect(() => {
         dispatch(fetchUsers("suggestions"))
-    }, [dispatch])
+    }, [dispatch, sessionUser])
 
     return (
         <div className="suggested-user-container">
@@ -32,7 +32,7 @@ const SuggestedUsers = () => {
             </div>
             <div className="suggested-user-list">
                 {users && users.map(user => {
-                    return (
+                    return user.id !== sessionUser.id ? (
                         <div className="suggested-user-item" key={user.id}>
                             <div className="suggested-user-item-left">
                                 <NavLink className="user-show-profile-link" exact to={`/users/${user.id}`}>{user.profilePictureUrl ? <img src={user.profilePictureUrl} alt="profile"  /> : <></>}</NavLink>
@@ -48,7 +48,7 @@ const SuggestedUsers = () => {
                             </div>
                         </div>
                        
-                    )
+                    ) : <></>
                 })}
             </div>
         </div>

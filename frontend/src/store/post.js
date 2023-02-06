@@ -51,7 +51,6 @@ export const getCommentsForPost = (state, postId) => {
 
 export const fetchPosts = () => async (dispatch) => {
     const res = await csrfFetch('/api/posts');
-
     if (res.ok) {
         const posts = await res.json();
         dispatch(receivePosts(posts));
@@ -111,7 +110,6 @@ export const deletePost = (postId) => async (dispatch) => {
 const postReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = {...state};
-
     switch (action.type) {
         case RECEIVE_POSTS:
             // return {...state, ...action.posts}

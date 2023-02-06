@@ -1,8 +1,9 @@
 import csrfFetch from "./csrf";
+import { fetchPosts } from "./post";
 
-export const RECEIVE_FOllOW = 'comments/RECEIVE_FOLLOW';
-export const RECEIVE_FOLLOWS = 'comments/RECEIVE_FOLLOWS';
-export const REMOVE_FOLLOW = 'comments/REMOVE_FOLLOW';
+export const RECEIVE_FOllOW = 'follows/RECEIVE_FOLLOW';
+export const RECEIVE_FOLLOWS = 'follows/RECEIVE_FOLLOWS';
+export const REMOVE_FOLLOW = 'follows/REMOVE_FOLLOW';
 
 const receiveFollow = (follow) => ({
     type: RECEIVE_FOllOW,
@@ -60,6 +61,7 @@ export const createFollow = (followeeId) => async (dispatch) => {
     if (res.ok) {
         const follow = await res.json();
         dispatch(receiveFollow(follow));
+        dispatch(fetchPosts());
     }
 }
 
@@ -78,12 +80,11 @@ export const deleteFollow = (followeeId) => async (dispatch) => {
 const followReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = {...state};
-
     switch (action.type) {
         case RECEIVE_FOLLOWS:
             return {...state, ...action.follows}
         case RECEIVE_FOllOW:
-            return {...state, [action.follow.id]: action.follow}
+            return {...state, [action.follow.follow.id]: action.follow}
         case REMOVE_FOLLOW:
             delete newState[action.followId];
             return newState;

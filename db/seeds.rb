@@ -52,8 +52,8 @@ require 'open-uri'
 
   
   Follow.create!(follower_id: decorideas.id, followee_id: cutepets.id)
-  Follow.create!(follower_id: decorideas.id, followee_id: appacademy.id)
-  Follow.create!(follower_id: decorideas.id, followee_id: sflocations.id)
+  # Follow.create!(follower_id: decorideas.id, followee_id: appacademy.id)
+  # Follow.create!(follower_id: decorideas.id, followee_id: sflocations.id)
   Follow.create!(follower_id: decorideas.id, followee_id: valenciaciudad.id)
   Follow.create!(follower_id: decorideas.id, followee_id: fcbarcelona.id)
   Follow.create!(follower_id: decorideas.id, followee_id: stevejobs.id)
