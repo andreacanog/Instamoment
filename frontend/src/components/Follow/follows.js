@@ -6,7 +6,7 @@ const follows = () => {
     const sessionUser = useSelector((state) => state.session.user);
 
     return (
-        <div className="modal-follows">
+        <div className="modal-following-users">
             <h1>Users that you follow</h1>
             {users.map(user => {
                 return user.id !== sessionUser.id ? (
