@@ -22,11 +22,9 @@
     text-decoration: none;
     font-size: 25px;
     color: #343131;
-    /* display: block; */
     display: flex;
     flex-direction: row;
     transition: 0.3s;
-    /* margin-bottom: 20px; */
     padding-right: 50px;
     text-align: left;
     margin: 18px;
@@ -67,18 +65,17 @@
     scale: 1.2;
 }
 
-.bars {
-    margin-top: 250px;
-}
+/* .bars {
+    margin-top: 10px;
+} */
 
 .more-button {
     height: 35px;
     width: 35px;
-    /* border-radius: 50px; */
     font-size: 25px;
     border: none;
     cursor: pointer;
-    /* background: #fafafa;; */
+    margin-bottom: 50px;
 }
 .settings{
     cursor: pointer;
@@ -183,7 +180,7 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     cursor: pointer;
     direction: ltr;
-    padding-left: 16px;
+    padding-left: 2px;
     padding-top: 13px;  
 }
 
@@ -212,4 +209,37 @@
     border-radius: 50%;
     width: 40px;
     height: 40px;
+}
+
+.icons-for-links {
+    display: flex;
+    flex-direction: column;
+    font-size: 28px;
+    padding: 8px 61px 7px 41px;
+    color: #343131;
+}
+
+.linkedin-icon {
+    color: #343131;
+    margin-bottom: 15px;
+}
+
+.linkedin-icon:hover {
+    color: #0077b5;
+    background-color: #fafafa;
+}
+
+.github-icon {
+    color: #343131;
+    margin-top: 35px;
+    
+}
+
+.github-icon:hover {
+    color: #0077b5;
+    background-color: #fafafa;
+}
+
+.follows {
+    color: #4e4e4e70;
 }

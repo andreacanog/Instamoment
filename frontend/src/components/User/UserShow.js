@@ -47,7 +47,7 @@ const UserShow = () => {
             </div>
 
             <div className="edit-follow-button-user">
-              {currentUser.id === user.id ?  <button className="edit-profile-button">Edit Profile</button> : <FollowButton user={user}/>}
+              {currentUser.id !== user.id ? <FollowButton user={user}/> : <></>}
             </div>
 
             {/* <div className="setting-button-user">
