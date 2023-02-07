@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import {AiOutlineHeart} from "react-icons/ai"
 import './SideNavBar.css';
 import { useSelector } from 'react-redux';
 import MoreButton from './MoreButton';
 import {GrHomeRounded} from "react-icons/gr";
-import {FiSearch} from "react-icons/fi";
 import {AiOutlinePlusSquare} from "react-icons/ai";
 import {CgProfile} from "react-icons/cg";
-import { useDispatch } from 'react-redux';
-import { getUser } from '../../store/user';
 import {AiFillLinkedin} from 'react-icons/ai'
 import {BsGithub} from 'react-icons/bs'
 import {FaUserFriends} from 'react-icons/fa'
@@ -19,19 +15,19 @@ import {FaUserFriends} from 'react-icons/fa'
 
 const SideNav = () => {
     const sessionUser = useSelector(state => state.session.user);
-    const [search, setSearch] = useState("");
-    const dispatch = useDispatch();
+    // const [search, setSearch] = useState("");
+    // const dispatch = useDispatch();
 
     const openModal = (e) => {
         e.preventDefault();
-        let modal = document.getElementById('post-create-modal');
-        modal.style.display = 'flex';
+        let modal1 = document.getElementById('post-create-modal');
+        modal1.style.display = 'flex';
     }
 
     const openFollowsModal = (e) => {
         e.preventDefault();
-        let modal = document.getElementById('follows-modal');
-        modal.style.display = 'flex';
+        let modal2 = document.getElementById('follows-modal');
+        modal2.style.display = 'flex';
     }
 
 
@@ -48,7 +44,7 @@ const SideNav = () => {
                 {/* <NavLink className="side-navbar-link home" exact to="/feed/posts"><FiSearch/><div className='side-nav-search'>Search</div></NavLink> */}
                 
                 <a title="Create" onClick={openModal} className="side-navbar-link create"><AiOutlinePlusSquare/><div className='side-nav-create'>Create</div></a>
-                <a title="follows" onClick={openFollowsModal} className="side-navbar-link follows" exact to="/feed/posts"><FaUserFriends/><div className='side-nav-notifications'>Follows</div></a>
+                <a title="follows" onClick={openFollowsModal} className="side-navbar-link follows"><FaUserFriends/><div className='side-nav-notifications'>Follows</div></a>
                 <NavLink title="Profile" className="side-navbar-link user-ico profile" exact to={`/users/${sessionUser.id}`}>{sessionUser?.profilePictureUrl ? <img className='profile-nav-bar' src={sessionUser?.profilePictureUrl} alt="profile"  /> : <CgProfile/>}<div className='side-nav-profile'>Profile</div></NavLink>
                 
                 
@@ -56,13 +52,14 @@ const SideNav = () => {
 
             
             <div className='icons-for-links'>
-                <a href="https://www.linkedin.com/in/andrea-cano-gisbert-4402151b8/" target="_blank" rel="noreferrer">
-                    <i className="linkedin-icon"><AiFillLinkedin/></i>
+                <a className="linkedin-icon" href="https://www.linkedin.com/in/andrea-cano-gisbert-4402151b8/" target="_blank" rel="noreferrer">
+                    <i><AiFillLinkedin/></i>
                 </a>
-                <a href="https://github.com/andreacanog" target="_blank">
-                    <i className="github-icon"><BsGithub/></i>
+                <a className="github-icon" href="https://github.com/andreacanog" target="_blank">
+                    <i><BsGithub/></i>
                 </a>
             </div>
+
             </div>
         </div>
     ) : <></>;

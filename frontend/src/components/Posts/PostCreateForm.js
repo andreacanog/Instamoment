@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useRef } from 'react';
 import './posts.css'
-import {AiOutlineClose} from 'react-icons/ai';
 import { useDispatch } from "react-redux";
 import { createPost } from '../../store/post';
 

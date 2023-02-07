@@ -24,7 +24,7 @@ const UserShow = () => {
   
   useEffect(() => {
     dispatch(fetchUser(userId)); 
-  }, [dispatch, userId]);
+  }, [dispatch, user]);
   
   if (!user) return null;
 

@@ -219,26 +219,21 @@
     color: #343131;
 }
 
+.icons-for-links a:hover{
+    /* color: #0077b5; */
+    background-color: #fafafa;
+}
+
 .linkedin-icon {
     color: #343131;
     margin-bottom: 15px;
 }
 
-.linkedin-icon:hover {
-    color: #0077b5;
-    background-color: #fafafa;
-}
-
 .github-icon {
-    color: #343131;
-    margin-top: 35px;
-    
+    color: #343131;   
 }
 
-.github-icon:hover {
-    color: #0077b5;
-    background-color: #fafafa;
-}
+
 
 .follows {
     color: #4e4e4e70;

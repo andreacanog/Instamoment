@@ -1,4 +1,5 @@
 import React from "react";
+import "./follow.css"
 
 
 const follows = () => {
@@ -6,7 +7,8 @@ const follows = () => {
     const sessionUser = useSelector((state) => state.session.user);
 
     return (
-        <div className="modal-following-users">
+        <div className="modal-following-users" id="follows-modal">
+            <div className="modal-following-users-header">
             <h1>Users that you follow</h1>
             {users.map(user => {
                 return user.id !== sessionUser.id ? (
@@ -16,6 +18,7 @@ const follows = () => {
                     </div>
                 ) : <></>
             })}
+            </div>
         </div>
     )
 }
