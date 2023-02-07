@@ -23,7 +23,7 @@ const SuggestedUsers = () => {
         dispatch(fetchUsers("suggestions"))
     }, [dispatch, sessionUser])
 
-    return (
+    return sessionUser ? (
         <div className="suggested-user-container">
             <div className="suggested-user-header">
                 <h3>Suggestions for you</h3>
@@ -52,7 +52,7 @@ const SuggestedUsers = () => {
                 })}
             </div>
         </div>
-    )
+    ) : <></>
 }
 export default SuggestedUsers;
 

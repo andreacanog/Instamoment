@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import {GoThreeBars} from 'react-icons/go';
+import { Redirect, useHistory } from "react-router-dom";
+
 
 function MoreButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  let history = useHistory();
   
   const openMenu = () => {
     if (showMenu) return;
@@ -24,12 +27,12 @@ function MoreButton({ user }) {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
-  const logout = (e) => {
-    e.preventDefault();
-    dispatch(sessionActions.logout());
+  const HandleLogout = (e) => {
+    return dispatch(sessionActions.logout())
   };
 
-  return (
+
+  return user ? (
     <div className="more-button-container" onClick={openMenu}>
       {/* <button className='more-button' onClick={openMenu}>
         <div> */}
@@ -39,12 +42,12 @@ function MoreButton({ user }) {
       {showMenu && (
         <ul className="profile-dropdown">
           <li>
-            <button onClick={logout}>Log Out</button>
+            <button onClick={HandleLogout}>Log Out</button>
           </li>
         </ul>
       )}
     </div>
-  );
+  ) : <Redirect to="/login"/>;
 }
 
 
