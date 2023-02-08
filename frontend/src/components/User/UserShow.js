@@ -22,12 +22,11 @@ const UserShow = () => {
     dispatch(fetchUser(userId)); 
   },[dispatch, user] );
 
-  console.log("user", user)
+  
 
   const handleClick = (e) => {
     e.preventDefault();
 
-    // debugger
     if (e.target.name === 'followers') {
       let modal = document.getElementById('follows-modal-followers');
       modal.style.display = 'flex';
@@ -35,7 +34,7 @@ const UserShow = () => {
 
       let modal = document.getElementById('follows-modal-followees');
       modal.style.display = 'flex';
-      console.log("set to flex for followees")
+  
     }
   }
   
