@@ -1,6 +1,21 @@
 json.user do
   json.extract! @user, :id, :username, :name, :bio, :created_at, :updated_at, :followee_ids, :follower_ids, :post_ids
   json.profilePictureUrl @user.profile_picture.url #if @user.profile_picture.attached?
+
+  json.followers @user.followers do |follower|
+       
+        json.extract! follower, :id, :username
+        json.profile_picture_url follower.profile_picture.url
+      
+  end 
+
+  json.followees @user.followees do |followee|
+      
+        json.extract! followee, :id, :username
+        json.profile_picture_url followee.profile_picture.url
+      
+  end 
+  
 end
 
   json.posts do 

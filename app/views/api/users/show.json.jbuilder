@@ -14,4 +14,18 @@ json.user do
       end
   end 
 
+  json.followers @user.followers do |follower|
+      json.set! follower.id do  
+        json.extract! follower, :id, :username
+        json.profile_picture_url follower.profile_picture.url
+      end
+  end 
+
+  json.followees @user.followees do |followee|
+      json.set! followee.id do  
+        json.extract! followee, :id, :username
+        json.profile_picture_url followee.profile_picture.url
+      end
+  end 
+
 end

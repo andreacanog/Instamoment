@@ -305,3 +305,11 @@
     padding-top: 15px;
     font-size: 25px ;
 }
+
+/* .follow {
+    cursor: pointer;
+} */
+
+.follow-button-usershow{
+    cursor: pointer;
+}

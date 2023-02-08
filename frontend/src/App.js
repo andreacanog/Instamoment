@@ -8,6 +8,8 @@ import SideNavBar from './components/SideNavBar';
 import UserShow from './components/User/UserShow';
 import PostCreateForm from './components/Posts/PostCreateForm'; 
 import SuggestedUsers from './components/Suggestions/SuggestedUsers';
+import Followees from './components/Follow/Followees';
+import Followers from './components/Follow/Followers';
 
 
 
@@ -35,6 +37,8 @@ function App() {
         </Route>
         <Route path='/users/:userId'>
           <UserShow/>
+          <Followees/>
+          <Followers/>
         </Route>
         <Route path={'/*'} component={error} />
         <Redirect to={'/error'} />

@@ -7,10 +7,6 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import './UserShowPost.css'
 import { getPosts } from "../../store/post";
-import {CgProfile} from "react-icons/cg"
-import {RiUserUnfollowLine} from "react-icons/ri"
-import { NavLink } from "react-router-dom";
-import {FiSettings} from "react-icons/fi"
 import FollowButton from "../Follow";
 
 
@@ -24,7 +20,23 @@ const UserShow = () => {
   
   useEffect(() => {
     dispatch(fetchUser(userId)); 
-  }, [dispatch, user]);
+  },[] );
+
+
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    // debugger
+    if (e.target.name === 'followers') {
+      let modal = document.getElementById('follows-modal-followers');
+      modal.style.display = 'flex';
+    } else if (e.target.name === 'following') {
+
+      let modal = document.getElementById('follows-modal-followees');
+      modal.style.display = 'flex';
+      console.log("set to flex for followees")
+    }
+  }
   
   if (!user) return null;
 
@@ -58,8 +70,8 @@ const UserShow = () => {
 
           <div className="second-row">
             <div className="numbers-second-row">{user.postIds.length}</div><div className="names-second-row"> Posts</div>
-            <div className="numbers-second-row">{user.followerIds.length}</div><div className="names-second-row"> Followers</div>
-            <div className="numbers-second-row">{user.followeeIds.length}</div><div className="names-second-row"> Following</div>
+            <div className="numbers-second-row">{user.followerIds.length}</div><div className="names-second-row "><button className="follow-button-usershow" onClick={handleClick} name="followers"> Followers</button></div>
+            <div className="numbers-second-row">{user.followeeIds.length}</div><div className="names-second-row "><button className="follow-button-usershow" onClick={handleClick} name="following"> Following</button></div>
           </div>
 
           <div className="third-row">
