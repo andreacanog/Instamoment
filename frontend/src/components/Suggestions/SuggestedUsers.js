@@ -1,10 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers } from "../../store/user";
+import { fetchUsers, fetchUser } from "../../store/user";
 import { createFollow } from "../../store/follow";
 import { useEffect } from "react";
 import "./SuggestedUser.css";
-import FollowButton from "../Follow";
+// import FollowButton from "../Follow";
+import FollowFromSuggested from "../Follow/FollowFromSuggested";
 import { NavLink } from "react-router-dom";
 
 
@@ -13,15 +14,9 @@ const SuggestedUsers = () => {
     const users = useSelector(state => state.users ? Object.values(state.users) : []);
     const sessionUser = useSelector((state) => state.session.user);
 
-    const handleFollow = (e) => {
-        e.preventDefault();
-        const follow = { followerId: sessionUser.id, followedId: e.target.value }
-        dispatch(createFollow(follow))
-    }
-
     useEffect(() => {
         dispatch(fetchUsers("suggestions"))
-    }, [dispatch, sessionUser])
+    }, [dispatch])
 
     return sessionUser ? (
         <div className="suggested-user-container">
@@ -32,16 +27,16 @@ const SuggestedUsers = () => {
             </div>
             <div className="suggested-user-list">
                 {users && users.map(user => {
-                    return user.id !== sessionUser.id ? (
+                    return user.id !== sessionUser.id && !user.followers.includes(sessionUser.id) ? (
                         <div className="suggested-user-item" key={user.id}>
                             <div className="suggested-user-item-left">
                                 <NavLink className="user-show-profile-link" exact to={`/users/${user.id}`}>{user.profilePictureUrl ? <img src={user.profilePictureUrl} alt="profile"  /> : <></>}</NavLink>
                                 <div className="suggested-user-item-left-info">
-                                    <p>{user !== sessionUser ? user.username : <></>}</p>
+                                    <p>{ user.username }</p>
                                 </div>
                                 <div className="suggested-user-item-right">
                                     <br/>
-                                    <FollowButton user={user}  />
+                                    <FollowFromSuggested user={user}/>
                                 </div>
                                
                             </div>

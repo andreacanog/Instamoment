@@ -1,5 +1,6 @@
 import csrfFetch from "./csrf";
 import { fetchPosts } from "./post";
+import { fetchUser } from "./user";
 
 export const RECEIVE_FOllOW = 'follows/RECEIVE_FOLLOW';
 export const RECEIVE_FOLLOWS = 'follows/RECEIVE_FOLLOWS';
@@ -46,7 +47,7 @@ export const fetchFollow = (followId) => async (dispatch) => {
     }
 }
 
-export const createFollow = (followeeId) => async (dispatch) => {
+export const createFollow = (followeeId, currentUserId) => async (dispatch) => {
     const follow = {
             followeeId
     }
@@ -62,17 +63,19 @@ export const createFollow = (followeeId) => async (dispatch) => {
         const follow = await res.json();
         dispatch(receiveFollow(follow));
         dispatch(fetchPosts());
+        dispatch(fetchUser(currentUserId))
     }
 }
 
 
-export const deleteFollow = (followeeId) => async (dispatch) => {
+export const deleteFollow = (followeeId, currentUserId) => async (dispatch) => {
     const res = await csrfFetch(`/api/follows/${followeeId}`, {
         method: 'DELETE'
     });
 
     if (res.ok) {
         dispatch(removeFollow(followeeId));
+        dispatch(fetchUser(currentUserId))
     }
 }
 

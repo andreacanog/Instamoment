@@ -30,10 +30,8 @@ function App() {
             <LandingPage/>
         </Route>
         <Route exact path="/feed/posts">
-          {/* <div> */}
             <PostIndex/>
             <SuggestedUsers/>
-          {/* </div> */}
         </Route>
         <Route path='/users/:userId'>
           <UserShow/>

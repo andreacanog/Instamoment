@@ -4,14 +4,16 @@ import {RiUserUnfollowLine} from "react-icons/ri"; //unfollow
 import { useSelector, useDispatch } from "react-redux";
 import { deleteFollow, createFollow } from "../../store/follow";
 import { useState } from "react";
+import { fetchUser } from "../../store/user";
 import "./follow.css"
 
 
-const FollowButton = ({ user }) => {
+const FollowFromSuggested = ({ user }) => {
     const currentUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
+    // const [tempUser, setTempUser] = useState({})
     const [followed, setFollowed] = useState(false);
-
+    let temp;
     const handleClick = (e) => {
         e.preventDefault();
         if (followed) { 
@@ -21,13 +23,23 @@ const FollowButton = ({ user }) => {
         }
         setFollowed(!followed)
     }
-    
+
+
+    useEffect(() => {
+        temp = dispatch(fetchUser(user.id))
+    }, [])
 
     useEffect(() => {
         if (user.followerIds.includes(currentUser.id)) {
             setFollowed(true) 
         }
-    }, [])
+    }, )
+
+    // useEffect(() => {
+    //     if (currentUser.followeeIds?.includes(user.id)) {
+    //         setFollowed(true) 
+    //     }
+    // }, [currentUser?.followeeIds])
 
 
     if (followed) {
@@ -49,4 +61,4 @@ const FollowButton = ({ user }) => {
     }
 }
 
-export default FollowButton;
+export default FollowFromSuggested;

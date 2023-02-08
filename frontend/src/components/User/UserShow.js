@@ -20,7 +20,7 @@ const UserShow = () => {
   
   useEffect(() => {
     dispatch(fetchUser(userId)); 
-  },[dispatch, user] );
+  },[dispatch, user]);
 
   
 

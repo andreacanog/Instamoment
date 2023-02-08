@@ -27,7 +27,7 @@ const Followers = () => {
     return (
         <div className="modal-followers-users" id="follows-modal-followers">
             <div className="modal-followers-users-header">
-            <h1>Users that you follow</h1>
+            <h1 className="followees-title">Users that follow you</h1>
             {user && user.followers.map(follower => {
                 return (
                     <div className="followees-container">
