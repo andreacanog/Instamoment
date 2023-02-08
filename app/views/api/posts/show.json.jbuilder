@@ -4,18 +4,18 @@ json.post do
     json.extract! @post.user, :username
     json.userProfilePic @post.user.profile_picture.url
 
-    json.likes post.likes.count
-    json.commentCount post.comments.count
+    json.likes @post.likes.count
+    json.commentCount @post.comments.count
     
-    if post.likers.include?(current_user)
+    if @post.likers.include?(current_user)
         json.liked true
-        json.ownLikeId post.likes.find_by(user_id: current_user.id).id
+        json.ownLikeId @post.likes.find_by(user_id: current_user.id).id
     else
         json.liked false
     end
 
     json.comments do
-            post.comments.each do |comment|
+            @post.comments.each do |comment|
                 json.set! comment.id do
                     json.extract! comment, :id, :post_id, :user_id, :body
                     json.user do
