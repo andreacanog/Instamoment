@@ -26,28 +26,28 @@ const Followees = () => {
         e.preventDefault();
         let modal = document.getElementById('follows-modal-followees');
         modal.style.display = 'none';
-        // return;
     }
 
-    const hanldeUserLinkClick = (e, id) => {
-        e.preventDefault()
-        closeModalFollows(e);
-        return (<Redirect to={`/users/${id}`}></Redirect>)
-        // history.push(`/users/${id}`);
-        // .then(() => {history.push(`/users/${id}`)})
-    }
+    // const hanldeUserLinkClick = (e, id) => {
+    //     e.preventDefault()
+    //     closeModalFollows(e);
+    //     return (<Redirect to={`/users/${id}`}></Redirect>)
+    //     // history.push(`/users/${id}`);
+    //     // .then(() => {history.push(`/users/${id}`)})
+    // }
 
     return (
         <div className="modal-followees-users" id="follows-modal-followees">
             <div className="modal-followees-users-header">
             <h1 className="followees-title">Users that you follow</h1>
             {user && user.followees.map(followee => {
-                return followee.id !== sessionUser.id ? (
+                return (
                     <div className="followees-container">
-                        <button className="followee-show-profile-link" onClick={e => hanldeUserLinkClick(e, followee.id)}>{followee.profilePictureUrl ? <img className="followee-show-profile-link"  src={followee.profilePictureUrl} alt="profile"  /> : <></>}</button>
+                        {/* <button className="followee-show-profile-link" onClick={e => hanldeUserLinkClick(e, followee.id)}>{followee.profilePictureUrl ? <img className="followee-show-profile-link"  src={followee.profilePictureUrl} alt="profile"  /> : <></>}</button> */}
+                        <img className="followee-show-profile-link"  src={followee.profilePictureUrl} alt="profile"  />
                         <h2 className="followee-username">{followee.username}</h2>
                     </div>
-                ) : <></>
+                ) 
             })}
             <button id="modal-close-button-followees" className='modal-close-button-followees' onClick={closeModalFollows}>Close Followings</button>
             </div>

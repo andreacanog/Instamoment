@@ -20,7 +20,7 @@ const Followers = () => {
 
     const closeModalFollows = (e) => {
         e.preventDefault();
-        let modal = document.getElementById('modal-close-button-follow');
+        let modal = document.getElementById('follows-modal-followers');
         modal.style.display = 'none';
     }
 
@@ -29,14 +29,15 @@ const Followers = () => {
             <div className="modal-followers-users-header">
             <h1>Users that you follow</h1>
             {user && user.followers.map(follower => {
-                return follower.id !== sessionUser.id ? (
-                    <div>
-                        <NavLink className="follower-show-profile-link" exact to={`/users/${follower.id}`}>{follower.profilePictureUrl ? <img className="follower-show-profile-link" src={follower.profilePictureUrl} alt="profile"  /> : <></>}</NavLink>
-                        <h2>{follower.username}</h2>
+                return (
+                    <div className="followees-container">
+                        {/* <NavLink className="follower-show-profile-link" exact to={`/users/${follower.id}`}>{follower.profilePictureUrl ? <img className="follower-show-profile-link" src={follower.profilePictureUrl} alt="profile"  /> : <></>}</NavLink> */}
+                        <img className="followee-show-profile-link" src={follower.profilePictureUrl} alt="profile"  /> 
+                        <h2 className="followee-username">{follower.username}</h2>
                     </div>
-                ) : <></>
+                ) 
             })}
-            <button id="modal-close-button-follow" className='modal-close-button' onClick={closeModalFollows}>Close Post</button>
+            <button id="modal-close-button-follow" className='modal-close-button-followees' onClick={closeModalFollows}>Close Post</button>
             </div>
         </div>
     )

@@ -20,8 +20,9 @@ const UserShow = () => {
   
   useEffect(() => {
     dispatch(fetchUser(userId)); 
-  },[] );
+  },[dispatch, user] );
 
+  console.log("user", user)
 
   const handleClick = (e) => {
     e.preventDefault();
