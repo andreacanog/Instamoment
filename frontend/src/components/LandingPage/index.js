@@ -49,11 +49,7 @@ const LandingPage = () => {
                             <img ref={ele => addToImgRefArr(ele)} src={pic3} alt='landing slide picture'/>
                             <img ref={ele => addToImgRefArr(ele)} src={pic4} alt='landing slide picture'/>
                             <img ref={ele => addToImgRefArr(ele)} src={pic4} alt='landing slide picture'/>
-                            {/* <img ref={ele => imgRef.current.push(ele)} src={pic1} alt='landing slide picture' className='active'/>
-                            <img ref={ele => imgRef.current.push(ele)} src={pic2} alt='landing slide picture'/>
-                            <img ref={ele => imgRef.current.push(ele)} src={pic3} alt='landing slide picture'/>
-                            <img ref={ele => imgRef.current.push(ele)} src={pic4} alt='landing slide picture'/>
-                            <img ref={ele => imgRef.current.push(ele)} src={pic4} alt='landing slide picture'/> */}
+                    
                         </div>
                     </div>
                     <div className='form-container'>
