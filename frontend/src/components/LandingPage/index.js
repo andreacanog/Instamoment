@@ -57,17 +57,7 @@ const LandingPage = () => {
                         <LoginFormPage/>
                     </div>
 
-                    {/* <div className="download">
-                        <p>Get the app.</p>
-                        <div className="link">
-                            <a href="#">
-                                <img src="" alt=""/>
-                            </a>
-                            <a href="#">
-                                <img src="" alt=""/>
-                            </a>
-                        </div>
-                    </div> */}
+                
                 </div>
             </div>
             <div className='links'>
