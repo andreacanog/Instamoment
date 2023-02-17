@@ -53,7 +53,6 @@ const LandingPage = () => {
                         </div>
                     </div>
                     <div className='form-container'>
-                    {/* <div> */}
                         <LoginFormPage/>
                     </div>
 
