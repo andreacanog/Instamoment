@@ -49,14 +49,11 @@ const LandingPage = () => {
                             <img ref={ele => addToImgRefArr(ele)} src={pic3} alt='landing slide picture'/>
                             <img ref={ele => addToImgRefArr(ele)} src={pic4} alt='landing slide picture'/>
                             <img ref={ele => addToImgRefArr(ele)} src={pic4} alt='landing slide picture'/>
-                    
                         </div>
                     </div>
                     <div className='form-container'>
                         <LoginFormPage/>
                     </div>
-
-                
                 </div>
             </div>
             <div className='links'>
