@@ -39,6 +39,7 @@ function LoginFormPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
+    
     return dispatch(sessionActions.login({ credential, password }))
       .then(() => {history.push('/feed/posts')})
       .catch(async (res) => {
