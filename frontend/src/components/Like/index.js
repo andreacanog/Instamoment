@@ -13,7 +13,7 @@ const LikeButton = ({ post, user }) => {
 
     useEffect(() => {
         if (post.liked) {
-            setLiked(true) // if the post has likes, set the like button to be liked
+            setLiked(true) 
         } 
     }, [post]) 
 
