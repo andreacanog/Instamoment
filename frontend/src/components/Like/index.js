@@ -27,7 +27,6 @@ const LikeButton = ({ post, user }) => {
             dispatch(createLike(post.id));
             setLiked(true)
         }
-        // setLiked(!liked);
     }
 
     if (liked) {
