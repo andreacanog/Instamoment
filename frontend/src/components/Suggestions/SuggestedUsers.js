@@ -4,7 +4,6 @@ import { fetchUsers, fetchUser } from "../../store/user";
 import { createFollow } from "../../store/follow";
 import { useEffect } from "react";
 import "./SuggestedUser.css";
-// import FollowButton from "../Follow";
 import FollowFromSuggested from "../Follow/FollowFromSuggested";
 import { NavLink } from "react-router-dom";
 
