@@ -24,7 +24,7 @@ const removeComment = (commentId, postId) => {
 
 
 
-//     postId
+
 // });
 
 export const getComment = (commentId) => (state) => {
