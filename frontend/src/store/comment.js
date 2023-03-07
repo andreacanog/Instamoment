@@ -22,7 +22,7 @@ const removeComment = (commentId, postId) => {
     }
 };
 
-//     type: REMOVE_COMMENT,
+
 //     commentId,
 //     postId
 // });
