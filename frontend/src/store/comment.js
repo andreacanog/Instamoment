@@ -21,7 +21,7 @@ const removeComment = (commentId, postId) => {
         postId
     }
 };
-// const removeComment = (commentId, postId) => ({
+
 //     type: REMOVE_COMMENT,
 //     commentId,
 //     postId
