@@ -26,7 +26,6 @@ const removeComment = (commentId, postId) => {
 
 
 
-
 export const getComment = (commentId) => (state) => {
     return state?.comments ? state.comments[commentId] : null;
 }
