@@ -113,7 +113,6 @@ const postReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_POSTS:
             return action.posts
-            
         case RECEIVE_POST:
             return {...state, [action.post.post.id]: action.post.post}
 
