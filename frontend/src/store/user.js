@@ -30,7 +30,7 @@ export const getUser = (userId) => (state) => {
     return state?.users ? state.users[userId] : null;   
 }
 
-// export const fetchUsers = () => async (dispatch) => {
+
 //     const res = await csrfFetch('/api/users');
 
 //     if (res.ok) {
