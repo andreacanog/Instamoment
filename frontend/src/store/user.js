@@ -32,7 +32,6 @@ export const getUser = (userId) => (state) => {
 
 
 
-
 //     if (res.ok) {
 //         const users = await res.json();
 //         dispatch(receiveUsers(users));
