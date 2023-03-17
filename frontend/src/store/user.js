@@ -31,7 +31,7 @@ export const getUser = (userId) => (state) => {
 }
 
 
-//     const res = await csrfFetch('/api/users');
+
 
 //     if (res.ok) {
 //         const users = await res.json();
