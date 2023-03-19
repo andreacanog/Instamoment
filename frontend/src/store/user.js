@@ -33,7 +33,7 @@ export const getUser = (userId) => (state) => {
 
 
 
-//         dispatch(receiveUsers(users));
+
 //     }
 // }
 
