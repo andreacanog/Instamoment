@@ -32,7 +32,7 @@ export const getUser = (userId) => (state) => {
 
 
 
-//         const users = await res.json();
+
 //         dispatch(receiveUsers(users));
 //     }
 // }
