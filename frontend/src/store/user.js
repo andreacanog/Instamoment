@@ -34,7 +34,7 @@ export const getUser = (userId) => (state) => {
 
 
 
-//     }
+
 // }
 
 export const fetchUsers = (type) => async dispatch => {
