@@ -31,7 +31,6 @@ export const getUser = (userId) => (state) => {
 }
 
 
-
 export const fetchUsers = (type) => async dispatch => {
     const res = await csrfFetch(`/api/users?type=${type}`);
     if(res.ok) {
