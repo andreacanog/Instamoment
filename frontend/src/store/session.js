@@ -1,5 +1,4 @@
 import csrfFetch from './csrf';
-
 import {removePosts} from './post';
 
 const SET_CURRENT_USER = 'session/setCurrentUser';
