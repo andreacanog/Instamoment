@@ -130,7 +130,6 @@ const postReducer = (state = {}, action) => {
             let post = newState[postId]
             
             if (post.comments === undefined) {
-               
                 post.comments = [];
             }
             if (action.comment !== undefined) {
