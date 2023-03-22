@@ -130,11 +130,7 @@ const postReducer = (state = {}, action) => {
             let post = newState[postId]
             
             if (post.comments === undefined) {
-                /**
-                 * Doing this for the instance where we are adding a new comment to a post for the first time.
-                 * During the first time, we will not have a key comments to set the new comment to and therefore create
-                 * it to avoid an error.
-                 */
+               
                 post.comments = [];
             }
             if (action.comment !== undefined) {
