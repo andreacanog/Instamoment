@@ -59,7 +59,7 @@ export const createLike = (postID) => async (dispatch) => {
     if (res.ok) {
         const like = await res.json();
         dispatch(receiveLike(like));
-        // dispatch(fetchPost(postID));
+  
     }
 }
 
