@@ -69,7 +69,7 @@ export const deleteLike = (postId) => async (dispatch) => {
 
     if (res.ok) {
         dispatch(removeLike(postId));
-        // dispatch(fetchPost(postId));
+
     }
 }
 
