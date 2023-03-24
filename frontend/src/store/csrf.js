@@ -20,4 +20,5 @@ export async function restoreCSRF() {
     storeCSRFToken(response);
     return response;
 };
+
 export default csrfFetch;
