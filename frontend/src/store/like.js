@@ -1,5 +1,5 @@
 import csrfFetch from "./csrf";
-import { fetchPost } from "./post";
+
 
 export const RECEIVE_LIKE = 'comments/RECEIVE_LIKE';
 export const RECEIVE_LIKES = 'comments/RECEIVE_LIKES';
