@@ -117,5 +117,4 @@ const commententReducer = (state = {}, action) => {
     }
 }
 
-
 export default commententReducer
