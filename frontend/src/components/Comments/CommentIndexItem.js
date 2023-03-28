@@ -47,7 +47,6 @@ const CommentIndexItem = ({comment, user, post}) => {
             <div className="comment-info-container">
                 <div className="post-index-item-comment-profile-pic">
                 </div>
-                
                 <NavLink exact to={`/users/${user.id}`}><div className="post-index-item-comment-username">{comment.user !== undefined ? comment.user.username : "user"}</div></NavLink>
                 <div className="post-index-item-comment-body" style={{display: !updatingComment ? "block" : "none"}} >{comment.body}</div>
                 <input type="text" className="comment-update-input" placeholder="Update Comment" onChange={(e) => setUpdatedComment(e.target.value)} value={updatedComment} name="" style={{display: updatingComment ? "block" : "none"}}/>
