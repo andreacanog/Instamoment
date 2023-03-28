@@ -4,7 +4,7 @@ import "./comment.css";
 import { fetchComments } from "../../store/comment";
 import CommentIndexItem from "./CommentIndexItem";
 import { getPost } from "../../store/post";
-import {getCommentsForPost} from '../../store/post'
+// import {getCommentsForPost} from '../../store/post'
 
 const CommentIndex = ({postId, comments}) => {
     const dispatch = useDispatch();
