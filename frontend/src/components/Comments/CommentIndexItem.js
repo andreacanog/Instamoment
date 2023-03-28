@@ -45,9 +45,7 @@ const CommentIndexItem = ({comment, user, post}) => {
     return (
         <div className="post-index-item-comment" key={comment.id}>  
             <div className="comment-info-container">
-                <div className="post-index-item-comment-profile-pic">{/* <img src={post.user
-                ? post.user.profilePhotoUrl
-                : ""} alt="profile" /> */}
+                <div className="post-index-item-comment-profile-pic">
                 </div>
                 {/* <div className="comment-line"> */}
                 <NavLink exact to={`/users/${user.id}`}><div className="post-index-item-comment-username">{comment.user !== undefined ? comment.user.username : "user"}</div></NavLink>
