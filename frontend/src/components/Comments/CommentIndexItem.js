@@ -41,7 +41,6 @@ const CommentIndexItem = ({comment, user, post}) => {
         }
     }
 
-
     return (
         <div className="post-index-item-comment" key={comment.id}>  
             <div className="comment-info-container">
