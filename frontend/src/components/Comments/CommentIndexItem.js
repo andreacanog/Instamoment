@@ -56,7 +56,6 @@ const CommentIndexItem = ({comment, user, post}) => {
                 { (user.id === comment.user_id || user.id === comment.userId) ? <button className="update-button" onClick={handleShowUpdateField} >{updatingComment ? "Close" : "Edit"}</button> : <></>}
                 { (user.id === comment.user_id || user.id === comment.userId) ? <button className="delete-botton" onClick={handleDelete} >{updatingComment ? "" : "Delete"}</button> : <></>}
             </div>
-
         </div>
 
     )
