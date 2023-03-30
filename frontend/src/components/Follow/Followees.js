@@ -31,7 +31,7 @@ const Followees = () => {
     // const hanldeUserLinkClick = (e, id) => {
     //     e.preventDefault()
     //     closeModalFollows(e);
-    //     return (<Redirect to={`/users/${id}`}></Redirect>)
+
 
 
 
