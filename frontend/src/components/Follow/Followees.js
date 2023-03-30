@@ -33,7 +33,7 @@ const Followees = () => {
     //     closeModalFollows(e);
     //     return (<Redirect to={`/users/${id}`}></Redirect>)
     //     // history.push(`/users/${id}`);
-    //     // .then(() => {history.push(`/users/${id}`)})
+
 
     return (
         <div className="modal-followees-users" id="follows-modal-followees">
