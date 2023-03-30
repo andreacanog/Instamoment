@@ -32,7 +32,7 @@ const Followees = () => {
     //     e.preventDefault()
     //     closeModalFollows(e);
     //     return (<Redirect to={`/users/${id}`}></Redirect>)
-    //     // history.push(`/users/${id}`);
+
 
 
     return (
