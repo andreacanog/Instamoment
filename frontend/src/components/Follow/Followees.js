@@ -28,7 +28,7 @@ const Followees = () => {
         modal.style.display = 'none';
     }
 
-    // const hanldeUserLinkClick = (e, id) => {
+
 
 
 
