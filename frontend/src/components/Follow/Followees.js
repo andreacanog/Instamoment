@@ -30,7 +30,7 @@ const Followees = () => {
 
     // const hanldeUserLinkClick = (e, id) => {
     //     e.preventDefault()
-    //     closeModalFollows(e);
+
 
 
 
