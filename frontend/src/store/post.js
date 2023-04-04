@@ -10,7 +10,6 @@ export const REMOVE_POST = 'posts/REMOVE_POST';
 export const REMOVE_POSTS = 'posts/REMOVE_POSTS';
 
 
-
 const receivePosts = (posts) => {
     return {
         type: RECEIVE_POSTS,    
