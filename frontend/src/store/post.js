@@ -3,7 +3,6 @@ import csrfFetch from "./csrf";
 import { RECEIVE_COMMENT, REMOVE_COMMENT } from "./comment";
 import { RECEIVE_LIKE, REMOVE_LIKE } from "./like";
 
-
 export const RECEIVE_POSTS = 'posts/RECEIVE_POSTS';
 export const RECEIVE_POST = 'posts/RECEIVE_POST';
 export const REMOVE_POST = 'posts/REMOVE_POST';
