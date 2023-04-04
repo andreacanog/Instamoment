@@ -46,7 +46,6 @@ export const getCommentsForPost = (state, postId) => {
 }
 
 
-
 export const fetchPosts = () => async (dispatch) => {
     const res = await csrfFetch('/api/posts');
     if (res.ok) {
