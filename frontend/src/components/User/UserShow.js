@@ -22,7 +22,6 @@ const UserShow = () => {
     dispatch(fetchUser(userId)); 
   },[dispatch, user]);
 
-  
 
   const handleClick = (e) => {
     e.preventDefault();
