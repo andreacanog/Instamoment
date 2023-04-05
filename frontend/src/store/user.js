@@ -47,7 +47,6 @@ export const fetchUser = (userId) => async (dispatch) => {
     }
 }
 
-
 export const createUser = (user) => async (dispatch) => {
     const res = await csrfFetch('/api/users', {
         method: 'POST',
