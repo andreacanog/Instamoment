@@ -40,7 +40,6 @@ const UserShow = () => {
   if (!user) return null;
 
  
-  
   return currentUser ? (
     <div className="user-show-container">
 
