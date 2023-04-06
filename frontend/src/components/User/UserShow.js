@@ -61,7 +61,6 @@ const UserShow = () => {
             </div>
 
             
-
           </div>
 
           <div className="second-row">
