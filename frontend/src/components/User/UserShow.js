@@ -60,7 +60,6 @@ const UserShow = () => {
               {currentUser.id !== user.id ? <FollowButton user={user}/> : <></>}
             </div>
 
-            
           </div>
 
           <div className="second-row">
