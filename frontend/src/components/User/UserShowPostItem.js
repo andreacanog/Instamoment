@@ -1,7 +1,6 @@
 import React from 'react';
 
 
-
 const UserShowPostItem= ({post}) => {
     return (
         <div className='user-show-photos-container-item'>
