@@ -196,9 +196,9 @@
 .second-row {
     display: flex;
 }
-.second-row > div {
+/* .second-row > div {
     
-}
+} */
 
 .third-row {
     display: flex;
