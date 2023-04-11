@@ -1,26 +1,26 @@
-/* 
 
-.user-show-header {
+
+/* .user-show-header {
   display: flex;
   flex-direction: row;
   max-width: 937px;
   min-height: 232px;
-}
+} */
 
 
-.cg-profile {
+/* .cg-profile {
     width: 100%;
     height: 100%;
-}
+} */
 
-.first-row {
+/* .first-row {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     padding-left: 65px;
-}
+} */
 
-.second-row {
+/* .second-row {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -32,19 +32,18 @@
     line-height: 16px;
     cursor: pointer;
 
-}
+} */
 
-.third-row {
+/* .third-row {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
   
-}
+} */
 
 
 
-
-.user-username {
+/* .user-username {
     line-height: 25px;
     font-weight: 400;
     color: rgb(38, 38, 38);
@@ -58,9 +57,9 @@
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     cursor: pointer;
-}
+} */
 
-.follow-profile-button {
+/* .follow-profile-button {
     font-weight: 600;
     font-size: 14px;
     line-height: 14px;
@@ -75,9 +74,9 @@
     background-color: var(--btn-bg);
     border-radius: 4px;
     padding: 8px 19px;
-}
+} */
 
-.edit-profile-button {
+/* .edit-profile-button {
     font-weight: 600;
     font-size: 14px;
     line-height: 14px;
@@ -92,24 +91,24 @@
     background-color: #EBEDF0;
     border-radius: 4px;
     padding: 8px 19px;
-}
+} */
 
-.settings-profile-button {
+/* .settings-profile-button {
     font-size: 25px;
-}
+} */
 
-.more-profile-button {
+/* .more-profile-button {
     font-size: 25px;
-}
+} */
 
-.user-show-header {
+/* .user-show-header {
     padding-top: 35px;
     padding-left: 69px;
-}
+} */
 
 
 
-.line {
+/* .line {
     flex-grow: 1;
     height: 1px;
     background-color: var(--box-border-color);
@@ -117,12 +116,12 @@
     top: 0.45em;
     max-width: 937px;
 }
-    
-.user-show-body {
+     */
+/* .user-show-body {
     padding-top: 56px;
-}
+} */
 
-.user-info-rows-container {
+/* .user-info-rows-container {
     position: relative;
 } */
 /* .user-name {
