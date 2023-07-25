@@ -19,7 +19,7 @@
     flex-direction: column;
 }
 
-/* .signup-form, input { */
+
 .sign-up-form-input {
     background: rgb(var(--ig-secondary-background));
     border-radius: 3px;
