@@ -21,7 +21,7 @@
 
 /* .signup-form, input { */
 .sign-up-form-input {
-    /* margin: 3px; */
+
     background: rgb(var(--ig-secondary-background));
     border-radius: 3px;
     margin: 10px 1px 5px 1px;
