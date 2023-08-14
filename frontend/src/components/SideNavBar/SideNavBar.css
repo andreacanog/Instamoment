@@ -2,7 +2,7 @@
     background-color:#fafafa;; 
     height: 100%; 
     width: 245px; 
-    position: fixed; /* Stay in place */
+    position: fixed; 
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
