@@ -4,7 +4,7 @@
     width: 245px; 
     position: fixed; 
     z-index: 1; 
-    top: 0; /* Stay at the top */
+    top: 0; 
     left: 0;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 23px; /* Place content 60px from the top */
