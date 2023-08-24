@@ -45,7 +45,7 @@
 
 .animate-input {
     height: 36px;
-    /* border: 1px solid var(--box-border-color); */
+
     border-radius: 3px;
     position: relative;
 }
