@@ -57,17 +57,17 @@
 } */
 
 
-/* .animate-input span {
-    position: absolute;
-    left: 8px;
-    height: 100%;
-    font-size: 12px;
-    line-height: 36px;
-    color: var(--txt-second-color);
-    transform-origin: left;
-    transition: transform 0.1s ease-in-out;
-    pointer-events: none;
-} */
+/* .animate-input span { */
+    /* position: absolute; */
+    /* left: 8px; */
+    /* height: 100%; */
+    /* font-size: 12px; */
+    /* line-height: 36px; */
+    /* color: var(--txt-second-color); */
+    /* transform-origin: left; */
+    /* transition: transform 0.1s ease-in-out; */
+    /* pointer-events: none; */
+/* } */
 
 .animate-input input {
     width: 100%;
