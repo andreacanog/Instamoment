@@ -87,7 +87,6 @@
     box-sizing: border-box;
 }
 
-
 @media only screen and (max-width: 800px) {
     .slide-container {
         display: none;
