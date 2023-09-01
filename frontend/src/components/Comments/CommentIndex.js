@@ -6,6 +6,7 @@ import CommentIndexItem from "./CommentIndexItem";
 import { getPost } from "../../store/post";
 
 
+
 const CommentIndex = ({postId, comments}) => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
