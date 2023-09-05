@@ -37,7 +37,6 @@ const Followees = () => {
             {user && user.followees.map(followee => {
                 return (
                     <div className="followees-container">
-                        {/* <button className="followee-show-profile-link" onClick={e => hanldeUserLinkClick(e, followee.id)}>{followee.profilePictureUrl ? <img className="followee-show-profile-link"  src={followee.profilePictureUrl} alt="profile"  /> : <></>}</button> */}
                         <img className="followee-show-profile-link"  src={followee.profilePictureUrl} alt="profile"  />
                         <h2 className="followee-username">{followee.username}</h2>
                     </div>
