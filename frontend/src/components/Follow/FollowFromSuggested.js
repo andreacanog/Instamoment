@@ -11,7 +11,7 @@ import "./follow.css"
 const FollowFromSuggested = ({ user }) => {
     const currentUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
-    // const [tempUser, setTempUser] = useState({})
+
     const [followed, setFollowed] = useState(false);
     let temp;
     const handleClick = (e) => {
