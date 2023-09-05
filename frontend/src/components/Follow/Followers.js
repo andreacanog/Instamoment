@@ -31,7 +31,6 @@ const Followers = () => {
             {user && user.followers.map(follower => {
                 return (
                     <div className="followees-container">
-                        {/* <NavLink className="follower-show-profile-link" exact to={`/users/${follower.id}`}>{follower.profilePictureUrl ? <img className="follower-show-profile-link" src={follower.profilePictureUrl} alt="profile"  /> : <></>}</NavLink> */}
                         <img className="followee-show-profile-link" src={follower.profilePictureUrl} alt="profile"  /> 
                         <h2 className="followee-username">{follower.username}</h2>
                     </div>
