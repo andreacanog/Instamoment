@@ -34,7 +34,7 @@ const FollowFromSuggested = ({ user }) => {
         }
     }, )
 
-    // useEffect(() => {
+
 
 
 
