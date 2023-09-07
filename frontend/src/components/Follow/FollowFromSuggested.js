@@ -38,7 +38,7 @@ const FollowFromSuggested = ({ user }) => {
     //     if (currentUser.followeeIds?.includes(user.id)) {
     //         setFollowed(true) 
     //     }
-    // }, [currentUser?.followeeIds])
+
 
 
     if (followed) {
