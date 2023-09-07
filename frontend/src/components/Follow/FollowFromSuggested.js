@@ -35,7 +35,7 @@ const FollowFromSuggested = ({ user }) => {
     }, )
 
     // useEffect(() => {
-    //     if (currentUser.followeeIds?.includes(user.id)) {
+
 
 
 
