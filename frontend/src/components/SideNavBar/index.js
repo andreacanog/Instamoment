@@ -16,7 +16,7 @@ import {FaUserFriends} from 'react-icons/fa'
 const SideNav = () => {
     const sessionUser = useSelector(state => state.session.user);
     // const [search, setSearch] = useState("");
-    // const dispatch = useDispatch();
+
 
     const openModal = (e) => {
         e.preventDefault();
