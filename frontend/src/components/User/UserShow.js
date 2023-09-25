@@ -81,7 +81,6 @@ const UserShow = () => {
         </div>
 
       </div>
-
       <div>
         <div className="user-show-body"> 
 
