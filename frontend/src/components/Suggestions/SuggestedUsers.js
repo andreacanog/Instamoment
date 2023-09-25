@@ -22,7 +22,7 @@ const SuggestedUsers = () => {
             <div className="suggested-user-header">
                 <h3>Suggestions for you</h3>
                 <br/>
-                {/* <p>See All</p> */}
+
             </div>
             <div className="suggested-user-list">
                 {users && users.map(user => {
