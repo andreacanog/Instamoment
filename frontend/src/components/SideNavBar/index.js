@@ -16,7 +16,6 @@ import {FaUserFriends} from 'react-icons/fa'
 const SideNav = () => {
     const sessionUser = useSelector(state => state.session.user);
 
-
     const openModal = (e) => {
         e.preventDefault();
         let modal1 = document.getElementById('post-create-modal');
