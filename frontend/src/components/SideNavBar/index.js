@@ -21,8 +21,7 @@ const SideNav = () => {
         let modal1 = document.getElementById('post-create-modal');
         modal1.style.display = 'flex';
     }
-
-    
+ 
 
 
     return sessionUser ? (
