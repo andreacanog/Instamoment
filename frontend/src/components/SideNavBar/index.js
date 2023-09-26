@@ -35,6 +35,7 @@ const SideNav = () => {
                 {/* <NavLink className="side-navbar-link home" exact to="/feed/posts"><FiSearch/><div className='side-nav-search'>Search</div></NavLink> */}
                 
                 <a title="Create" onClick={openModal} className="side-navbar-link create"><AiOutlinePlusSquare/><div className='side-nav-create'>Create</div></a>
+                
                 <NavLink title="Profile" className="side-navbar-link user-ico profile" exact to={`/users/${sessionUser.id}`}>{sessionUser?.profilePictureUrl ? <img className='profile-nav-bar' src={sessionUser?.profilePictureUrl} alt="profile"  /> : <CgProfile/>}<div className='side-nav-profile'>Profile</div></NavLink>
                 
                 
