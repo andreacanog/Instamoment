@@ -22,7 +22,6 @@ const SideNav = () => {
         modal1.style.display = 'flex';
     }
  
-
     return sessionUser ? (
         <div>
             <div className='sidenav'>
