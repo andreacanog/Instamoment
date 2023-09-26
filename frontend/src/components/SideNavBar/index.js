@@ -23,7 +23,6 @@ const SideNav = () => {
     }
  
 
-
     return sessionUser ? (
         <div>
             <div className='sidenav'>
