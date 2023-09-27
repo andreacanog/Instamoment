@@ -10,7 +10,7 @@ const PostIndex = () => {
   const dispatch = useDispatch();
   const posts = useSelector(getPosts);
   const user = useSelector(state => state.session.user);
-  // const users = useSelector(getUsers())
+
 
   useEffect(() => {
     dispatch(fetchPosts());
