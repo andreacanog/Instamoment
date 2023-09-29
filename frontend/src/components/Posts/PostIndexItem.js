@@ -181,7 +181,6 @@ const PostIndexItem = ({ post, user }) => {
             <div className="item-bottom-line">
             </div>
         </div>
-        
     </div>
 
     );
