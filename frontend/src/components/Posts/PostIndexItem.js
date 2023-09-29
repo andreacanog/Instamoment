@@ -184,7 +184,6 @@ const PostIndexItem = ({ post, user }) => {
         
     </div>
 
-
     );
 }
 
