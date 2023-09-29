@@ -96,7 +96,6 @@ const PostIndexItem = ({ post, user }) => {
         <div className="item-top-line">
         </div>
         
-
         <div className="post-index-item-user">
                 
             <div className="post-index-item-user-info">
