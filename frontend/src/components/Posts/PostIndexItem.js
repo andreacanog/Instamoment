@@ -166,9 +166,8 @@ const PostIndexItem = ({ post, user }) => {
             </div>
 
             <div className="post-index-item-comments">
-                
+
                     <CommentIndex postId={post.id} comments={comments}/>
-                    {/* {comments.map(comment => <p>{comment.body}</p>)} */}
                 
                 <div className="comment-container-button">
                     <input className='create-comment-input' onKeyDown={handleSubmitWithEnter} onChange={(e) => setComment(e.target.value)} value={comment} type="text" placeholder="Add a comment..." />
