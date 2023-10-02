@@ -63,7 +63,6 @@ const PostIndexItem = ({ post, user }) => {
 
     }, [showMenu]);
 
-
   
     const handleDeletePost = (e) => {
         e.preventDefault();
