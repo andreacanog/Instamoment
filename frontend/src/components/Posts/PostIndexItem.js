@@ -166,6 +166,7 @@ const PostIndexItem = ({ post, user }) => {
             </div>
 
             <div className="post-index-item-comments">
+                
                     <CommentIndex postId={post.id} comments={comments}/>
                     {/* {comments.map(comment => <p>{comment.body}</p>)} */}
                 
