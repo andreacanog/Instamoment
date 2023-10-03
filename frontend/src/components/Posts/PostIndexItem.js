@@ -135,7 +135,7 @@ const PostIndexItem = ({ post, user }) => {
 
                 <div className="post-icons-left">
                     <LikeButton post={post} user={user}/>
-                    {/* <div><FaRegComment/></div> */}
+
                 </div>
 
                 {/* <div className="post-icons-right">
@@ -159,7 +159,7 @@ const PostIndexItem = ({ post, user }) => {
                             <button className="update-post-button cancel-button-title" onClick={handleCancelTitle}>Cancel</button>
                         </div>
                 </div>
-                
+
             </div>
 
             <div className="post-index-item-comments">
