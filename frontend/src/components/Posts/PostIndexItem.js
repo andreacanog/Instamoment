@@ -149,10 +149,7 @@ const PostIndexItem = ({ post, user }) => {
                 
             </div>
             <div className="post-index-item__caption">
-                {/* <div className="post-index-item__caption__username">
-                    {post.user ? post.user
-                        .username : "Anonymous"}
-                </div> */}
+               
                 <div className="post-index-item-caption-container">
                     <div className="post-caption-username">{post.username}</div>
                     <div className="post-caption-title" style={{display: !updatingPostTitle ? "block" : "none"}} >{post.title}</div> 
