@@ -159,6 +159,7 @@ const PostIndexItem = ({ post, user }) => {
                             <button className="update-post-button cancel-button-title" onClick={handleCancelTitle}>Cancel</button>
                         </div>
                 </div>
+                
             </div>
 
             <div className="post-index-item-comments">
