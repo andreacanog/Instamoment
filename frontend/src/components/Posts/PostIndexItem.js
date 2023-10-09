@@ -139,7 +139,6 @@ const PostIndexItem = ({ post, user }) => {
 
 
 
-
     
             </div>
             <div className="post-count-likes-comments">
