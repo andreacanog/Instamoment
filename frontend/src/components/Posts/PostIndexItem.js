@@ -139,7 +139,7 @@ const PostIndexItem = ({ post, user }) => {
 
                 {/* <div className="post-icons-right"> */}
                     {/* <div><BiBookmark/></div> */}
-                {/* </div> */}
+
     
             </div>
             <div className="post-count-likes-comments">
