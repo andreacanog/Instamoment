@@ -137,7 +137,7 @@ const PostIndexItem = ({ post, user }) => {
                     <LikeButton post={post} user={user}/>
                 </div>
 
-                {/* <div className="post-icons-right"> */}
+
 
 
     
