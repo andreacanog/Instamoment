@@ -136,8 +136,9 @@ const PostIndexItem = ({ post, user }) => {
                 <div className="post-icons-left">
                     <LikeButton post={post} user={user}/>
                 </div>
-
+                
             </div>
+
             <div className="post-count-likes-comments">
                 <div className="likes-count"><p>{(post.likes === 0 || post.likes === undefined) ? "" : post.likes + "  likes"}</p></div>
                 <p className="comments-count">{(comments.length === 0) ? "" : comments.length + "  comments"}</p>
