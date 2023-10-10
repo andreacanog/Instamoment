@@ -138,7 +138,6 @@ const PostIndexItem = ({ post, user }) => {
                 </div>
 
 
-
             </div>
             <div className="post-count-likes-comments">
                 <div className="likes-count"><p>{(post.likes === 0 || post.likes === undefined) ? "" : post.likes + "  likes"}</p></div>
