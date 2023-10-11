@@ -136,7 +136,7 @@ const PostIndexItem = ({ post, user }) => {
                 <div className="post-icons-left">
                     <LikeButton post={post} user={user}/>
                 </div>
-                
+
             </div>
 
             <div className="post-count-likes-comments">
@@ -171,6 +171,7 @@ const PostIndexItem = ({ post, user }) => {
 
             <div className="item-bottom-line">
             </div>
+            
         </div>
     </div>
 
