@@ -144,6 +144,7 @@ const PostIndexItem = ({ post, user }) => {
                 <p className="comments-count">{(comments.length === 0) ? "" : comments.length + "  comments"}</p>
                 
             </div>
+            
             <div className="post-index-item__caption">
                
                 <div className="post-index-item-caption-container">
@@ -174,7 +175,7 @@ const PostIndexItem = ({ post, user }) => {
             </div>
 
         </div>
-        
+
     </div>
 
     );
