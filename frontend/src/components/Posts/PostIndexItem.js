@@ -170,10 +170,11 @@ const PostIndexItem = ({ post, user }) => {
             </div>
 
             <div className="item-bottom-line">
-                
+
             </div>
 
         </div>
+        
     </div>
 
     );
