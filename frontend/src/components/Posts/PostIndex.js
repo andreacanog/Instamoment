@@ -20,10 +20,11 @@ const PostIndex = () => {
   return user ? (
 
     <div className="post-index">
-      
+
       {posts.map(post => (
         <PostIndexItem key={post.id} post={post} user={user} />
       )).reverse()}
+      
     </div>
 
   ) : (<Redirect to="/login" ></Redirect>);
