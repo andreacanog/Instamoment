@@ -18,8 +18,9 @@ const PostIndex = () => {
   if (!posts) return null;
 
   return user ? (
-    
+
     <div className="post-index">
+      
       {posts.map(post => (
         <PostIndexItem key={post.id} post={post} user={user} />
       )).reverse()}
