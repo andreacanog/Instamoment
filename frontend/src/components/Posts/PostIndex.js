@@ -23,6 +23,7 @@ const PostIndex = () => {
         <PostIndexItem key={post.id} post={post} user={user} />
       )).reverse()}
     </div>
+    
   ) : (<Redirect to="/login" ></Redirect>);
 }
 
