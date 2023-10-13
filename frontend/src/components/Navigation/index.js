@@ -19,7 +19,7 @@ const Navigation = () => {
     sessionLinks = (
       <>
         {/* <NavLink to="/login">Log In</NavLink> */}
-        {/* <NavLink to="/signup">Sign Up</NavLink> */}
+
       </>
     );
   }
