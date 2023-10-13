@@ -18,7 +18,7 @@ const Navigation = () => {
   } else {
     sessionLinks = (
       <>
-        {/* <NavLink to="/login">Log In</NavLink> */}
+
 
       </>
     );
