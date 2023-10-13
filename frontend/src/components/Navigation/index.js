@@ -18,7 +18,6 @@ const Navigation = () => {
   } else {
     sessionLinks = (
       <>
-
       </>
     );
   }
