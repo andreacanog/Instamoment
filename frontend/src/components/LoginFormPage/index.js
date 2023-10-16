@@ -16,7 +16,6 @@ function LoginFormPage() {
   let history = useHistory();
 
 
-
   if (sessionUser) return <Redirect to="/" />;
 
   const handleDemoLogin = (e) => {
